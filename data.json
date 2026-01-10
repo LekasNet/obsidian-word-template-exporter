@@ -1,0 +1,11 @@
+{
+  "presetId": "mirea-vkr-gost-r-7.0.91-2021",
+  "exportOptions": {
+    "ignorePageBreaks": true,
+    "enablePagination": true,
+    "includeToc": false
+  },
+  "userPresets": [],
+  "outputFolder": "Exports",
+  "fileNameTemplate": "{title}.docx"
+}

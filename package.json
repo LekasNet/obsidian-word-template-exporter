@@ -1,0 +1,22 @@
+{
+  "name": "obsidian-gost-export",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node esbuild.config.mjs",
+    "dev": "node esbuild.config.mjs --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "docx": "^9.5.1",
+    "obsidian": "^1.11.4"
+  },
+  "devDependencies": {
+    "esbuild": "^0.27.2"
+  }
+}

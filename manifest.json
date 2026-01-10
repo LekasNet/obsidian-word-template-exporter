@@ -1,0 +1,9 @@
+{
+  "id": "obsidian-gost-export",
+  "name": "ГОСТ Word Export",
+  "version": "0.0.1",
+  "minAppVersion": "1.5.0",
+  "description": "Экспорт заметок Obsidian в Word (.docx) с оформлением по ГОСТ",
+  "author": "Your Name",
+  "isDesktopOnly": true
+}

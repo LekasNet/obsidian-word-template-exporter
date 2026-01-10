@@ -1,0 +1,22 @@
+{
+  "id": "gost-r-7.0.97-2025",
+  "name": "ГОСТ Р 7.0.97-2025 (ОРД)",
+  "page": {
+    "size": "A4",
+    "marginsMm": { "top": 20, "bottom": 20, "left": 20, "right": 10 },
+    "longTermStorageLeftMarginMm": 30
+  },
+  "font": {
+    "family": "Times New Roman",
+    "sizePt": 14
+  },
+  "paragraph": {
+    "alignment": "justify",
+    "firstLineIndentCm": 1.25,
+    "lineSpacing": 1.5
+  },
+  "pagination": {
+    "position": "top-center",
+    "offsetFromTopMm": 10
+  }
+}
