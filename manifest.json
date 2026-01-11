@@ -3,7 +3,7 @@
   "name": "Word Template Exporter",
   "version": "1.0.0",
   "minAppVersion": "1.5.0",
-  "description": "Export Obsidian notes to Microsoft Word (.docx) using customizable templates, including academic standards like APA, IEEE, and GOST (ГОСТ).",
+  "description": "Export markdown notes to Microsoft Word (.docx) using customizable templates, including academic standards like APA, IEEE, and GOST (ГОСТ).",
   "author": "lek4s",
   "authorUrl": "https://github.com/LekasNet",
   "isDesktopOnly": true
