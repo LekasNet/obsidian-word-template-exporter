@@ -1,33 +1,39 @@
+const { t } = require("../i18n");
 // src/gost/gost-schema.js
 
 const DEFAULT_PRESET = {
     id: "custom",
     name: "Пользовательский",
-
     page: {
         size: "A4",
         marginsMm: { top: 20, bottom: 20, left: 20, right: 10 },
-        // Для документов > 10 лет хранения в ГОСТе часто фигурирует 30 мм слева,
-        // поэтому держим как параметр пресета/политики:
         longTermStorageLeftMarginMm: 30
     },
-
     font: {
         family: "Times New Roman",
         sizePt: 14
     },
-
     paragraph: {
-        alignment: "justify",        // left | right | center | justify
+        alignment: "justify",
         firstLineIndentCm: 1.25,
         lineSpacing: 1.5
     },
-
     pagination: {
-        position: "top-center",      // top-center | bottom-center | none
+        position: "top-center",
         offsetFromTopMm: 10
+    },
+
+    // ✅ NEW: default document strings (RU)
+    strings: {
+        tocTitle: "СОДЕРЖАНИЕ",     // heading text on TOC page
+        tocFieldTitle: "Содержание", // internal label for Word TOC field
+        tableLabel: "Таблица",
+        figureLabel: "Рисунок",
+        captionSeparator: " — ",
+        imageNotFound: "Изображение не найдено: {src}"
     }
 };
+
 
 function isPlainObject(v) {
     return v != null && typeof v === "object" && !Array.isArray(v);

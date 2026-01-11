@@ -1,6 +1,7 @@
 // src/obsidian/preset-visual-editor.js
 
 const { Setting, Notice } = require("obsidian");
+const { t: tr } = require("../i18n"); // <- импортируем как tr, чтобы не конфликтовало
 
 // порядок, который ты просил
 const STYLE_ORDER = [
@@ -19,18 +20,18 @@ const STYLE_ORDER = [
 ];
 
 const LABELS = {
-    heading1: "Заголовок 1",
-    heading2: "Заголовок 2",
-    heading3: "Заголовок 3",
-    heading4: "Заголовок 4",
-    heading5: "Заголовок 5",
-    heading6: "Заголовок 6",
-    normal: "Текст",
-    tableText: "Таблица — текст",
-    tableHeaderText: "Таблица — шапка",
-    tableCaption: "Подпись таблицы",
-    figureCaption: "Подпись картинки",
-    listingText: "Код-листинг",
+    heading1: tr("block.heading1"),
+    heading2: tr("block.heading2"),
+    heading3: tr("block.heading3"),
+    heading4: tr("block.heading4"),
+    heading5: tr("block.heading5"),
+    heading6: tr("block.heading6"),
+    normal: tr("block.normal"),
+    tableText: tr("block.tableText"),
+    tableHeaderText: tr("block.tableHeaderText"),
+    tableCaption: tr("block.tableCaption"),
+    figureCaption: tr("block.figureCaption"),
+    listingText: tr("block.listingText"),
 };
 
 function sortBlocks(blocks) {
@@ -44,13 +45,13 @@ function getSelectedTypes(blocks) {
 
 function getAvailableTypes(selectedTypes) {
     const set = new Set(selectedTypes);
-    return STYLE_ORDER.filter((t) => !set.has(t));
+    return STYLE_ORDER.filter((x) => !set.has(x));
 }
 
 function defaultStyleFor(type, preset) {
     const normal =
         preset.styles?.normal || {
-            font: { family: "Times New Roman", sizePt: 14 },
+            font: { family: tr("placeholders.font.family"), sizePt: 14 },
             paragraph: {
                 alignment: "justify",
                 firstLineIndentCm: 1.25,
@@ -113,12 +114,12 @@ function renderPresetVisualEditor(containerEl, presetWrapper, hooks) {
     if (!preset.styles) preset.styles = {};
 
     // blocks model:
-    // { id: string, type: string|null }  where type=null means "unselected yet"
+    // { id: string, type: string|null } where type=null means "unselected yet"
     const blocks = [];
 
     // pull existing styles as blocks
-    for (const t of STYLE_ORDER) {
-        if (preset.styles[t]) blocks.push({ id: `b-${t}`, type: t });
+    for (const type of STYLE_ORDER) {
+        if (preset.styles[type]) blocks.push({ id: `b-${type}`, type });
     }
     sortBlocks(blocks);
 
@@ -132,9 +133,9 @@ function renderPresetVisualEditor(containerEl, presetWrapper, hooks) {
     header.style.alignItems = "center";
     header.style.marginBottom = "8px";
 
-    header.createEl("h3", { text: "Визуальный редактор" });
+    header.createEl("h3", { text: tr("visualEditor.title") });
 
-    const addBtn = header.createEl("button", { text: "➕ Добавить блок" });
+    const addBtn = header.createEl("button", { text: tr("buttons.addBlock") });
     addBtn.classList.add("mod-cta");
 
     const blocksEl = containerEl.createDiv();
@@ -144,10 +145,11 @@ function renderPresetVisualEditor(containerEl, presetWrapper, hooks) {
         const available = getAvailableTypes(selectedTypes);
 
         const s = new Setting(blockEl)
-            .setName("Тип блока")
-            .setDesc("Выбери, что редактируем. Уже выбранные типы недоступны.");
+            .setName(tr("visualEditor.blockType.title"))
+            .setDesc(tr("visualEditor.blockType.desc"));
 
         s.addDropdown((dd) => {
+            // лучше тоже локализовать, но можно и так:
             dd.addOption("", "— выбрать —");
 
             // если уже выбран тип в этом блоке — показываем его в списке тоже
@@ -155,7 +157,7 @@ function renderPresetVisualEditor(containerEl, presetWrapper, hooks) {
                 dd.addOption(block.type, LABELS[block.type] || block.type);
             }
 
-            for (const t of available) dd.addOption(t, LABELS[t] || t);
+            for (const type of available) dd.addOption(type, LABELS[type] || type);
 
             dd.setValue(block.type || "");
             dd.onChange((v) => {
@@ -164,7 +166,7 @@ function renderPresetVisualEditor(containerEl, presetWrapper, hooks) {
                 // защита от дублей
                 const alreadyUsed = selectedTypes.includes(v) && block.type !== v;
                 if (alreadyUsed) {
-                    new Notice("Этот тип уже добавлен.");
+                    new Notice(tr("notices.blocks.typeAlreadyAdded"));
                     dd.setValue(block.type || "");
                     return;
                 }
@@ -187,28 +189,29 @@ function renderPresetVisualEditor(containerEl, presetWrapper, hooks) {
     }
 
     function renderStyleFields(blockEl, type) {
-        const styleObj = preset.styles[type] || (preset.styles[type] = defaultStyleFor(type, preset));
+        const styleObj =
+            preset.styles[type] || (preset.styles[type] = defaultStyleFor(type, preset));
         const font = styleObj.font || (styleObj.font = {});
         const par = styleObj.paragraph || (styleObj.paragraph = {});
 
         // FONT
         new Setting(blockEl)
-            .setName("Шрифт")
-            .addText((t) => {
-                t.setPlaceholder("Times New Roman");
-                t.setValue(font.family || "");
-                t.onChange((v) => {
+            .setName(tr("fields.font.family"))
+            .addText((input) => {
+                input.setPlaceholder(tr("placeholders.font.family"));
+                input.setValue(font.family || "");
+                input.onChange((v) => {
                     font.family = v;
                     notifyChange();
                 });
             });
 
         new Setting(blockEl)
-            .setName("Размер (pt)")
-            .addText((t) => {
-                t.setPlaceholder("14");
-                t.setValue(font.sizePt != null ? String(font.sizePt) : "");
-                t.onChange((v) => {
+            .setName(tr("fields.font.sizePt"))
+            .addText((input) => {
+                input.setPlaceholder(tr("placeholders.font.sizePt"));
+                input.setValue(font.sizePt != null ? String(font.sizePt) : "");
+                input.onChange((v) => {
                     const n = Number(v);
                     if (!Number.isFinite(n)) return;
                     font.sizePt = n;
@@ -217,7 +220,27 @@ function renderPresetVisualEditor(containerEl, presetWrapper, hooks) {
             });
 
         new Setting(blockEl)
-            .setName("Жирный")
+            .setName(tr("fields.font.color"))
+            .addText((input) => {
+                input.setPlaceholder(tr("placeholders.font.color"));
+                input.setValue(font.color || "");
+                input.onChange((v) => {
+                    // разрешим пусто = "не задавать"
+                    const s = String(v || "").trim().replace(/^#/, "").toUpperCase();
+                    if (!s) {
+                        delete font.color;
+                        notifyChange();
+                        return;
+                    }
+                    // простая валидация HEX 6 символов
+                    if (!/^[0-9A-F]{6}$/.test(s)) return;
+                    font.color = s;
+                    notifyChange();
+                });
+            });
+
+        new Setting(blockEl)
+            .setName(tr("fields.font.bold"))
             .addToggle((tg) => {
                 tg.setValue(!!font.bold);
                 tg.onChange((v) => {
@@ -227,7 +250,7 @@ function renderPresetVisualEditor(containerEl, presetWrapper, hooks) {
             });
 
         new Setting(blockEl)
-            .setName("Курсив")
+            .setName(tr("fields.font.italic"))
             .addToggle((tg) => {
                 tg.setValue(!!font.italic);
                 tg.onChange((v) => {
@@ -238,12 +261,12 @@ function renderPresetVisualEditor(containerEl, presetWrapper, hooks) {
 
         // PARAGRAPH
         new Setting(blockEl)
-            .setName("Выравнивание")
+            .setName(tr("fields.paragraph.alignment"))
             .addDropdown((dd) => {
-                dd.addOption("justify", "По ширине");
-                dd.addOption("left", "По левому краю");
-                dd.addOption("center", "По центру");
-                dd.addOption("right", "По правому краю");
+                dd.addOption("justify", tr("fields.paragraph.alignment.justify"));
+                dd.addOption("left", tr("fields.paragraph.alignment.left"));
+                dd.addOption("center", tr("fields.paragraph.alignment.center"));
+                dd.addOption("right", tr("fields.paragraph.alignment.right"));
                 dd.setValue(par.alignment || "justify");
                 dd.onChange((v) => {
                     par.alignment = v;
@@ -252,11 +275,11 @@ function renderPresetVisualEditor(containerEl, presetWrapper, hooks) {
             });
 
         new Setting(blockEl)
-            .setName("Красная строка (см)")
-            .addText((t) => {
-                t.setPlaceholder("1.25");
-                t.setValue(par.firstLineIndentCm != null ? String(par.firstLineIndentCm) : "");
-                t.onChange((v) => {
+            .setName(tr("fields.paragraph.firstLineIndentCm"))
+            .addText((input) => {
+                input.setPlaceholder(tr("placeholders.paragraph.firstLineIndentCm"));
+                input.setValue(par.firstLineIndentCm != null ? String(par.firstLineIndentCm) : "");
+                input.onChange((v) => {
                     const n = Number(v);
                     if (!Number.isFinite(n)) return;
                     par.firstLineIndentCm = n;
@@ -265,11 +288,11 @@ function renderPresetVisualEditor(containerEl, presetWrapper, hooks) {
             });
 
         new Setting(blockEl)
-            .setName("Интервал до (pt)")
-            .addText((t) => {
-                t.setPlaceholder("0");
-                t.setValue(par.spacingBeforePt != null ? String(par.spacingBeforePt) : "");
-                t.onChange((v) => {
+            .setName(tr("fields.paragraph.spacingBeforePt"))
+            .addText((input) => {
+                input.setPlaceholder(tr("placeholders.paragraph.spacingBeforePt"));
+                input.setValue(par.spacingBeforePt != null ? String(par.spacingBeforePt) : "");
+                input.onChange((v) => {
                     const n = Number(v);
                     if (!Number.isFinite(n)) return;
                     par.spacingBeforePt = n;
@@ -278,11 +301,12 @@ function renderPresetVisualEditor(containerEl, presetWrapper, hooks) {
             });
 
         new Setting(blockEl)
-            .setName("Интервал после (pt)")
-            .addText((t) => {
-                t.setPlaceholder("0");
-                t.setValue(par.spacingAfterPt != null ? String(par.spacingAfterPt) : "");
-                t.onChange((v) => {
+            .setName(tr("fields.paragraph.spacingAfterPt"))
+            .addText((input) => {
+                // ✅ тут был баг: placeholder брался spacingBeforePt
+                input.setPlaceholder(tr("placeholders.paragraph.spacingAfterPt"));
+                input.setValue(par.spacingAfterPt != null ? String(par.spacingAfterPt) : "");
+                input.onChange((v) => {
                     const n = Number(v);
                     if (!Number.isFinite(n)) return;
                     par.spacingAfterPt = n;
@@ -291,11 +315,11 @@ function renderPresetVisualEditor(containerEl, presetWrapper, hooks) {
             });
 
         new Setting(blockEl)
-            .setName("Межстрочный интервал")
-            .addText((t) => {
-                t.setPlaceholder("1.5");
-                t.setValue(par.lineSpacing != null ? String(par.lineSpacing) : "");
-                t.onChange((v) => {
+            .setName(tr("fields.paragraph.lineSpacing"))
+            .addText((input) => {
+                input.setPlaceholder(tr("placeholders.paragraph.lineSpacing"));
+                input.setValue(par.lineSpacing != null ? String(par.lineSpacing) : "");
+                input.onChange((v) => {
                     const n = Number(v);
                     if (!Number.isFinite(n)) return;
                     par.lineSpacing = n;
@@ -328,9 +352,11 @@ function renderPresetVisualEditor(containerEl, presetWrapper, hooks) {
             top.style.alignItems = "center";
             top.style.marginBottom = "6px";
 
-            top.createEl("strong", { text: b.type ? (LABELS[b.type] || b.type) : "Новый блок" });
+            top.createEl("strong", {
+                text: b.type ? (LABELS[b.type] || b.type) : tr("visualEditor.block.new"),
+            });
 
-            const del = top.createEl("button", { text: "Удалить" });
+            const del = top.createEl("button", { text: tr("buttons.delete") });
             del.onclick = () => {
                 if (b.type) delete preset.styles[b.type];
                 blocks.splice(index, 1);
@@ -338,7 +364,7 @@ function renderPresetVisualEditor(containerEl, presetWrapper, hooks) {
                 renderAll();
             };
 
-            // chooser always visible (so you can create empty then pick)
+            // chooser always visible
             renderBlockTypeChooser(blockEl, b);
 
             // if chosen → show fields
@@ -354,7 +380,7 @@ function renderPresetVisualEditor(containerEl, presetWrapper, hooks) {
     addBtn.onclick = () => {
         const available = getAvailableTypes(getSelectedTypes(blocks));
         if (!available.length) {
-            new Notice("Все блоки уже добавлены");
+            new Notice(tr("notices.blocks.allAdded"));
             return;
         }
         // добавляем “пустой” блок только с dropdown

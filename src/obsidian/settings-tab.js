@@ -1,6 +1,7 @@
 const { PluginSettingTab, Setting, Notice, Modal } = require("obsidian");
 const { getPresetOptions } = require("../gost/gost-loader");
 const {PresetEditorModal} = require("./preset-editor-modal");
+const { t } = require("../i18n");
 
 class GostExportSettingTab extends PluginSettingTab {
     constructor(app, plugin) {
@@ -18,8 +19,8 @@ class GostExportSettingTab extends PluginSettingTab {
            ПРЕСЕТ ПО УМОЛЧАНИЮ
            ======================= */
         new Setting(containerEl)
-            .setName("Пресет по умолчанию")
-            .setDesc("Используется при Fast Export")
+            .setName(t("settings.presetDefault.title"))
+            .setDesc(t("settings.presetDefault.desc"))
             .addDropdown((dd) => {
                 const presets = getPresetOptions(this.plugin.settings.userPresets);
                 for (const p of presets) dd.addOption(p.id, p.name);
@@ -31,13 +32,13 @@ class GostExportSettingTab extends PluginSettingTab {
                 });
             });
 
-        containerEl.createEl("h3", { text: "Параметры экспорта (по умолчанию)" });
+        containerEl.createEl("h3", { text: t("settings.exportDefaults.title") });
 
         /* =======================
            TOGGLES
            ======================= */
         new Setting(containerEl)
-            .setName("Игнорировать разрывы страниц ---")
+            .setName(t("settings.exportDefaults.ignorePageBreaks.title"))
             .addToggle((t) => {
                 t.setValue(this.plugin.settings.exportOptions.ignorePageBreaks);
                 t.onChange(async (v) => {
@@ -47,7 +48,7 @@ class GostExportSettingTab extends PluginSettingTab {
             });
 
         new Setting(containerEl)
-            .setName("Нумерация страниц")
+            .setName(t("settings.exportDefaults.enablePagination.title"))
             .addToggle((t) => {
                 t.setValue(this.plugin.settings.exportOptions.enablePagination);
                 t.onChange(async (v) => {
@@ -57,7 +58,7 @@ class GostExportSettingTab extends PluginSettingTab {
             });
 
         new Setting(containerEl)
-            .setName("Автоматическое содержание (Word)")
+            .setName(t("settings.exportDefaults.includeToc.title"))
             .addToggle((t) => {
                 t.setValue(this.plugin.settings.exportOptions.includeToc);
                 t.onChange(async (v) => {
@@ -69,31 +70,31 @@ class GostExportSettingTab extends PluginSettingTab {
         /* =======================
            КАСТОМНЫЕ ПРЕСЕТЫ
            ======================= */
-        containerEl.createEl("h3", { text: "Кастомные шаблоны" });
+        containerEl.createEl("h3", { text: t("settings.userPresets.title") });
 
         // внутри display(), вместо твоего forEach(...)
         this.plugin.settings.userPresets.forEach((p, index) => {
             new Setting(containerEl)
-                .setName(p.name || "(без названия)")
+                .setName(p.name || t("settings.userPresets.unnamed"))
                 .setDesc(p.id)
                 .addExtraButton((b) => {
                     b.setIcon("pencil");
-                    b.setTooltip("Редактировать");
+                    b.setTooltip(t("tooltips.edit"));
                     b.onClick(() => this.openPresetEditor(p, index));
                 })
                 .addExtraButton((b) => {
                     b.setIcon("download");
-                    b.setTooltip("Импорт");
+                    b.setTooltip(t("tooltips.import"));
                     b.onClick(() => this.importPreset(index));
                 })
                 .addExtraButton((b) => {
                     b.setIcon("upload");
-                    b.setTooltip("Экспорт");
+                    b.setTooltip(t("buttons.export"));
                     b.onClick(() => this.exportPreset(index));
                 })
                 .addExtraButton((b) => {
                     b.setIcon("trash");
-                    b.setTooltip("Удалить");
+                    b.setTooltip(t("buttons.delete"));
                     b.onClick(async () => {
                         this.plugin.settings.userPresets.splice(index, 1);
                         await this.plugin.saveSettings();
@@ -106,7 +107,7 @@ class GostExportSettingTab extends PluginSettingTab {
         new Setting(containerEl)
             .addButton((b) =>
                 b
-                    .setButtonText("➕ Добавить пресет")
+                    .setButtonText(t("settings.userPresets.addPreset"))
                     .setCta()
                     .onClick(() => this.createPreset())
             );
@@ -121,7 +122,7 @@ class GostExportSettingTab extends PluginSettingTab {
         const modal = new Modal(this.app);
         modal.onOpen = () => {
             const { contentEl } = modal;
-            contentEl.createEl("h2", { text: "Экспорт пресета (JSON)" });
+            contentEl.createEl("h2", { text: t("modal.presetExport.title") });
 
             const ta = contentEl.createEl("textarea");
             ta.value = payload;
@@ -133,16 +134,16 @@ class GostExportSettingTab extends PluginSettingTab {
 
             new Setting(contentEl)
                 .addButton((b) =>
-                    b.setButtonText("Скопировать").setCta().onClick(async () => {
+                    b.setButtonText(t("buttons.copy")).setCta().onClick(async () => {
                         try {
                             await navigator.clipboard.writeText(payload);
-                            new Notice("✅ Скопировано в буфер обмена");
+                            new Notice(t("notices.preset.copied"));
                         } catch {
-                            new Notice("⚠️ Не удалось скопировать. Скопируй вручную.");
+                            new Notice(t("notices.preset.copyFail"));
                         }
                     })
                 )
-                .addButton((b) => b.setButtonText("Закрыть").onClick(() => modal.close()));
+                .addButton((b) => b.setButtonText(t("buttons.close")).onClick(() => modal.close()));
         };
 
         modal.open();
@@ -152,16 +153,16 @@ class GostExportSettingTab extends PluginSettingTab {
         const modal = new Modal(this.app);
         modal.onOpen = () => {
             const { contentEl } = modal;
-            contentEl.createEl("h2", { text: "Импорт пресета (JSON)" });
+            contentEl.createEl("h2", { text: t("modal.presetImport.title") });
 
             const ta = contentEl.createEl("textarea");
-            ta.placeholder = "Вставь сюда JSON пресета (объект с id/name/preset)...";
+            ta.placeholder = t("modal.presetImport.placeholder");
             ta.style.width = "100%";
             ta.style.height = "300px";
 
             new Setting(contentEl)
                 .addButton((b) =>
-                    b.setButtonText("Импортировать").setCta().onClick(async () => {
+                    b.setButtonText(t("buttons.import")).setCta().onClick(async () => {
                         try {
                             const obj = JSON.parse(ta.value);
 
@@ -179,13 +180,13 @@ class GostExportSettingTab extends PluginSettingTab {
                             await this.plugin.saveSettings();
                             this.display();
                             modal.close();
-                            new Notice("✅ Пресет импортирован");
+                            new Notice(t("notices.preset.imported"));
                         } catch (e) {
-                            new Notice("❌ Некорректный JSON или структура (нужно: id, name, preset)");
+                            new Notice(t("notices.preset.importBad"));
                         }
                     })
                 )
-                .addButton((b) => b.setButtonText("Отмена").onClick(() => modal.close()));
+                .addButton((b) => b.setButtonText(t("buttons.cancel")).onClick(() => modal.close()));
         };
 
         modal.open();

@@ -1,0 +1,139 @@
+{
+  "id": "ieee",
+  "name": "IEEE (Technical)",
+  "page": {
+    "size": "A4",
+    "orientation": "portrait",
+    "marginsMm": { "left": 19, "right": 19, "top": 19, "bottom": 19 }
+  },
+  "pagination": {
+    "position": "bottom-center",
+    "startAt": 1,
+    "skipFirstPages": 0
+  },
+  "strings": {
+    "tocTitle": "CONTENTS",
+    "tocFieldTitle": "Contents",
+    "tableLabel": "Table",
+    "figureLabel": "Figure",
+    "captionSeparator": " — ",
+    "imageNotFound": "Image not found: {src}"
+  },
+
+  "styles": {
+    "normal": {
+      "font": { "family": "Times New Roman", "sizePt": 10, "bold": false, "italic": false, "color": "000000" },
+      "paragraph": {
+        "alignment": "justify",
+        "firstLineIndentCm": 0.63,
+        "spacingBeforePt": 0,
+        "spacingAfterPt": 0,
+        "lineSpacing": 1.0
+      }
+    },
+
+    "heading1": {
+      "font": { "family": "Times New Roman", "sizePt": 12, "bold": true, "italic": false, "color": "000000" },
+      "paragraph": {
+        "alignment": "center",
+        "firstLineIndentCm": 0,
+        "spacingBeforePt": 12,
+        "spacingAfterPt": 6,
+        "lineSpacing": 1.0,
+        "keepWithNext": true,
+        "keepLines": true
+      }
+    },
+    "heading2": {
+      "font": { "family": "Times New Roman", "sizePt": 11, "bold": true, "italic": false, "color": "000000" },
+      "paragraph": {
+        "alignment": "left",
+        "firstLineIndentCm": 0,
+        "spacingBeforePt": 12,
+        "spacingAfterPt": 6,
+        "lineSpacing": 1.0,
+        "keepWithNext": true,
+        "keepLines": true
+      }
+    },
+    "heading3": {
+      "font": { "family": "Times New Roman", "sizePt": 10, "bold": true, "italic": false, "color": "000000" },
+      "paragraph": {
+        "alignment": "left",
+        "firstLineIndentCm": 0,
+        "spacingBeforePt": 10,
+        "spacingAfterPt": 4,
+        "lineSpacing": 1.0,
+        "keepWithNext": true,
+        "keepLines": true
+      }
+    },
+
+    "tableCaption": {
+      "font": { "family": "Times New Roman", "sizePt": 9, "bold": true, "italic": false, "color": "000000" },
+      "paragraph": {
+        "alignment": "center",
+        "firstLineIndentCm": 0,
+        "spacingBeforePt": 6,
+        "spacingAfterPt": 3,
+        "lineSpacing": 1.0,
+        "keepWithNext": true
+      }
+    },
+    "tableText": {
+      "font": { "family": "Times New Roman", "sizePt": 9, "bold": false, "italic": false, "color": "000000" },
+      "paragraph": {
+        "alignment": "center",
+        "firstLineIndentCm": 0,
+        "spacingBeforePt": 0,
+        "spacingAfterPt": 0,
+        "lineSpacing": 1.0
+      }
+    },
+    "tableHeaderText": {
+      "font": { "family": "Times New Roman", "sizePt": 9, "bold": true, "italic": false, "color": "000000" },
+      "paragraph": {
+        "alignment": "center",
+        "firstLineIndentCm": 0,
+        "spacingBeforePt": 0,
+        "spacingAfterPt": 0,
+        "lineSpacing": 1.0
+      }
+    },
+
+    "figureCaption": {
+      "font": { "family": "Times New Roman", "sizePt": 9, "bold": false, "italic": false, "color": "000000" },
+      "paragraph": {
+        "alignment": "center",
+        "firstLineIndentCm": 0,
+        "spacingBeforePt": 3,
+        "spacingAfterPt": 6,
+        "lineSpacing": 1.0
+      }
+    },
+
+    "listingText": {
+      "font": { "family": "Courier New", "sizePt": 9, "bold": false, "italic": false, "color": "000000" },
+      "paragraph": {
+        "alignment": "left",
+        "firstLineIndentCm": 0,
+        "spacingBeforePt": 0,
+        "spacingAfterPt": 0,
+        "lineSpacing": 1.0,
+        "keepLines": true
+      }
+    },
+
+    "tocTitle": {
+      "font": { "family": "Times New Roman", "sizePt": 11, "bold": true, "allCaps": true, "color": "000000" },
+      "paragraph": {
+        "alignment": "center",
+        "firstLineIndentCm": 0,
+        "spacingBeforePt": 0,
+        "spacingAfterPt": 6,
+        "lineSpacing": 1.0,
+        "pageBreakBefore": false
+      }
+    }
+  }
+}

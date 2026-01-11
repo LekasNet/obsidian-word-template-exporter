@@ -3,6 +3,10 @@
 const preset_7097_2025 = require("./presets/gost-r-7.0.97-2025.json");
 const preset_mirea_vkr_7091_2021 = require("./presets/mirea-vkr-gost-r-7.0.91-2021.json");
 
+const preset_apa7 = require("./presets/apa-7.json");
+const preset_ieee = require("./presets/ieee.json");
+
+
 function validatePreset(p) {
     const errors = [];
 
@@ -20,7 +24,7 @@ function validatePreset(p) {
     if (p.styles != null && typeof p.styles !== "object") errors.push("styles must be an object");
 
     if (errors.length) {
-        const msg = `Invalid ГОСТ preset "${p?.id ?? "unknown"}":\n- ` + errors.join("\n- ");
+        const msg = `Invalid preset "${p?.id ?? "unknown"}":\n- ` + errors.join("\n- ");
         const err = new Error(msg);
         err.code = "GOST_PRESET_INVALID";
         err.details = errors;
@@ -33,7 +37,9 @@ function validatePreset(p) {
 function getBuiltinPresets() {
     const presets = [
         preset_7097_2025,
-        preset_mirea_vkr_7091_2021
+        preset_mirea_vkr_7091_2021,
+        preset_apa7,
+        preset_ieee
     ];
 
     return presets.map(validatePreset);

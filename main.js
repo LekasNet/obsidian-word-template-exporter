@@ -8,24 +8,173 @@ var require_gost_r_7_0_97_2025 = __commonJS({
   "src/gost/presets/gost-r-7.0.97-2025.json"(exports2, module2) {
     module2.exports = {
       id: "gost-r-7.0.97-2025",
-      name: "\u0413\u041E\u0421\u0422 \u0420 7.0.97-2025 (\u041E\u0420\u0414)",
+      name: "GOST R 7.0.97\u20132025",
       page: {
         size: "A4",
-        marginsMm: { top: 20, bottom: 20, left: 20, right: 10 },
+        orientation: "portrait",
+        marginsMm: { left: 20, right: 10, top: 20, bottom: 20 },
         longTermStorageLeftMarginMm: 30
-      },
-      font: {
-        family: "Times New Roman",
-        sizePt: 14
-      },
-      paragraph: {
-        alignment: "justify",
-        firstLineIndentCm: 1.25,
-        lineSpacing: 1.5
       },
       pagination: {
         position: "top-center",
-        offsetFromTopMm: 10
+        offsetFromTopMm: 10,
+        startAt: 1,
+        skipFirstPages: 0
+      },
+      strings: {
+        tocTitle: "\u0421\u041E\u0414\u0415\u0420\u0416\u0410\u041D\u0418\u0415",
+        tocFieldTitle: "\u0421\u043E\u0434\u0435\u0440\u0436\u0430\u043D\u0438\u0435",
+        tableLabel: "\u0422\u0430\u0431\u043B\u0438\u0446\u0430",
+        figureLabel: "\u0420\u0438\u0441\u0443\u043D\u043E\u043A",
+        captionSeparator: " \u2014 ",
+        imageNotFound: "\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435 \u043D\u0435 \u043D\u0430\u0439\u0434\u0435\u043D\u043E: {src}"
+      },
+      styles: {
+        normal: {
+          font: { family: "Times New Roman", sizePt: 14, bold: false, italic: false, color: "000000" },
+          paragraph: {
+            alignment: "justify",
+            firstLineIndentCm: 1.25,
+            spacingBeforePt: 0,
+            spacingAfterPt: 0,
+            lineSpacing: 1.5
+          }
+        },
+        heading1: {
+          font: { family: "Times New Roman", sizePt: 14, bold: true, italic: false, color: "000000" },
+          paragraph: {
+            alignment: "center",
+            firstLineIndentCm: 0,
+            spacingBeforePt: 12,
+            spacingAfterPt: 6,
+            lineSpacing: 1.5,
+            keepWithNext: true,
+            keepLines: true
+          }
+        },
+        heading2: {
+          font: { family: "Times New Roman", sizePt: 14, bold: true, italic: false, color: "000000" },
+          paragraph: {
+            alignment: "left",
+            firstLineIndentCm: 1.25,
+            spacingBeforePt: 12,
+            spacingAfterPt: 6,
+            lineSpacing: 1.5,
+            keepWithNext: true,
+            keepLines: true
+          }
+        },
+        heading3: {
+          font: { family: "Times New Roman", sizePt: 14, bold: true, italic: false, color: "000000" },
+          paragraph: {
+            alignment: "left",
+            firstLineIndentCm: 1.25,
+            spacingBeforePt: 6,
+            spacingAfterPt: 6,
+            lineSpacing: 1.5,
+            keepWithNext: true,
+            keepLines: true
+          }
+        },
+        heading4: {
+          font: { family: "Times New Roman", sizePt: 14, bold: true, italic: false, color: "000000" },
+          paragraph: {
+            alignment: "left",
+            firstLineIndentCm: 1.25,
+            spacingBeforePt: 6,
+            spacingAfterPt: 6,
+            lineSpacing: 1.5,
+            keepWithNext: true,
+            keepLines: true
+          }
+        },
+        heading5: {
+          font: { family: "Times New Roman", sizePt: 14, bold: true, italic: false, color: "000000" },
+          paragraph: {
+            alignment: "left",
+            firstLineIndentCm: 1.25,
+            spacingBeforePt: 6,
+            spacingAfterPt: 6,
+            lineSpacing: 1.5,
+            keepWithNext: true,
+            keepLines: true
+          }
+        },
+        heading6: {
+          font: { family: "Times New Roman", sizePt: 14, bold: true, italic: false, color: "000000" },
+          paragraph: {
+            alignment: "left",
+            firstLineIndentCm: 1.25,
+            spacingBeforePt: 6,
+            spacingAfterPt: 6,
+            lineSpacing: 1.5,
+            keepWithNext: true,
+            keepLines: true
+          }
+        },
+        tableCaption: {
+          font: { family: "Times New Roman", sizePt: 14, bold: false, italic: true, color: "000000" },
+          paragraph: {
+            alignment: "left",
+            firstLineIndentCm: 0,
+            spacingBeforePt: 6,
+            spacingAfterPt: 3,
+            lineSpacing: 1,
+            keepWithNext: true
+          }
+        },
+        tableText: {
+          font: { family: "Times New Roman", sizePt: 12, bold: false, italic: false, color: "000000" },
+          paragraph: {
+            alignment: "justify",
+            firstLineIndentCm: 0,
+            spacingBeforePt: 0,
+            spacingAfterPt: 0,
+            lineSpacing: 1
+          }
+        },
+        tableHeaderText: {
+          font: { family: "Times New Roman", sizePt: 12, bold: true, italic: false, color: "000000" },
+          paragraph: {
+            alignment: "justify",
+            firstLineIndentCm: 0,
+            spacingBeforePt: 0,
+            spacingAfterPt: 0,
+            lineSpacing: 1
+          }
+        },
+        figureCaption: {
+          font: { family: "Times New Roman", sizePt: 14, bold: false, italic: true, color: "000000" },
+          paragraph: {
+            alignment: "center",
+            firstLineIndentCm: 0,
+            spacingBeforePt: 3,
+            spacingAfterPt: 6,
+            lineSpacing: 1
+          }
+        },
+        listingText: {
+          font: { family: "Courier New", sizePt: 10, bold: false, italic: false, color: "000000" },
+          paragraph: {
+            alignment: "left",
+            firstLineIndentCm: 0,
+            spacingBeforePt: 0,
+            spacingAfterPt: 0,
+            lineSpacing: 1,
+            keepLines: true
+          }
+        },
+        tocTitle: {
+          font: { family: "Times New Roman", sizePt: 14, bold: true, italic: false, color: "000000" },
+          paragraph: {
+            alignment: "center",
+            firstLineIndentCm: 0,
+            spacingBeforePt: 0,
+            spacingAfterPt: 12,
+            lineSpacing: 1.5,
+            pageBreakBefore: false
+          }
+        }
       }
     };
   }
@@ -36,7 +185,7 @@ var require_mirea_vkr_gost_r_7_0_91_2021 = __commonJS({
   "src/gost/presets/mirea-vkr-gost-r-7.0.91-2021.json"(exports2, module2) {
     module2.exports = {
       id: "mirea-vkr-gost-r-7.0.91-2021",
-      name: "\u041C\u0418\u0420\u042D\u0410 \u0412\u041A\u0420 \u2014 \u0413\u041E\u0421\u0422 \u0420 7.0.91-2021",
+      name: "\u041C\u0418\u0420\u042D\u0410 \u0412\u041A\u0420/\u041A\u0443\u0440\u0441\u043E\u0432\u0430\u044F \u2014 \u0413\u041E\u0421\u0422 \u0420 7.0.91-2021",
       page: {
         size: "A4",
         orientation: "portrait",
@@ -49,7 +198,7 @@ var require_mirea_vkr_gost_r_7_0_91_2021 = __commonJS({
       },
       styles: {
         normal: {
-          font: { family: "Times New Roman", sizePt: 14, bold: false, italic: false },
+          font: { family: "Times New Roman", sizePt: 14, bold: false, italic: false, color: "000000" },
           paragraph: {
             alignment: "justify",
             firstLineIndentCm: 1.25,
@@ -59,7 +208,7 @@ var require_mirea_vkr_gost_r_7_0_91_2021 = __commonJS({
           }
         },
         heading1: {
-          font: { family: "Times New Roman", sizePt: 18, bold: true, allCaps: true },
+          font: { family: "Times New Roman", sizePt: 18, bold: true, allCaps: true, color: "000000" },
           paragraph: {
             alignment: "justify",
             firstLineIndentCm: 1.25,
@@ -72,7 +221,7 @@ var require_mirea_vkr_gost_r_7_0_91_2021 = __commonJS({
           }
         },
         heading2: {
-          font: { family: "Times New Roman", sizePt: 16, bold: true },
+          font: { family: "Times New Roman", sizePt: 16, bold: true, color: "000000" },
           paragraph: {
             alignment: "justify",
             firstLineIndentCm: 1.25,
@@ -84,7 +233,7 @@ var require_mirea_vkr_gost_r_7_0_91_2021 = __commonJS({
           }
         },
         heading3: {
-          font: { family: "Times New Roman", sizePt: 14, bold: true },
+          font: { family: "Times New Roman", sizePt: 14, bold: true, color: "000000" },
           paragraph: {
             alignment: "justify",
             firstLineIndentCm: 1.25,
@@ -96,7 +245,7 @@ var require_mirea_vkr_gost_r_7_0_91_2021 = __commonJS({
           }
         },
         heading4: {
-          font: { family: "Times New Roman", sizePt: 14, bold: true },
+          font: { family: "Times New Roman", sizePt: 14, bold: true, color: "000000" },
           paragraph: {
             alignment: "justify",
             firstLineIndentCm: 1.25,
@@ -108,7 +257,7 @@ var require_mirea_vkr_gost_r_7_0_91_2021 = __commonJS({
           }
         },
         heading5: {
-          font: { family: "Times New Roman", sizePt: 14, bold: true },
+          font: { family: "Times New Roman", sizePt: 14, bold: true, color: "000000" },
           paragraph: {
             alignment: "justify",
             firstLineIndentCm: 1.25,
@@ -120,7 +269,7 @@ var require_mirea_vkr_gost_r_7_0_91_2021 = __commonJS({
           }
         },
         heading6: {
-          font: { family: "Times New Roman", sizePt: 14, bold: true },
+          font: { family: "Times New Roman", sizePt: 14, bold: true, color: "000000" },
           paragraph: {
             alignment: "justify",
             firstLineIndentCm: 1.25,
@@ -132,7 +281,7 @@ var require_mirea_vkr_gost_r_7_0_91_2021 = __commonJS({
           }
         },
         tableCaption: {
-          font: { family: "Times New Roman", sizePt: 12, italic: true },
+          font: { family: "Times New Roman", sizePt: 12, italic: true, color: "000000" },
           paragraph: {
             alignment: "justify",
             firstLineIndentCm: 0,
@@ -142,8 +291,18 @@ var require_mirea_vkr_gost_r_7_0_91_2021 = __commonJS({
             keepWithNext: true
           }
         },
+        tableHeaderText: {
+          font: { family: "Times New Roman", sizePt: 12, bold: true, italic: false, color: "000000" },
+          paragraph: {
+            alignment: "justify",
+            firstLineIndentCm: 0,
+            spacingBeforePt: 0,
+            spacingAfterPt: 0,
+            lineSpacing: 1
+          }
+        },
         tableText: {
-          font: { family: "Times New Roman", sizePt: 12, bold: false, italic: false },
+          font: { family: "Times New Roman", sizePt: 12, bold: false, italic: false, color: "000000" },
           paragraph: {
             alignment: "justify",
             firstLineIndentCm: 0,
@@ -153,7 +312,7 @@ var require_mirea_vkr_gost_r_7_0_91_2021 = __commonJS({
           }
         },
         figureCaption: {
-          font: { family: "Times New Roman", sizePt: 12, bold: true, italic: false },
+          font: { family: "Times New Roman", sizePt: 12, bold: true, italic: false, color: "000000" },
           paragraph: {
             alignment: "center",
             firstLineIndentCm: 0,
@@ -163,7 +322,7 @@ var require_mirea_vkr_gost_r_7_0_91_2021 = __commonJS({
           }
         },
         listingCaption: {
-          font: { family: "Times New Roman", sizePt: 12, italic: true },
+          font: { family: "Times New Roman", sizePt: 12, italic: true, color: "000000" },
           paragraph: {
             alignment: "left",
             firstLineIndentCm: 0,
@@ -174,7 +333,7 @@ var require_mirea_vkr_gost_r_7_0_91_2021 = __commonJS({
           }
         },
         listingText: {
-          font: { family: "Courier New", sizePt: 10, bold: false, italic: false },
+          font: { family: "Courier New", sizePt: 10, bold: false, italic: false, color: "000000" },
           paragraph: {
             alignment: "left",
             firstLineIndentCm: 0,
@@ -189,11 +348,315 @@ var require_mirea_vkr_gost_r_7_0_91_2021 = __commonJS({
   }
 });
 
+// src/gost/presets/apa-7.json
+var require_apa_7 = __commonJS({
+  "src/gost/presets/apa-7.json"(exports2, module2) {
+    module2.exports = {
+      id: "apa-7",
+      name: "APA 7 (Academic)",
+      page: {
+        size: "A4",
+        orientation: "portrait",
+        marginsMm: { left: 25.4, right: 25.4, top: 25.4, bottom: 25.4 }
+      },
+      pagination: {
+        position: "top-right",
+        startAt: 1,
+        skipFirstPages: 0
+      },
+      strings: {
+        tocTitle: "CONTENTS",
+        tocFieldTitle: "Contents",
+        tableLabel: "Table",
+        figureLabel: "Figure",
+        captionSeparator: " \u2014 ",
+        imageNotFound: "Image not found: {src}"
+      },
+      styles: {
+        normal: {
+          font: { family: "Times New Roman", sizePt: 12, bold: false, italic: false, color: "000000" },
+          paragraph: {
+            alignment: "left",
+            firstLineIndentCm: 1.27,
+            spacingBeforePt: 0,
+            spacingAfterPt: 0,
+            lineSpacing: 2
+          }
+        },
+        heading1: {
+          font: { family: "Times New Roman", sizePt: 12, bold: true, italic: false, color: "000000" },
+          paragraph: {
+            alignment: "center",
+            firstLineIndentCm: 0,
+            spacingBeforePt: 24,
+            spacingAfterPt: 12,
+            lineSpacing: 2,
+            keepWithNext: true,
+            keepLines: true
+          }
+        },
+        heading2: {
+          font: { family: "Times New Roman", sizePt: 12, bold: true, italic: false, color: "000000" },
+          paragraph: {
+            alignment: "left",
+            firstLineIndentCm: 0,
+            spacingBeforePt: 24,
+            spacingAfterPt: 12,
+            lineSpacing: 2,
+            keepWithNext: true,
+            keepLines: true
+          }
+        },
+        heading3: {
+          font: { family: "Times New Roman", sizePt: 12, bold: true, italic: true, color: "000000" },
+          paragraph: {
+            alignment: "left",
+            firstLineIndentCm: 0,
+            spacingBeforePt: 18,
+            spacingAfterPt: 6,
+            lineSpacing: 2,
+            keepWithNext: true,
+            keepLines: true
+          }
+        },
+        heading4: {
+          font: { family: "Times New Roman", sizePt: 12, bold: true, italic: false, color: "000000" },
+          paragraph: {
+            alignment: "left",
+            firstLineIndentCm: 1.27,
+            spacingBeforePt: 12,
+            spacingAfterPt: 6,
+            lineSpacing: 2,
+            keepWithNext: true,
+            keepLines: true
+          }
+        },
+        heading5: {
+          font: { family: "Times New Roman", sizePt: 12, bold: true, italic: true, color: "000000" },
+          paragraph: {
+            alignment: "left",
+            firstLineIndentCm: 1.27,
+            spacingBeforePt: 12,
+            spacingAfterPt: 6,
+            lineSpacing: 2,
+            keepWithNext: true,
+            keepLines: true
+          }
+        },
+        tableCaption: {
+          font: { family: "Times New Roman", sizePt: 12, italic: true, color: "000000" },
+          paragraph: {
+            alignment: "left",
+            firstLineIndentCm: 0,
+            spacingBeforePt: 12,
+            spacingAfterPt: 0,
+            lineSpacing: 2,
+            keepWithNext: true
+          }
+        },
+        tableText: {
+          font: { family: "Times New Roman", sizePt: 11, bold: false, italic: false, color: "000000" },
+          paragraph: {
+            alignment: "left",
+            firstLineIndentCm: 0,
+            spacingBeforePt: 0,
+            spacingAfterPt: 0,
+            lineSpacing: 2
+          }
+        },
+        tableHeaderText: {
+          font: { family: "Times New Roman", sizePt: 11, bold: true, italic: false, color: "000000" },
+          paragraph: {
+            alignment: "left",
+            firstLineIndentCm: 0,
+            spacingBeforePt: 0,
+            spacingAfterPt: 0,
+            lineSpacing: 2
+          }
+        },
+        figureCaption: {
+          font: { family: "Times New Roman", sizePt: 12, bold: false, italic: true, color: "000000" },
+          paragraph: {
+            alignment: "center",
+            firstLineIndentCm: 0,
+            spacingBeforePt: 6,
+            spacingAfterPt: 12,
+            lineSpacing: 2
+          }
+        },
+        listingText: {
+          font: { family: "Courier New", sizePt: 10, bold: false, italic: false, color: "000000" },
+          paragraph: {
+            alignment: "left",
+            firstLineIndentCm: 0,
+            spacingBeforePt: 0,
+            spacingAfterPt: 0,
+            lineSpacing: 1,
+            keepLines: true
+          }
+        },
+        tocTitle: {
+          font: { family: "Times New Roman", sizePt: 12, bold: true, allCaps: false, color: "000000" },
+          paragraph: {
+            alignment: "center",
+            firstLineIndentCm: 0,
+            spacingBeforePt: 0,
+            spacingAfterPt: 12,
+            lineSpacing: 2,
+            pageBreakBefore: false
+          }
+        }
+      }
+    };
+  }
+});
+
+// src/gost/presets/ieee.json
+var require_ieee = __commonJS({
+  "src/gost/presets/ieee.json"(exports2, module2) {
+    module2.exports = {
+      id: "ieee",
+      name: "IEEE (Technical)",
+      page: {
+        size: "A4",
+        orientation: "portrait",
+        marginsMm: { left: 19, right: 19, top: 19, bottom: 19 }
+      },
+      pagination: {
+        position: "bottom-center",
+        startAt: 1,
+        skipFirstPages: 0
+      },
+      strings: {
+        tocTitle: "CONTENTS",
+        tocFieldTitle: "Contents",
+        tableLabel: "Table",
+        figureLabel: "Figure",
+        captionSeparator: " \u2014 ",
+        imageNotFound: "Image not found: {src}"
+      },
+      styles: {
+        normal: {
+          font: { family: "Times New Roman", sizePt: 10, bold: false, italic: false, color: "000000" },
+          paragraph: {
+            alignment: "justify",
+            firstLineIndentCm: 0.63,
+            spacingBeforePt: 0,
+            spacingAfterPt: 0,
+            lineSpacing: 1
+          }
+        },
+        heading1: {
+          font: { family: "Times New Roman", sizePt: 12, bold: true, italic: false, color: "000000" },
+          paragraph: {
+            alignment: "center",
+            firstLineIndentCm: 0,
+            spacingBeforePt: 12,
+            spacingAfterPt: 6,
+            lineSpacing: 1,
+            keepWithNext: true,
+            keepLines: true
+          }
+        },
+        heading2: {
+          font: { family: "Times New Roman", sizePt: 11, bold: true, italic: false, color: "000000" },
+          paragraph: {
+            alignment: "left",
+            firstLineIndentCm: 0,
+            spacingBeforePt: 12,
+            spacingAfterPt: 6,
+            lineSpacing: 1,
+            keepWithNext: true,
+            keepLines: true
+          }
+        },
+        heading3: {
+          font: { family: "Times New Roman", sizePt: 10, bold: true, italic: false, color: "000000" },
+          paragraph: {
+            alignment: "left",
+            firstLineIndentCm: 0,
+            spacingBeforePt: 10,
+            spacingAfterPt: 4,
+            lineSpacing: 1,
+            keepWithNext: true,
+            keepLines: true
+          }
+        },
+        tableCaption: {
+          font: { family: "Times New Roman", sizePt: 9, bold: true, italic: false, color: "000000" },
+          paragraph: {
+            alignment: "center",
+            firstLineIndentCm: 0,
+            spacingBeforePt: 6,
+            spacingAfterPt: 3,
+            lineSpacing: 1,
+            keepWithNext: true
+          }
+        },
+        tableText: {
+          font: { family: "Times New Roman", sizePt: 9, bold: false, italic: false, color: "000000" },
+          paragraph: {
+            alignment: "center",
+            firstLineIndentCm: 0,
+            spacingBeforePt: 0,
+            spacingAfterPt: 0,
+            lineSpacing: 1
+          }
+        },
+        tableHeaderText: {
+          font: { family: "Times New Roman", sizePt: 9, bold: true, italic: false, color: "000000" },
+          paragraph: {
+            alignment: "center",
+            firstLineIndentCm: 0,
+            spacingBeforePt: 0,
+            spacingAfterPt: 0,
+            lineSpacing: 1
+          }
+        },
+        figureCaption: {
+          font: { family: "Times New Roman", sizePt: 9, bold: false, italic: false, color: "000000" },
+          paragraph: {
+            alignment: "center",
+            firstLineIndentCm: 0,
+            spacingBeforePt: 3,
+            spacingAfterPt: 6,
+            lineSpacing: 1
+          }
+        },
+        listingText: {
+          font: { family: "Courier New", sizePt: 9, bold: false, italic: false, color: "000000" },
+          paragraph: {
+            alignment: "left",
+            firstLineIndentCm: 0,
+            spacingBeforePt: 0,
+            spacingAfterPt: 0,
+            lineSpacing: 1,
+            keepLines: true
+          }
+        },
+        tocTitle: {
+          font: { family: "Times New Roman", sizePt: 11, bold: true, allCaps: true, color: "000000" },
+          paragraph: {
+            alignment: "center",
+            firstLineIndentCm: 0,
+            spacingBeforePt: 0,
+            spacingAfterPt: 6,
+            lineSpacing: 1,
+            pageBreakBefore: false
+          }
+        }
+      }
+    };
+  }
+});
+
 // src/gost/gost-loader.js
 var require_gost_loader = __commonJS({
   "src/gost/gost-loader.js"(exports2, module2) {
     var preset_7097_2025 = require_gost_r_7_0_97_2025();
     var preset_mirea_vkr_7091_2021 = require_mirea_vkr_gost_r_7_0_91_2021();
+    var preset_apa7 = require_apa_7();
+    var preset_ieee = require_ieee();
     function validatePreset(p) {
       var _a, _b;
       const errors = [];
@@ -208,7 +671,7 @@ var require_gost_loader = __commonJS({
       }
       if (p.styles != null && typeof p.styles !== "object") errors.push("styles must be an object");
       if (errors.length) {
-        const msg = `Invalid \u0413\u041E\u0421\u0422 preset "${(_b = p == null ? void 0 : p.id) != null ? _b : "unknown"}":
+        const msg = `Invalid preset "${(_b = p == null ? void 0 : p.id) != null ? _b : "unknown"}":
 - ` + errors.join("\n- ");
         const err = new Error(msg);
         err.code = "GOST_PRESET_INVALID";
@@ -220,7 +683,9 @@ var require_gost_loader = __commonJS({
     function getBuiltinPresets() {
       const presets = [
         preset_7097_2025,
-        preset_mirea_vkr_7091_2021
+        preset_mirea_vkr_7091_2021,
+        preset_apa7,
+        preset_ieee
       ];
       return presets.map(validatePreset);
     }
@@ -248,17 +713,310 @@ var require_gost_loader = __commonJS({
   }
 });
 
+// src/i18n/ru.json
+var require_ru = __commonJS({
+  "src/i18n/ru.json"(exports2, module2) {
+    module2.exports = {
+      "app.title": "\u042D\u043A\u0441\u043F\u043E\u0440\u0442 \u0432 Word",
+      "app.pluginName": "Word Export",
+      "settings.title": "\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438",
+      "settings.presetDefault.title": "\u041F\u0440\u0435\u0441\u0435\u0442 \u043F\u043E \u0443\u043C\u043E\u043B\u0447\u0430\u043D\u0438\u044E",
+      "settings.presetDefault.desc": "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0435\u0442\u0441\u044F \u043F\u0440\u0438 Fast Export",
+      "settings.exportDefaults.title": "\u041F\u0430\u0440\u0430\u043C\u0435\u0442\u0440\u044B \u044D\u043A\u0441\u043F\u043E\u0440\u0442\u0430 (\u043F\u043E \u0443\u043C\u043E\u043B\u0447\u0430\u043D\u0438\u044E)",
+      "settings.exportDefaults.ignorePageBreaks.title": "\u0418\u0433\u043D\u043E\u0440\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u0440\u0430\u0437\u0440\u044B\u0432\u044B \u0441\u0442\u0440\u0430\u043D\u0438\u0446 ---",
+      "settings.exportDefaults.enablePagination.title": "\u041D\u0443\u043C\u0435\u0440\u0430\u0446\u0438\u044F \u0441\u0442\u0440\u0430\u043D\u0438\u0446",
+      "settings.exportDefaults.includeToc.title": "\u0410\u0432\u0442\u043E\u043C\u0430\u0442\u0438\u0447\u0435\u0441\u043A\u043E\u0435 \u0441\u043E\u0434\u0435\u0440\u0436\u0430\u043D\u0438\u0435 (Word)",
+      "settings.userPresets.title": "\u041A\u0430\u0441\u0442\u043E\u043C\u043D\u044B\u0435 \u0448\u0430\u0431\u043B\u043E\u043D\u044B",
+      "settings.userPresets.addPreset": "\u2795 \u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u043F\u0440\u0435\u0441\u0435\u0442",
+      "settings.userPresets.unnamed": "(\u0431\u0435\u0437 \u043D\u0430\u0437\u0432\u0430\u043D\u0438\u044F)",
+      "buttons.cancel": "\u041E\u0442\u043C\u0435\u043D\u0430",
+      "buttons.save": "\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C",
+      "buttons.close": "\u0417\u0430\u043A\u0440\u044B\u0442\u044C",
+      "buttons.copy": "\u0421\u043A\u043E\u043F\u0438\u0440\u043E\u0432\u0430\u0442\u044C",
+      "buttons.import": "\u0418\u043C\u043F\u043E\u0440\u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C",
+      "buttons.export": "\u042D\u043A\u0441\u043F\u043E\u0440\u0442",
+      "buttons.addBlock": "\u2795 \u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u0431\u043B\u043E\u043A",
+      "buttons.delete": "\u0423\u0434\u0430\u043B\u0438\u0442\u044C",
+      "tooltips.edit": "\u0420\u0435\u0434\u0430\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C",
+      "tooltips.import": "\u0418\u043C\u043F\u043E\u0440\u0442",
+      "tooltips.export": "\u042D\u043A\u0441\u043F\u043E\u0440\u0442",
+      "tooltips.delete": "\u0423\u0434\u0430\u043B\u0438\u0442\u044C",
+      "notices.export.ok": "\u2705 \u042D\u043A\u0441\u043F\u043E\u0440\u0442 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\n{path}",
+      "notices.export.fail": "\u274C \u042D\u043A\u0441\u043F\u043E\u0440\u0442 \u043D\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\n{message}",
+      "notices.preset.saved": "\u2705 \u041F\u0440\u0435\u0441\u0435\u0442 \u0441\u043E\u0445\u0440\u0430\u043D\u0451\u043D",
+      "notices.preset.invalidJson": "\u274C \u041D\u0435\u043A\u043E\u0440\u0440\u0435\u043A\u0442\u043D\u044B\u0439 JSON",
+      "notices.preset.invalidJsonVisualNotUpdated": "\u274C \u041D\u0435\u043A\u043E\u0440\u0440\u0435\u043A\u0442\u043D\u044B\u0439 JSON. \u0412\u0438\u0437\u0443\u0430\u043B\u044C\u043D\u044B\u0439 \u0440\u0435\u0434\u0430\u043A\u0442\u043E\u0440 \u043D\u0435 \u043E\u0431\u043D\u043E\u0432\u043B\u0451\u043D.",
+      "notices.preset.copied": "\u2705 \u0421\u043A\u043E\u043F\u0438\u0440\u043E\u0432\u0430\u043D\u043E \u0432 \u0431\u0443\u0444\u0435\u0440 \u043E\u0431\u043C\u0435\u043D\u0430",
+      "notices.preset.copyFail": "\u26A0\uFE0F \u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u0441\u043A\u043E\u043F\u0438\u0440\u043E\u0432\u0430\u0442\u044C. \u0421\u043A\u043E\u043F\u0438\u0440\u0443\u0439 \u0432\u0440\u0443\u0447\u043D\u0443\u044E.",
+      "notices.preset.imported": "\u2705 \u041F\u0440\u0435\u0441\u0435\u0442 \u0438\u043C\u043F\u043E\u0440\u0442\u0438\u0440\u043E\u0432\u0430\u043D",
+      "notices.preset.importBad": "\u274C \u041D\u0435\u043A\u043E\u0440\u0440\u0435\u043A\u0442\u043D\u044B\u0439 JSON \u0438\u043B\u0438 \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u0430 (\u043D\u0443\u0436\u043D\u043E: id, name, preset)",
+      "notices.preset.noPresets": "\u041D\u0435\u0442 \u0434\u043E\u0441\u0442\u0443\u043F\u043D\u044B\u0445 \u043F\u0440\u0435\u0441\u0435\u0442\u043E\u0432.",
+      "notices.blocks.allAdded": "\u0412\u0441\u0435 \u0431\u043B\u043E\u043A\u0438 \u0443\u0436\u0435 \u0434\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B",
+      "notices.blocks.typeAlreadyAdded": "\u042D\u0442\u043E\u0442 \u0442\u0438\u043F \u0443\u0436\u0435 \u0434\u043E\u0431\u0430\u0432\u043B\u0435\u043D.",
+      "errors.unknown": "\u041D\u0435\u0438\u0437\u0432\u0435\u0441\u0442\u043D\u0430\u044F \u043E\u0448\u0438\u0431\u043A\u0430.",
+      "errors.presetNotFound": "\u0412\u044B\u0431\u0440\u0430\u043D\u043D\u044B\u0439 \u043F\u0440\u0435\u0441\u0435\u0442 \u043D\u0435 \u043D\u0430\u0439\u0434\u0435\u043D.",
+      "errors.presetInvalid": "\u041D\u0435\u043A\u043E\u0440\u0440\u0435\u043A\u0442\u043D\u044B\u0439 \u043F\u0440\u0435\u0441\u0435\u0442 \u0413\u041E\u0421\u0422.",
+      "errors.noActiveFile": "\u041D\u0435\u0442 \u0430\u043A\u0442\u0438\u0432\u043D\u043E\u0439 \u0437\u0430\u043C\u0435\u0442\u043A\u0438 \u0434\u043B\u044F \u044D\u043A\u0441\u043F\u043E\u0440\u0442\u0430.",
+      "errors.exportFailed": "\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u044D\u043A\u0441\u043F\u043E\u0440\u0442\u0435 \u0432 Word.",
+      "errors.noActiveNote": "\u041D\u0435\u0442 \u0430\u043A\u0442\u0438\u0432\u043D\u043E\u0439 \u0437\u0430\u043C\u0435\u0442\u043A\u0438 \u0434\u043B\u044F \u044D\u043A\u0441\u043F\u043E\u0440\u0442\u0430.",
+      "errors.emptyNote": "\u0417\u0430\u043C\u0435\u0442\u043A\u0430 \u043F\u0443\u0441\u0442\u0430\u044F \u2014 \u043D\u0435\u0447\u0435\u0433\u043E \u044D\u043A\u0441\u043F\u043E\u0440\u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C.",
+      "errors.buildDocxFailed": "\u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u0441\u0444\u043E\u0440\u043C\u0438\u0440\u043E\u0432\u0430\u0442\u044C DOCX.",
+      "errors.saveFailed": "\u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u0441\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C \u0444\u0430\u0439\u043B \u0432 vault.",
+      "modal.exportOptions.title": "\u042D\u043A\u0441\u043F\u043E\u0440\u0442 \u0432 Word \u2014 \u043F\u0430\u0440\u0430\u043C\u0435\u0442\u0440\u044B",
+      "modal.exportOptions.preset.title": "\u041F\u0440\u0435\u0441\u0435\u0442",
+      "modal.exportOptions.preset.desc": "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u043D\u0430\u0431\u043E\u0440 \u043F\u0440\u0430\u0432\u0438\u043B \u043E\u0444\u043E\u0440\u043C\u043B\u0435\u043D\u0438\u044F.",
+      "modal.exportOptions.ignorePageBreaks.title": "\u0418\u0433\u043D\u043E\u0440\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u0440\u0430\u0437\u0440\u044B\u0432\u044B \u0441\u0442\u0440\u0430\u043D\u0438\u0446 \u043F\u043E ---",
+      "modal.exportOptions.ignorePageBreaks.desc": "\u0415\u0441\u043B\u0438 \u0432\u043A\u043B\u044E\u0447\u0435\u043D\u043E \u2014 \u0441\u0442\u0440\u043E\u043A\u0430 '---' \u043D\u0435 \u0431\u0443\u0434\u0435\u0442 \u0432\u0441\u0442\u0430\u0432\u043B\u044F\u0442\u044C \u0440\u0430\u0437\u0440\u044B\u0432 \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u044B.",
+      "modal.exportOptions.enablePagination.title": "\u041D\u0443\u043C\u0435\u0440\u0430\u0446\u0438\u044F \u0441\u0442\u0440\u0430\u043D\u0438\u0446",
+      "modal.exportOptions.enablePagination.desc": "\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u043D\u043E\u043C\u0435\u0440 \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u044B \u0432 \u043A\u043E\u043B\u043E\u043D\u0442\u0438\u0442\u0443\u043B (\u043F\u043E\u0437\u0438\u0446\u0438\u044F \u0431\u0435\u0440\u0451\u0442\u0441\u044F \u0438\u0437 \u043F\u0440\u0435\u0441\u0435\u0442\u0430).",
+      "modal.exportOptions.includeToc.title": "\u0410\u0432\u0442\u043E\u043C\u0430\u0442\u0438\u0447\u0435\u0441\u043A\u043E\u0435 \u0441\u043E\u0434\u0435\u0440\u0436\u0430\u043D\u0438\u0435 (Word TOC)",
+      "modal.exportOptions.includeToc.desc": "\u0414\u043E\u0431\u0430\u0432\u0438\u0442 \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u0443 '\u0421\u041E\u0414\u0415\u0420\u0416\u0410\u041D\u0418\u0415' \u0438 \u0442\u0430\u0431\u043B\u0438\u0446\u0443 \u0441\u043E\u0434\u0435\u0440\u0436\u0430\u043D\u0438\u044F \u043F\u043E \u0437\u0430\u0433\u043E\u043B\u043E\u0432\u043A\u0430\u043C.",
+      "modal.presetEditor.title": "\u0420\u0435\u0434\u0430\u043A\u0442\u043E\u0440 \u043F\u0440\u0435\u0441\u0435\u0442\u0430",
+      "modal.presetEditor.name.title": "\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435",
+      "modal.presetEditor.tabs.visual": "\u0412\u0438\u0437\u0443\u0430\u043B\u044C\u043D\u043E",
+      "modal.presetEditor.tabs.json": "JSON",
+      "modal.presetExport.title": "\u042D\u043A\u0441\u043F\u043E\u0440\u0442 \u043F\u0440\u0435\u0441\u0435\u0442\u0430 (JSON)",
+      "modal.presetImport.title": "\u0418\u043C\u043F\u043E\u0440\u0442 \u043F\u0440\u0435\u0441\u0435\u0442\u0430 (JSON)",
+      "modal.presetImport.placeholder": "\u0412\u0441\u0442\u0430\u0432\u044C \u0441\u044E\u0434\u0430 JSON \u043F\u0440\u0435\u0441\u0435\u0442\u0430 (\u043E\u0431\u044A\u0435\u043A\u0442 \u0441 id/name/preset)...",
+      "visualEditor.title": "\u0412\u0438\u0437\u0443\u0430\u043B\u044C\u043D\u044B\u0439 \u0440\u0435\u0434\u0430\u043A\u0442\u043E\u0440",
+      "visualEditor.blockType.title": "\u0422\u0438\u043F \u0431\u043B\u043E\u043A\u0430",
+      "visualEditor.blockType.desc": "\u0412\u044B\u0431\u0435\u0440\u0438, \u0447\u0442\u043E \u0440\u0435\u0434\u0430\u043A\u0442\u0438\u0440\u0443\u0435\u043C. \u0423\u0436\u0435 \u0432\u044B\u0431\u0440\u0430\u043D\u043D\u044B\u0435 \u0442\u0438\u043F\u044B \u043D\u0435\u0434\u043E\u0441\u0442\u0443\u043F\u043D\u044B.",
+      "visualEditor.block.new": "\u041D\u043E\u0432\u044B\u0439 \u0431\u043B\u043E\u043A",
+      "block.heading1": "\u0417\u0430\u0433\u043E\u043B\u043E\u0432\u043E\u043A 1",
+      "block.heading2": "\u0417\u0430\u0433\u043E\u043B\u043E\u0432\u043E\u043A 2",
+      "block.heading3": "\u0417\u0430\u0433\u043E\u043B\u043E\u0432\u043E\u043A 3",
+      "block.heading4": "\u0417\u0430\u0433\u043E\u043B\u043E\u0432\u043E\u043A 4",
+      "block.heading5": "\u0417\u0430\u0433\u043E\u043B\u043E\u0432\u043E\u043A 5",
+      "block.heading6": "\u0417\u0430\u0433\u043E\u043B\u043E\u0432\u043E\u043A 6",
+      "block.normal": "\u0422\u0435\u043A\u0441\u0442",
+      "block.tableText": "\u0422\u0430\u0431\u043B\u0438\u0446\u0430 \u2014 \u0442\u0435\u043A\u0441\u0442",
+      "block.tableHeaderText": "\u0422\u0430\u0431\u043B\u0438\u0446\u0430 \u2014 \u0448\u0430\u043F\u043A\u0430",
+      "block.tableCaption": "\u041F\u043E\u0434\u043F\u0438\u0441\u044C \u0442\u0430\u0431\u043B\u0438\u0446\u044B",
+      "block.figureCaption": "\u041F\u043E\u0434\u043F\u0438\u0441\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0438",
+      "block.listingText": "\u041A\u043E\u0434-\u043B\u0438\u0441\u0442\u0438\u043D\u0433",
+      "fields.font.family": "\u0428\u0440\u0438\u0444\u0442",
+      "fields.font.sizePt": "\u0420\u0430\u0437\u043C\u0435\u0440 (pt)",
+      "fields.font.bold": "\u0416\u0438\u0440\u043D\u044B\u0439",
+      "fields.font.italic": "\u041A\u0443\u0440\u0441\u0438\u0432",
+      "fields.paragraph.alignment": "\u0412\u044B\u0440\u0430\u0432\u043D\u0438\u0432\u0430\u043D\u0438\u0435",
+      "fields.paragraph.alignment.justify": "\u041F\u043E \u0448\u0438\u0440\u0438\u043D\u0435",
+      "fields.paragraph.alignment.left": "\u041F\u043E \u043B\u0435\u0432\u043E\u043C\u0443 \u043A\u0440\u0430\u044E",
+      "fields.paragraph.alignment.center": "\u041F\u043E \u0446\u0435\u043D\u0442\u0440\u0443",
+      "fields.paragraph.alignment.right": "\u041F\u043E \u043F\u0440\u0430\u0432\u043E\u043C\u0443 \u043A\u0440\u0430\u044E",
+      "fields.paragraph.firstLineIndentCm": "\u041A\u0440\u0430\u0441\u043D\u0430\u044F \u0441\u0442\u0440\u043E\u043A\u0430 (\u0441\u043C)",
+      "fields.paragraph.spacingBeforePt": "\u0418\u043D\u0442\u0435\u0440\u0432\u0430\u043B \u0434\u043E (pt)",
+      "fields.paragraph.spacingAfterPt": "\u0418\u043D\u0442\u0435\u0440\u0432\u0430\u043B \u043F\u043E\u0441\u043B\u0435 (pt)",
+      "fields.paragraph.lineSpacing": "\u041C\u0435\u0436\u0441\u0442\u0440\u043E\u0447\u043D\u044B\u0439 \u0438\u043D\u0442\u0435\u0440\u0432\u0430\u043B",
+      "fields.font.color": "\u0426\u0432\u0435\u0442 (HEX)",
+      "placeholders.font.family": "Times New Roman",
+      "placeholders.font.sizePt": "14",
+      "placeholders.paragraph.firstLineIndentCm": "1.25",
+      "placeholders.paragraph.spacingBeforePt": "0",
+      "placeholders.paragraph.spacingAfterPt": "0",
+      "placeholders.paragraph.lineSpacing": "1.5",
+      "placeholders.font.color": "000000",
+      "commands.fastExport": "Export note to Word \u2014 Fast",
+      "commands.advancedExport": "Export note to Word \u2014 Advanced\u2026"
+    };
+  }
+});
+
+// src/i18n/en.json
+var require_en = __commonJS({
+  "src/i18n/en.json"(exports2, module2) {
+    module2.exports = {
+      "app.title": "Word Export",
+      "app.pluginName": "Word Export",
+      "settings.title": "Settings",
+      "settings.presetDefault.title": "Default preset",
+      "settings.presetDefault.desc": "Used for Fast Export",
+      "settings.exportDefaults.title": "Default export options",
+      "settings.exportDefaults.ignorePageBreaks.title": "Ignore page breaks (---)",
+      "settings.exportDefaults.enablePagination.title": "Page numbering",
+      "settings.exportDefaults.includeToc.title": "Automatic table of contents (Word)",
+      "settings.userPresets.title": "Custom presets",
+      "settings.userPresets.addPreset": "\u2795 Add preset",
+      "settings.userPresets.unnamed": "(unnamed)",
+      "buttons.cancel": "Cancel",
+      "buttons.save": "Save",
+      "buttons.close": "Close",
+      "buttons.copy": "Copy",
+      "buttons.import": "Import",
+      "buttons.export": "Export",
+      "buttons.addBlock": "\u2795 Add block",
+      "buttons.delete": "Delete",
+      "tooltips.edit": "Edit",
+      "tooltips.import": "Import",
+      "tooltips.export": "Export",
+      "tooltips.delete": "Delete",
+      "notices.export.ok": "\u2705 Export completed\n{path}",
+      "notices.export.fail": "\u274C Export failed\n{message}",
+      "notices.preset.saved": "\u2705 Preset saved",
+      "notices.preset.invalidJson": "\u274C Invalid JSON",
+      "notices.preset.invalidJsonVisualNotUpdated": "\u274C Invalid JSON. Visual editor was not updated.",
+      "notices.preset.copied": "\u2705 Copied to clipboard",
+      "notices.preset.copyFail": "\u26A0\uFE0F Copy failed. Please copy manually.",
+      "notices.preset.imported": "\u2705 Preset imported",
+      "notices.preset.importBad": "\u274C Invalid JSON or structure (required: id, name, preset)",
+      "notices.preset.noPresets": "No presets available.",
+      "notices.blocks.allAdded": "All blocks have already been added",
+      "notices.blocks.typeAlreadyAdded": "This block type has already been added.",
+      "errors.unknown": "Unknown error.",
+      "errors.presetNotFound": "Selected preset was not found.",
+      "errors.presetInvalid": "Invalid preset.",
+      "errors.noActiveFile": "No active note to export.",
+      "errors.exportFailed": "Export to Word failed.",
+      "errors.noActiveNote": "No active note to export.",
+      "errors.emptyNote": "The note is empty \u2014 nothing to export.",
+      "errors.buildDocxFailed": "Failed to build DOCX.",
+      "errors.saveFailed": "Failed to save file to the vault.",
+      "modal.exportOptions.title": "Export to Word \u2014 options",
+      "modal.exportOptions.preset.title": "Preset",
+      "modal.exportOptions.preset.desc": "Select a formatting preset.",
+      "modal.exportOptions.ignorePageBreaks.title": "Ignore page breaks (---)",
+      "modal.exportOptions.ignorePageBreaks.desc": "If enabled, the '---' line will not insert a page break.",
+      "modal.exportOptions.enablePagination.title": "Page numbering",
+      "modal.exportOptions.enablePagination.desc": "Add page numbers to header/footer (position comes from the preset).",
+      "modal.exportOptions.includeToc.title": "Automatic table of contents (Word TOC)",
+      "modal.exportOptions.includeToc.desc": "Adds a TOC page and generates a table of contents from headings.",
+      "modal.presetEditor.title": "Preset Editor",
+      "modal.presetEditor.name.title": "Name",
+      "modal.presetEditor.tabs.visual": "Visual",
+      "modal.presetEditor.tabs.json": "JSON",
+      "modal.presetExport.title": "Export preset (JSON)",
+      "modal.presetImport.title": "Import preset (JSON)",
+      "modal.presetImport.placeholder": "Paste preset JSON here (object with id/name/preset)...",
+      "visualEditor.title": "Visual editor",
+      "visualEditor.blockType.title": "Block type",
+      "visualEditor.blockType.desc": "Choose what to edit. Already selected types are unavailable.",
+      "visualEditor.block.new": "New block",
+      "block.heading1": "Heading 1",
+      "block.heading2": "Heading 2",
+      "block.heading3": "Heading 3",
+      "block.heading4": "Heading 4",
+      "block.heading5": "Heading 5",
+      "block.heading6": "Heading 6",
+      "block.normal": "Body text",
+      "block.tableText": "Table \u2014 text",
+      "block.tableHeaderText": "Table \u2014 header",
+      "block.tableCaption": "Table caption",
+      "block.figureCaption": "Figure caption",
+      "block.listingText": "Code listing",
+      "fields.font.family": "Font",
+      "fields.font.sizePt": "Size (pt)",
+      "fields.font.bold": "Bold",
+      "fields.font.italic": "Italic",
+      "fields.paragraph.alignment": "Alignment",
+      "fields.paragraph.alignment.justify": "Justify",
+      "fields.paragraph.alignment.left": "Left",
+      "fields.paragraph.alignment.center": "Center",
+      "fields.paragraph.alignment.right": "Right",
+      "fields.paragraph.firstLineIndentCm": "First line indent (cm)",
+      "fields.paragraph.spacingBeforePt": "Spacing before (pt)",
+      "fields.paragraph.spacingAfterPt": "Spacing after (pt)",
+      "fields.paragraph.lineSpacing": "Line spacing",
+      "fields.font.color": "Color (HEX)",
+      "placeholders.font.family": "Times New Roman",
+      "placeholders.font.sizePt": "14",
+      "placeholders.paragraph.firstLineIndentCm": "1.25",
+      "placeholders.paragraph.spacingBeforePt": "0",
+      "placeholders.paragraph.spacingAfterPt": "0",
+      "placeholders.paragraph.lineSpacing": "1.5",
+      "placeholders.font.color": "000000",
+      "commands.fastExport": "Export note to Word \u2014 Fast",
+      "commands.advancedExport": "Export note to Word \u2014 Advanced\u2026"
+    };
+  }
+});
+
+// src/i18n/index.js
+var require_i18n = __commonJS({
+  "src/i18n/index.js"(exports2, module2) {
+    var ru = require_ru();
+    var en = require_en();
+    var { moment } = require("obsidian");
+    var obsidianGetLanguage = null;
+    try {
+      const obsidian = require("obsidian");
+      obsidianGetLanguage = typeof obsidian.getLanguage === "function" ? obsidian.getLanguage : null;
+    } catch (_) {
+    }
+    var dict = { ru, en };
+    var currentLang = "en";
+    function normalizeLang(raw) {
+      const s = String(raw || "").trim().toLowerCase().replace("_", "-");
+      if (s === "ru" || s.startsWith("ru-")) return "ru";
+      return "en";
+    }
+    function detectFromObsidian(app) {
+      try {
+        if (obsidianGetLanguage) {
+          const lang = obsidianGetLanguage();
+          if (lang) return lang;
+        }
+      } catch (_) {
+      }
+      try {
+        const lang = app && app.vault && typeof app.vault.getConfig === "function" ? app.vault.getConfig("language") : null;
+        if (lang) return lang;
+      } catch (_) {
+      }
+      try {
+        if (typeof moment !== "undefined" && typeof moment.locale === "function") {
+          const lang = moment.locale();
+          if (lang) return lang;
+        }
+      } catch (_) {
+      }
+      return null;
+    }
+    function detectSystemLanguage() {
+      try {
+        if (typeof navigator !== "undefined") {
+          const langs = Array.isArray(navigator.languages) ? navigator.languages : [];
+          if (langs.length) return langs[0];
+          if (navigator.language) return navigator.language;
+        }
+      } catch (_) {
+      }
+      return null;
+    }
+    function initI18n(app) {
+      const obsLang = detectFromObsidian(app);
+      const sysLang = detectSystemLanguage();
+      currentLang = normalizeLang(obsLang || sysLang || "en");
+    }
+    function getLang() {
+      return currentLang;
+    }
+    function t(key, vars) {
+      const table = dict[currentLang] || dict.en;
+      let s = table && table[key] || dict.en[key] || key;
+      if (vars && typeof vars === "object") {
+        for (const [k, v] of Object.entries(vars)) {
+          s = s.replaceAll(`{${k}}`, String(v));
+        }
+      }
+      return s;
+    }
+    module2.exports = {
+      initI18n,
+      t,
+      getLang
+    };
+  }
+});
+
 // src/gost/gost-schema.js
 var require_gost_schema = __commonJS({
   "src/gost/gost-schema.js"(exports2, module2) {
+    var { t } = require_i18n();
     var DEFAULT_PRESET = {
       id: "custom",
       name: "\u041F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C\u0441\u043A\u0438\u0439",
       page: {
         size: "A4",
         marginsMm: { top: 20, bottom: 20, left: 20, right: 10 },
-        // Для документов > 10 лет хранения в ГОСТе часто фигурирует 30 мм слева,
-        // поэтому держим как параметр пресета/политики:
         longTermStorageLeftMarginMm: 30
       },
       font: {
@@ -267,14 +1025,23 @@ var require_gost_schema = __commonJS({
       },
       paragraph: {
         alignment: "justify",
-        // left | right | center | justify
         firstLineIndentCm: 1.25,
         lineSpacing: 1.5
       },
       pagination: {
         position: "top-center",
-        // top-center | bottom-center | none
         offsetFromTopMm: 10
+      },
+      // ✅ NEW: default document strings (RU)
+      strings: {
+        tocTitle: "\u0421\u041E\u0414\u0415\u0420\u0416\u0410\u041D\u0418\u0415",
+        // heading text on TOC page
+        tocFieldTitle: "\u0421\u043E\u0434\u0435\u0440\u0436\u0430\u043D\u0438\u0435",
+        // internal label for Word TOC field
+        tableLabel: "\u0422\u0430\u0431\u043B\u0438\u0446\u0430",
+        figureLabel: "\u0420\u0438\u0441\u0443\u043D\u043E\u043A",
+        captionSeparator: " \u2014 ",
+        imageNotFound: "\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435 \u043D\u0435 \u043D\u0430\u0439\u0434\u0435\u043D\u043E: {src}"
       }
     };
     function isPlainObject(v) {
@@ -22474,6 +23241,7 @@ var require_exporter = __commonJS({
   "src/core/exporter.js"(exports2, module2) {
     var path = require("path");
     var { normalizePath } = require("obsidian");
+    var { t } = require_i18n();
     var {
       Document,
       Packer,
@@ -22489,7 +23257,8 @@ var require_exporter = __commonJS({
       PageNumber,
       TableOfContents,
       Header,
-      Footer
+      Footer,
+      HeadingLevel
     } = require_dist();
     var { mmToTwips, cmToTwips, ptToHalfPoints } = require_units();
     var { parseMarkdownToModel } = require_markdown_parser();
@@ -22519,17 +23288,31 @@ var require_exporter = __commonJS({
           return AlignmentType.JUSTIFIED;
       }
     }
+    function getStrings(preset) {
+      const s = (preset == null ? void 0 : preset.strings) || {};
+      return {
+        tocTitle: s.tocTitle || "\u0421\u041E\u0414\u0415\u0420\u0416\u0410\u041D\u0418\u0415",
+        tocFieldTitle: s.tocFieldTitle || "\u0421\u043E\u0434\u0435\u0440\u0436\u0430\u043D\u0438\u0435",
+        tableLabel: s.tableLabel || "\u0422\u0430\u0431\u043B\u0438\u0446\u0430",
+        figureLabel: s.figureLabel || "\u0420\u0438\u0441\u0443\u043D\u043E\u043A",
+        captionSeparator: s.captionSeparator || " \u2014 ",
+        imageNotFound: s.imageNotFound || "\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435 \u043D\u0435 \u043D\u0430\u0439\u0434\u0435\u043D\u043E: {src}"
+      };
+    }
+    function escapeRegExp(str) {
+      return String(str || "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    }
     function applyFileNameTemplate(template, title) {
       const safeTitle = (title || "Untitled").replace(/[<>:"/\\|?*\u0000-\u001F]/g, "").trim() || "Untitled";
-      const t = template && template.trim() ? template.trim() : "{title}.docx";
-      const name = t.replaceAll("{title}", safeTitle);
+      const templateStr = template && template.trim() ? template.trim() : "{title}.docx";
+      const name = templateStr.replaceAll("{title}", safeTitle);
       return name.toLowerCase().endsWith(".docx") ? name : `${name}.docx`;
     }
     function synthesizeStylesIfMissing(preset) {
       var _a, _b, _c, _d;
       if (preset && !preset.styles) preset.styles = {};
       if (preset && preset.styles && !preset.styles.normal) {
-        const baseFont = preset.font || { family: "Times New Roman", sizePt: 14 };
+        const baseFont = preset.font || { family: t("placeholders.font.family"), sizePt: 14 };
         const basePar = preset.paragraph || {
           alignment: "justify",
           firstLineIndentCm: 1.25,
@@ -22591,9 +23374,11 @@ var require_exporter = __commonJS({
       return opts;
     }
     function runsFromInlines(inlines, style, preset) {
-      const baseFont = style.font || preset.font || { family: "Times New Roman", sizePt: 14 };
-      const baseFamily = baseFont.family || "Times New Roman";
+      const baseFont = style.font || preset.font || { family: t("placeholders.font.family"), sizePt: 14 };
+      const baseFamily = baseFont.family || t("placeholders.font.family");
       const baseSize = ptToHalfPoints(baseFont.sizePt || 14);
+      const baseColor = (baseFont.color || "").replace(/^#/, "").toUpperCase();
+      const hasColor = /^[0-9A-F]{6}$/.test(baseColor);
       const forceBold = !!baseFont.bold;
       const forceItalic = !!baseFont.italic;
       const allCaps = !!baseFont.allCaps;
@@ -22604,7 +23389,8 @@ var require_exporter = __commonJS({
           font: isCode ? "Courier New" : baseFamily,
           size: isCode ? ptToHalfPoints(Math.max(10, (baseFont.sizePt || 14) - 2)) : baseSize,
           bold: forceBold || !!inl.bold,
-          italics: forceItalic || !!inl.italic
+          italics: forceItalic || !!inl.italic,
+          ...hasColor ? { color: baseColor } : {}
         });
         if (allCaps) run.allCaps = true;
         return run;
@@ -22623,19 +23409,25 @@ var require_exporter = __commonJS({
     function inlinesToText(inlines) {
       return (inlines || []).map((x) => x.text || "").join("");
     }
-    function isTableCaptionParagraphBlock(block) {
+    function isTableCaptionParagraphBlock(block, preset) {
       if (!block || block.type !== "paragraph") return false;
-      const t = inlinesToText(block.inlines).trim();
-      return /^Таблица\s+\d+([.\d]*)\b/i.test(t);
+      const strings = getStrings(preset);
+      const label = escapeRegExp(strings.tableLabel);
+      const text = inlinesToText(block.inlines).trim();
+      const rx = new RegExp(`^${label}\\s+\\d+(?:\\.\\d+)*\\b`, "i");
+      return rx.test(text);
     }
     function makeTableCaptionParagraphFromText(text, preset) {
+      const strings = getStrings(preset);
       const style = getStyle(preset, "tableCaption", "normal");
       const pOpts = paragraphOptionsFromStyle(style);
-      const font = style.font || { family: "Times New Roman", sizePt: 12 };
-      const family = font.family || "Times New Roman";
+      const font = style.font || { family: t("placeholders.font.family"), sizePt: 12 };
+      const family = font.family || t("placeholders.font.family");
       const size = ptToHalfPoints(font.sizePt || 12);
-      const t = (text || "").trim();
-      let m = /^(Таблица\s+\d+(?:\.\d+)*\s*[—-]\s*)(.*)$/i.exec(t);
+      const line = (text || "").trim();
+      const label = escapeRegExp(strings.tableLabel);
+      const sep = escapeRegExp(strings.captionSeparator || " \u2014 ");
+      let m = new RegExp(`^(${label}\\s+\\d+(?:\\.\\d+)*\\s*${sep}\\s*)(.*)$`, "i").exec(line);
       if (m) {
         const prefix = m[1];
         const rest = m[2] || "";
@@ -22648,7 +23440,7 @@ var require_exporter = __commonJS({
           ]
         });
       }
-      m = /^(Таблица\s+\d+(?:\.\d+)*\s+)(.*)$/i.exec(t);
+      m = new RegExp(`^(${label}\\s+\\d+(?:\\.\\d+)*\\s+)(.*)$`, "i").exec(line);
       if (m) {
         const prefix = m[1];
         const rest = m[2] || "";
@@ -22664,7 +23456,7 @@ var require_exporter = __commonJS({
       return new Paragraph({
         ...pOpts,
         indent: void 0,
-        children: [new TextRun({ text: t, font: family, size, italics: true })]
+        children: [new TextRun({ text: line, font: family, size, italics: true })]
       });
     }
     function makeTable(block, preset) {
@@ -22745,11 +23537,12 @@ var require_exporter = __commonJS({
       };
       const app = plugin.app;
       const activeFile = app.workspace.getActiveFile();
-      if (!activeFile) throw ensureError("NO_ACTIVE_FILE", "\u041D\u0435\u0442 \u0430\u043A\u0442\u0438\u0432\u043D\u043E\u0439 \u0437\u0430\u043C\u0435\u0442\u043A\u0438 \u0434\u043B\u044F \u044D\u043A\u0441\u043F\u043E\u0440\u0442\u0430.");
+      if (!activeFile) throw ensureError("NO_ACTIVE_FILE", t("errors.noActiveFile"));
       synthesizeStylesIfMissing(preset);
+      const strings = getStrings(preset);
       const md = await app.vault.read(activeFile);
       const model = parseMarkdownToModel(md);
-      if (!model.blocks.length) throw ensureError("EXPORT_FAILED", "\u0417\u0430\u043C\u0435\u0442\u043A\u0430 \u043F\u0443\u0441\u0442\u0430\u044F \u2014 \u043D\u0435\u0447\u0435\u0433\u043E \u044D\u043A\u0441\u043F\u043E\u0440\u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C.");
+      if (!model.blocks.length) throw ensureError("EXPORT_FAILED", t("errors.emptyNote"));
       const outputFolder = (((_a = plugin.settings) == null ? void 0 : _a.outputFolder) || "Exports").trim() || "Exports";
       const fileNameTemplate = ((_b = plugin.settings) == null ? void 0 : _b.fileNameTemplate) || "{title}.docx";
       const outName = applyFileNameTemplate(fileNameTemplate, activeFile.basename);
@@ -22767,11 +23560,26 @@ var require_exporter = __commonJS({
         }
         if (block.type === "heading") {
           const level = Math.min(6, Math.max(1, block.level || 1));
-          contentChildren.push(paragraphFromInlines(block.inlines, `heading${level}`, preset));
+          const headingMap = {
+            1: HeadingLevel.HEADING_1,
+            2: HeadingLevel.HEADING_2,
+            3: HeadingLevel.HEADING_3,
+            4: HeadingLevel.HEADING_4,
+            5: HeadingLevel.HEADING_5,
+            6: HeadingLevel.HEADING_6
+          };
+          contentChildren.push(
+            paragraphFromInlines(block.inlines, `heading${level}`, preset, {
+              heading: headingMap[level],
+              // ✅ this makes Word treat it as a real heading
+              // optional: make sure no first-line indent leaks into headings
+              indent: null
+            })
+          );
           continue;
         }
         if (block.type === "paragraph") {
-          if (isTableCaptionParagraphBlock(block)) {
+          if (isTableCaptionParagraphBlock(block, preset)) {
             pendingTableCaptionText = inlinesToText(block.inlines).trim();
             continue;
           }
@@ -22810,17 +23618,17 @@ var require_exporter = __commonJS({
         }
         if (block.type === "table") {
           tableCounter += 1;
-          const captionText = pendingTableCaptionText || `\u0422\u0430\u0431\u043B\u0438\u0446\u0430 ${tableCounter} \u2014 `;
+          const captionText = pendingTableCaptionText || `${strings.tableLabel} ${tableCounter}${strings.captionSeparator}`;
           contentChildren.push(makeTableCaptionParagraphFromText(captionText, preset));
           pendingTableCaptionText = null;
-          const t = makeTable(block, preset);
-          if (t) contentChildren.push(t);
+          const table = makeTable(block, preset);
+          if (table) contentChildren.push(table);
           continue;
         }
         if (block.type === "image") {
           figureCounter += 1;
           const name = fileBaseName(block.src || "image");
-          const caption = `\u0420\u0438\u0441\u0443\u043D\u043E\u043A ${figureCounter} \u2014 ${name}`;
+          const caption = `${strings.figureLabel} ${figureCounter}${strings.captionSeparator}${name}`;
           const resolved = await resolveImageBinary(plugin, activeFile, block.src);
           if (resolved) {
             const imageRun = new ImageRun({
@@ -22829,13 +23637,12 @@ var require_exporter = __commonJS({
             });
             contentChildren.push(makeImageParagraph(imageRun));
           } else {
+            const msg = strings.imageNotFound.replace("{src}", String(block.src || ""));
             contentChildren.push(
-              paragraphFromInlines(
-                [{ type: "text", text: `[\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435 \u043D\u0435 \u043D\u0430\u0439\u0434\u0435\u043D\u043E: ${block.src}]` }],
-                "normal",
-                preset,
-                { indent: null, alignment: AlignmentType.CENTER }
-              )
+              paragraphFromInlines([{ type: "text", text: `[${msg}]` }], "normal", preset, {
+                indent: null,
+                alignment: AlignmentType.CENTER
+              })
             );
           }
           contentChildren.push(
@@ -22861,12 +23668,12 @@ var require_exporter = __commonJS({
       const sections = [];
       if (opts.includeToc) {
         const tocTitle = paragraphFromInlines(
-          [{ type: "text", text: "\u0421\u041E\u0414\u0415\u0420\u0416\u0410\u041D\u0418\u0415" }],
+          [{ type: "text", text: strings.tocTitle }],
           "tocTitle",
           preset,
           { indent: null, alignment: AlignmentType.CENTER }
         );
-        const toc = new TableOfContents("\u0421\u043E\u0434\u0435\u0440\u0436\u0430\u043D\u0438\u0435", {
+        const toc = new TableOfContents(strings.tocFieldTitle, {
           hyperlink: true,
           headingStyleRange: "1-6"
         });
@@ -22877,19 +23684,16 @@ var require_exporter = __commonJS({
           children: [tocTitle, toc]
         });
       }
+      void skipFirstPages;
       const mainSectionProperties = {
         page: pageProps,
         ...opts.enablePagination ? {
-          // attach header/footer with page number
           ...pageNumHF || {},
-          // start page numbers from preset.pagination.startAt (e.g. 3)
           pageNumberStart: startAt > 0 ? startAt : 1
         } : {}
       };
       sections.push({
         properties: mainSectionProperties,
-        // If TOC exists: main content must start on a new page (new section already starts on new page in Word)
-        // If no TOC: just starts immediately
         children: contentChildren
       });
       const doc = new Document({ sections });
@@ -22897,14 +23701,14 @@ var require_exporter = __commonJS({
       try {
         buffer = await Packer.toBuffer(doc);
       } catch (e) {
-        throw ensureError("EXPORT_FAILED", "\u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u0441\u0444\u043E\u0440\u043C\u0438\u0440\u043E\u0432\u0430\u0442\u044C DOCX.", { cause: e });
+        throw ensureError("EXPORT_FAILED", t("errors.buildDocxFailed"), { cause: e });
       }
       const adapter = app.vault.adapter;
       try {
         await ensureFolder(adapter, outFolderPath);
         await adapter.writeBinary(outFilePath, buffer);
       } catch (e) {
-        throw ensureError("EXPORT_FAILED", "\u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u0441\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C \u0444\u0430\u0439\u043B \u0432 vault.", { cause: e });
+        throw ensureError("EXPORT_FAILED", t("errors.saveFailed"), { cause: e });
       }
       return { outFilePath, outName };
     }
@@ -22919,6 +23723,7 @@ var require_export_options_modal = __commonJS({
   "src/obsidian/export-options-modal.js"(exports2, module2) {
     var { Modal, Setting, Notice } = require("obsidian");
     var { getPresetOptions } = require_gost_loader();
+    var { t } = require_i18n();
     var ExportOptionsModal = class extends Modal {
       /**
        * @param {import("obsidian").App} app
@@ -22946,38 +23751,38 @@ var require_export_options_modal = __commonJS({
       onOpen() {
         const { contentEl } = this;
         contentEl.empty();
-        contentEl.createEl("h2", { text: "\u042D\u043A\u0441\u043F\u043E\u0440\u0442 \u0432 Word \u2014 \u043F\u0430\u0440\u0430\u043C\u0435\u0442\u0440\u044B" });
+        contentEl.createEl("h2", { text: t("modal.exportOptions.title") });
         const presets = getPresetOptions();
         if (!presets.length) {
-          new Notice("\u041D\u0435\u0442 \u0434\u043E\u0441\u0442\u0443\u043F\u043D\u044B\u0445 \u043F\u0440\u0435\u0441\u0435\u0442\u043E\u0432.");
+          new Notice(t("notices.preset.noPresets"));
           this.close();
           return;
         }
-        new Setting(contentEl).setName("\u041F\u0440\u0435\u0441\u0435\u0442").setDesc("\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u043D\u0430\u0431\u043E\u0440 \u043F\u0440\u0430\u0432\u0438\u043B \u043E\u0444\u043E\u0440\u043C\u043B\u0435\u043D\u0438\u044F.").addDropdown((dd) => {
+        new Setting(contentEl).setName(t("modal.exportOptions.preset.title")).setDesc(t("modal.exportOptions.preset.desc")).addDropdown((dd) => {
           for (const p of presets) dd.addOption(p.id, p.name);
           dd.setValue(this.state.presetId);
           dd.onChange((v) => this.state.presetId = v);
         });
-        new Setting(contentEl).setName("\u0418\u0433\u043D\u043E\u0440\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u0440\u0430\u0437\u0440\u044B\u0432\u044B \u0441\u0442\u0440\u0430\u043D\u0438\u0446 \u043F\u043E ---").setDesc("\u0415\u0441\u043B\u0438 \u0432\u043A\u043B\u044E\u0447\u0435\u043D\u043E \u2014 \u0441\u0442\u0440\u043E\u043A\u0430 '---' \u043D\u0435 \u0431\u0443\u0434\u0435\u0442 \u0432\u0441\u0442\u0430\u0432\u043B\u044F\u0442\u044C \u0440\u0430\u0437\u0440\u044B\u0432 \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u044B.").addToggle((t) => {
-          t.setValue(this.state.ignorePageBreaks);
-          t.onChange((v) => this.state.ignorePageBreaks = v);
+        new Setting(contentEl).setName(t("modal.exportOptions.ignorePageBreaks.title")).setDesc(t("modal.exportOptions.ignorePageBreaks.desc")).addToggle((t2) => {
+          t2.setValue(this.state.ignorePageBreaks);
+          t2.onChange((v) => this.state.ignorePageBreaks = v);
         });
-        new Setting(contentEl).setName("\u041D\u0443\u043C\u0435\u0440\u0430\u0446\u0438\u044F \u0441\u0442\u0440\u0430\u043D\u0438\u0446").setDesc("\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u043D\u043E\u043C\u0435\u0440 \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u044B \u0432 \u043A\u043E\u043B\u043E\u043D\u0442\u0438\u0442\u0443\u043B (\u043F\u043E\u0437\u0438\u0446\u0438\u044F \u0431\u0435\u0440\u0451\u0442\u0441\u044F \u0438\u0437 \u043F\u0440\u0435\u0441\u0435\u0442\u0430).").addToggle((t) => {
-          t.setValue(this.state.enablePagination);
-          t.onChange((v) => this.state.enablePagination = v);
+        new Setting(contentEl).setName(t("settings.exportDefaults.enablePagination.title")).setDesc(t("modal.exportOptions.enablePagination.desc")).addToggle((t2) => {
+          t2.setValue(this.state.enablePagination);
+          t2.onChange((v) => this.state.enablePagination = v);
         });
-        new Setting(contentEl).setName("\u0410\u0432\u0442\u043E\u043C\u0430\u0442\u0438\u0447\u0435\u0441\u043A\u043E\u0435 \u0441\u043E\u0434\u0435\u0440\u0436\u0430\u043D\u0438\u0435 (Word TOC)").setDesc("\u0414\u043E\u0431\u0430\u0432\u0438\u0442 \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u0443 '\u0421\u041E\u0414\u0415\u0420\u0416\u0410\u041D\u0418\u0415' \u0438 \u0442\u0430\u0431\u043B\u0438\u0446\u0443 \u0441\u043E\u0434\u0435\u0440\u0436\u0430\u043D\u0438\u044F \u043F\u043E \u0437\u0430\u0433\u043E\u043B\u043E\u0432\u043A\u0430\u043C.").addToggle((t) => {
-          t.setValue(this.state.includeToc);
-          t.onChange((v) => this.state.includeToc = v);
+        new Setting(contentEl).setName(t("modal.exportOptions.includeToc.title")).setDesc(t("modal.exportOptions.includeToc.desc")).addToggle((t2) => {
+          t2.setValue(this.state.includeToc);
+          t2.onChange((v) => this.state.includeToc = v);
         });
         const footer = contentEl.createDiv({ cls: "gost-export-modal-footer" });
         footer.style.display = "flex";
         footer.style.gap = "8px";
         footer.style.marginTop = "16px";
         footer.style.justifyContent = "flex-end";
-        const btnCancel = footer.createEl("button", { text: "\u041E\u0442\u043C\u0435\u043D\u0430" });
+        const btnCancel = footer.createEl("button", { text: t("buttons.cancel") });
         btnCancel.onclick = () => this.close();
-        const btnExport = footer.createEl("button", { text: "\u042D\u043A\u0441\u043F\u043E\u0440\u0442" });
+        const btnExport = footer.createEl("button", { text: t("buttons.export") });
         btnExport.addClass("mod-cta");
         btnExport.onclick = () => {
           this.close();
@@ -23000,26 +23805,27 @@ var require_commands = __commonJS({
     var { normalizePreset } = require_gost_schema();
     var { exportActiveNoteToDocx } = require_exporter();
     var { ExportOptionsModal } = require_export_options_modal();
+    var { t } = require_i18n();
     function getUserErrorMessage(error) {
       if (!error) return "\u041D\u0435\u0438\u0437\u0432\u0435\u0441\u0442\u043D\u0430\u044F \u043E\u0448\u0438\u0431\u043A\u0430";
       if (typeof error === "object" && error.code) {
         switch (error.code) {
           case "PRESET_NOT_FOUND":
-            return "\u0412\u044B\u0431\u0440\u0430\u043D\u043D\u044B\u0439 \u043F\u0440\u0435\u0441\u0435\u0442 \u043D\u0435 \u043D\u0430\u0439\u0434\u0435\u043D.";
+            return t("errors.presetNotFound");
           case "GOST_PRESET_INVALID":
-            return "\u041D\u0435\u043A\u043E\u0440\u0440\u0435\u043A\u0442\u043D\u044B\u0439 \u043F\u0440\u0435\u0441\u0435\u0442 \u0413\u041E\u0421\u0422.";
+            return t("errors.presetInvalid");
           case "NO_ACTIVE_FILE":
-            return "\u041D\u0435\u0442 \u0430\u043A\u0442\u0438\u0432\u043D\u043E\u0439 \u0437\u0430\u043C\u0435\u0442\u043A\u0438 \u0434\u043B\u044F \u044D\u043A\u0441\u043F\u043E\u0440\u0442\u0430.";
+            return t("errors.noActiveFile");
           case "EXPORT_FAILED":
-            return "\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u044D\u043A\u0441\u043F\u043E\u0440\u0442\u0435 \u0432 Word.";
+            return t("errors.exportFailed");
           default:
-            return "\u041D\u0435\u0438\u0437\u0432\u0435\u0441\u0442\u043D\u0430\u044F \u043E\u0448\u0438\u0431\u043A\u0430.";
+            return t("errors.unknown");
         }
       }
       if (typeof (error == null ? void 0 : error.message) === "string" && error.message.trim()) {
         return error.message.trim();
       }
-      return "\u041D\u0435\u0438\u0437\u0432\u0435\u0441\u0442\u043D\u0430\u044F \u043E\u0448\u0438\u0431\u043A\u0430.";
+      return t("errors.unknown");
     }
     async function runExport(plugin, opts) {
       const rawPreset = getPresetById(opts.presetId);
@@ -23050,12 +23856,10 @@ var require_commands = __commonJS({
               enablePagination: true,
               includeToc: false
             });
-            new Notice(`\u2705 \u042D\u043A\u0441\u043F\u043E\u0440\u0442 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D
-${result.outFilePath}`, 6e3);
+            new Notice(t("notices.export.ok", { path: result.outFilePath }), 6e3);
           } catch (error) {
             console.error("[\u0413\u041E\u0421\u0422 Export] \u041E\u0448\u0438\u0431\u043A\u0430 \u044D\u043A\u0441\u043F\u043E\u0440\u0442\u0430:", error);
-            new Notice(`\u274C \u042D\u043A\u0441\u043F\u043E\u0440\u0442 \u043D\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D
-${getUserErrorMessage(error)}`, 6e3);
+            new Notice(t("notices.export.fail", { message: getUserErrorMessage(error) }), 6e3);
           }
         }
       });
@@ -23069,12 +23873,10 @@ ${getUserErrorMessage(error)}`, 6e3);
             onSubmit: async (opts) => {
               try {
                 const result = await runExport(plugin, opts);
-                new Notice(`\u2705 \u042D\u043A\u0441\u043F\u043E\u0440\u0442 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D
-${result.outFilePath}`, 6e3);
+                new Notice(t("notices.export.ok", { path: result.outFilePath }), 6e3);
               } catch (error) {
                 console.error("[\u0413\u041E\u0421\u0422 Export] \u041E\u0448\u0438\u0431\u043A\u0430 \u044D\u043A\u0441\u043F\u043E\u0440\u0442\u0430:", error);
-                new Notice(`\u274C \u042D\u043A\u0441\u043F\u043E\u0440\u0442 \u043D\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D
-${getUserErrorMessage(error)}`, 6e3);
+                new Notice(t("notices.export.fail", { message: getUserErrorMessage(error) }), 6e3);
               }
             }
           });
@@ -23114,6 +23916,7 @@ var require_settings = __commonJS({
 var require_preset_visual_editor = __commonJS({
   "src/obsidian/preset-visual-editor.js"(exports2, module2) {
     var { Setting, Notice } = require("obsidian");
+    var { t: tr } = require_i18n();
     var STYLE_ORDER = [
       "heading1",
       "heading2",
@@ -23129,18 +23932,18 @@ var require_preset_visual_editor = __commonJS({
       "listingText"
     ];
     var LABELS = {
-      heading1: "\u0417\u0430\u0433\u043E\u043B\u043E\u0432\u043E\u043A 1",
-      heading2: "\u0417\u0430\u0433\u043E\u043B\u043E\u0432\u043E\u043A 2",
-      heading3: "\u0417\u0430\u0433\u043E\u043B\u043E\u0432\u043E\u043A 3",
-      heading4: "\u0417\u0430\u0433\u043E\u043B\u043E\u0432\u043E\u043A 4",
-      heading5: "\u0417\u0430\u0433\u043E\u043B\u043E\u0432\u043E\u043A 5",
-      heading6: "\u0417\u0430\u0433\u043E\u043B\u043E\u0432\u043E\u043A 6",
-      normal: "\u0422\u0435\u043A\u0441\u0442",
-      tableText: "\u0422\u0430\u0431\u043B\u0438\u0446\u0430 \u2014 \u0442\u0435\u043A\u0441\u0442",
-      tableHeaderText: "\u0422\u0430\u0431\u043B\u0438\u0446\u0430 \u2014 \u0448\u0430\u043F\u043A\u0430",
-      tableCaption: "\u041F\u043E\u0434\u043F\u0438\u0441\u044C \u0442\u0430\u0431\u043B\u0438\u0446\u044B",
-      figureCaption: "\u041F\u043E\u0434\u043F\u0438\u0441\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0438",
-      listingText: "\u041A\u043E\u0434-\u043B\u0438\u0441\u0442\u0438\u043D\u0433"
+      heading1: tr("block.heading1"),
+      heading2: tr("block.heading2"),
+      heading3: tr("block.heading3"),
+      heading4: tr("block.heading4"),
+      heading5: tr("block.heading5"),
+      heading6: tr("block.heading6"),
+      normal: tr("block.normal"),
+      tableText: tr("block.tableText"),
+      tableHeaderText: tr("block.tableHeaderText"),
+      tableCaption: tr("block.tableCaption"),
+      figureCaption: tr("block.figureCaption"),
+      listingText: tr("block.listingText")
     };
     function sortBlocks(blocks) {
       const idx = new Map(STYLE_ORDER.map((k, i) => [k, i]));
@@ -23154,12 +23957,12 @@ var require_preset_visual_editor = __commonJS({
     }
     function getAvailableTypes(selectedTypes) {
       const set = new Set(selectedTypes);
-      return STYLE_ORDER.filter((t) => !set.has(t));
+      return STYLE_ORDER.filter((x) => !set.has(x));
     }
     function defaultStyleFor(type, preset) {
       var _a;
       const normal = ((_a = preset.styles) == null ? void 0 : _a.normal) || {
-        font: { family: "Times New Roman", sizePt: 14 },
+        font: { family: tr("placeholders.font.family"), sizePt: 14 },
         paragraph: {
           alignment: "justify",
           firstLineIndentCm: 1.25,
@@ -23207,8 +24010,8 @@ var require_preset_visual_editor = __commonJS({
       presetWrapper.preset = preset;
       if (!preset.styles) preset.styles = {};
       const blocks = [];
-      for (const t of STYLE_ORDER) {
-        if (preset.styles[t]) blocks.push({ id: `b-${t}`, type: t });
+      for (const type of STYLE_ORDER) {
+        if (preset.styles[type]) blocks.push({ id: `b-${type}`, type });
       }
       sortBlocks(blocks);
       function notifyChange() {
@@ -23219,26 +24022,26 @@ var require_preset_visual_editor = __commonJS({
       header.style.justifyContent = "space-between";
       header.style.alignItems = "center";
       header.style.marginBottom = "8px";
-      header.createEl("h3", { text: "\u0412\u0438\u0437\u0443\u0430\u043B\u044C\u043D\u044B\u0439 \u0440\u0435\u0434\u0430\u043A\u0442\u043E\u0440" });
-      const addBtn = header.createEl("button", { text: "\u2795 \u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u0431\u043B\u043E\u043A" });
+      header.createEl("h3", { text: tr("visualEditor.title") });
+      const addBtn = header.createEl("button", { text: tr("buttons.addBlock") });
       addBtn.classList.add("mod-cta");
       const blocksEl = containerEl.createDiv();
       function renderBlockTypeChooser(blockEl, block) {
         const selectedTypes = getSelectedTypes(blocks);
         const available = getAvailableTypes(selectedTypes);
-        const s = new Setting(blockEl).setName("\u0422\u0438\u043F \u0431\u043B\u043E\u043A\u0430").setDesc("\u0412\u044B\u0431\u0435\u0440\u0438, \u0447\u0442\u043E \u0440\u0435\u0434\u0430\u043A\u0442\u0438\u0440\u0443\u0435\u043C. \u0423\u0436\u0435 \u0432\u044B\u0431\u0440\u0430\u043D\u043D\u044B\u0435 \u0442\u0438\u043F\u044B \u043D\u0435\u0434\u043E\u0441\u0442\u0443\u043F\u043D\u044B.");
+        const s = new Setting(blockEl).setName(tr("visualEditor.blockType.title")).setDesc(tr("visualEditor.blockType.desc"));
         s.addDropdown((dd) => {
           dd.addOption("", "\u2014 \u0432\u044B\u0431\u0440\u0430\u0442\u044C \u2014");
           if (block.type && !available.includes(block.type)) {
             dd.addOption(block.type, LABELS[block.type] || block.type);
           }
-          for (const t of available) dd.addOption(t, LABELS[t] || t);
+          for (const type of available) dd.addOption(type, LABELS[type] || type);
           dd.setValue(block.type || "");
           dd.onChange((v) => {
             if (!v) return;
             const alreadyUsed = selectedTypes.includes(v) && block.type !== v;
             if (alreadyUsed) {
-              new Notice("\u042D\u0442\u043E\u0442 \u0442\u0438\u043F \u0443\u0436\u0435 \u0434\u043E\u0431\u0430\u0432\u043B\u0435\u043D.");
+              new Notice(tr("notices.blocks.typeAlreadyAdded"));
               dd.setValue(block.type || "");
               return;
             }
@@ -23257,83 +24060,98 @@ var require_preset_visual_editor = __commonJS({
         const styleObj = preset.styles[type] || (preset.styles[type] = defaultStyleFor(type, preset));
         const font = styleObj.font || (styleObj.font = {});
         const par = styleObj.paragraph || (styleObj.paragraph = {});
-        new Setting(blockEl).setName("\u0428\u0440\u0438\u0444\u0442").addText((t) => {
-          t.setPlaceholder("Times New Roman");
-          t.setValue(font.family || "");
-          t.onChange((v) => {
+        new Setting(blockEl).setName(tr("fields.font.family")).addText((input) => {
+          input.setPlaceholder(tr("placeholders.font.family"));
+          input.setValue(font.family || "");
+          input.onChange((v) => {
             font.family = v;
             notifyChange();
           });
         });
-        new Setting(blockEl).setName("\u0420\u0430\u0437\u043C\u0435\u0440 (pt)").addText((t) => {
-          t.setPlaceholder("14");
-          t.setValue(font.sizePt != null ? String(font.sizePt) : "");
-          t.onChange((v) => {
+        new Setting(blockEl).setName(tr("fields.font.sizePt")).addText((input) => {
+          input.setPlaceholder(tr("placeholders.font.sizePt"));
+          input.setValue(font.sizePt != null ? String(font.sizePt) : "");
+          input.onChange((v) => {
             const n = Number(v);
             if (!Number.isFinite(n)) return;
             font.sizePt = n;
             notifyChange();
           });
         });
-        new Setting(blockEl).setName("\u0416\u0438\u0440\u043D\u044B\u0439").addToggle((tg) => {
+        new Setting(blockEl).setName(tr("fields.font.color")).addText((input) => {
+          input.setPlaceholder(tr("placeholders.font.color"));
+          input.setValue(font.color || "");
+          input.onChange((v) => {
+            const s = String(v || "").trim().replace(/^#/, "").toUpperCase();
+            if (!s) {
+              delete font.color;
+              notifyChange();
+              return;
+            }
+            if (!/^[0-9A-F]{6}$/.test(s)) return;
+            font.color = s;
+            notifyChange();
+          });
+        });
+        new Setting(blockEl).setName(tr("fields.font.bold")).addToggle((tg) => {
           tg.setValue(!!font.bold);
           tg.onChange((v) => {
             font.bold = v;
             notifyChange();
           });
         });
-        new Setting(blockEl).setName("\u041A\u0443\u0440\u0441\u0438\u0432").addToggle((tg) => {
+        new Setting(blockEl).setName(tr("fields.font.italic")).addToggle((tg) => {
           tg.setValue(!!font.italic);
           tg.onChange((v) => {
             font.italic = v;
             notifyChange();
           });
         });
-        new Setting(blockEl).setName("\u0412\u044B\u0440\u0430\u0432\u043D\u0438\u0432\u0430\u043D\u0438\u0435").addDropdown((dd) => {
-          dd.addOption("justify", "\u041F\u043E \u0448\u0438\u0440\u0438\u043D\u0435");
-          dd.addOption("left", "\u041F\u043E \u043B\u0435\u0432\u043E\u043C\u0443 \u043A\u0440\u0430\u044E");
-          dd.addOption("center", "\u041F\u043E \u0446\u0435\u043D\u0442\u0440\u0443");
-          dd.addOption("right", "\u041F\u043E \u043F\u0440\u0430\u0432\u043E\u043C\u0443 \u043A\u0440\u0430\u044E");
+        new Setting(blockEl).setName(tr("fields.paragraph.alignment")).addDropdown((dd) => {
+          dd.addOption("justify", tr("fields.paragraph.alignment.justify"));
+          dd.addOption("left", tr("fields.paragraph.alignment.left"));
+          dd.addOption("center", tr("fields.paragraph.alignment.center"));
+          dd.addOption("right", tr("fields.paragraph.alignment.right"));
           dd.setValue(par.alignment || "justify");
           dd.onChange((v) => {
             par.alignment = v;
             notifyChange();
           });
         });
-        new Setting(blockEl).setName("\u041A\u0440\u0430\u0441\u043D\u0430\u044F \u0441\u0442\u0440\u043E\u043A\u0430 (\u0441\u043C)").addText((t) => {
-          t.setPlaceholder("1.25");
-          t.setValue(par.firstLineIndentCm != null ? String(par.firstLineIndentCm) : "");
-          t.onChange((v) => {
+        new Setting(blockEl).setName(tr("fields.paragraph.firstLineIndentCm")).addText((input) => {
+          input.setPlaceholder(tr("placeholders.paragraph.firstLineIndentCm"));
+          input.setValue(par.firstLineIndentCm != null ? String(par.firstLineIndentCm) : "");
+          input.onChange((v) => {
             const n = Number(v);
             if (!Number.isFinite(n)) return;
             par.firstLineIndentCm = n;
             notifyChange();
           });
         });
-        new Setting(blockEl).setName("\u0418\u043D\u0442\u0435\u0440\u0432\u0430\u043B \u0434\u043E (pt)").addText((t) => {
-          t.setPlaceholder("0");
-          t.setValue(par.spacingBeforePt != null ? String(par.spacingBeforePt) : "");
-          t.onChange((v) => {
+        new Setting(blockEl).setName(tr("fields.paragraph.spacingBeforePt")).addText((input) => {
+          input.setPlaceholder(tr("placeholders.paragraph.spacingBeforePt"));
+          input.setValue(par.spacingBeforePt != null ? String(par.spacingBeforePt) : "");
+          input.onChange((v) => {
             const n = Number(v);
             if (!Number.isFinite(n)) return;
             par.spacingBeforePt = n;
             notifyChange();
           });
         });
-        new Setting(blockEl).setName("\u0418\u043D\u0442\u0435\u0440\u0432\u0430\u043B \u043F\u043E\u0441\u043B\u0435 (pt)").addText((t) => {
-          t.setPlaceholder("0");
-          t.setValue(par.spacingAfterPt != null ? String(par.spacingAfterPt) : "");
-          t.onChange((v) => {
+        new Setting(blockEl).setName(tr("fields.paragraph.spacingAfterPt")).addText((input) => {
+          input.setPlaceholder(tr("placeholders.paragraph.spacingAfterPt"));
+          input.setValue(par.spacingAfterPt != null ? String(par.spacingAfterPt) : "");
+          input.onChange((v) => {
             const n = Number(v);
             if (!Number.isFinite(n)) return;
             par.spacingAfterPt = n;
             notifyChange();
           });
         });
-        new Setting(blockEl).setName("\u041C\u0435\u0436\u0441\u0442\u0440\u043E\u0447\u043D\u044B\u0439 \u0438\u043D\u0442\u0435\u0440\u0432\u0430\u043B").addText((t) => {
-          t.setPlaceholder("1.5");
-          t.setValue(par.lineSpacing != null ? String(par.lineSpacing) : "");
-          t.onChange((v) => {
+        new Setting(blockEl).setName(tr("fields.paragraph.lineSpacing")).addText((input) => {
+          input.setPlaceholder(tr("placeholders.paragraph.lineSpacing"));
+          input.setValue(par.lineSpacing != null ? String(par.lineSpacing) : "");
+          input.onChange((v) => {
             const n = Number(v);
             if (!Number.isFinite(n)) return;
             par.lineSpacing = n;
@@ -23359,8 +24177,10 @@ var require_preset_visual_editor = __commonJS({
           top.style.justifyContent = "space-between";
           top.style.alignItems = "center";
           top.style.marginBottom = "6px";
-          top.createEl("strong", { text: b.type ? LABELS[b.type] || b.type : "\u041D\u043E\u0432\u044B\u0439 \u0431\u043B\u043E\u043A" });
-          const del = top.createEl("button", { text: "\u0423\u0434\u0430\u043B\u0438\u0442\u044C" });
+          top.createEl("strong", {
+            text: b.type ? LABELS[b.type] || b.type : tr("visualEditor.block.new")
+          });
+          const del = top.createEl("button", { text: tr("buttons.delete") });
           del.onclick = () => {
             if (b.type) delete preset.styles[b.type];
             blocks.splice(index, 1);
@@ -23378,7 +24198,7 @@ var require_preset_visual_editor = __commonJS({
       addBtn.onclick = () => {
         const available = getAvailableTypes(getSelectedTypes(blocks));
         if (!available.length) {
-          new Notice("\u0412\u0441\u0435 \u0431\u043B\u043E\u043A\u0438 \u0443\u0436\u0435 \u0434\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B");
+          new Notice(tr("notices.blocks.allAdded"));
           return;
         }
         blocks.push({ id: `b-${Date.now()}`, type: null });
@@ -23402,6 +24222,7 @@ var require_preset_editor_modal = __commonJS({
   "src/obsidian/preset-editor-modal.js"(exports2, module2) {
     var { Modal, Setting, Notice } = require("obsidian");
     var { renderPresetVisualEditor } = require_preset_visual_editor();
+    var { t } = require_i18n();
     var PresetEditorModal = class extends Modal {
       constructor(app, presetWrapper, onSave) {
         super(app);
@@ -23418,17 +24239,17 @@ var require_preset_editor_modal = __commonJS({
       render() {
         const { contentEl } = this;
         contentEl.empty();
-        contentEl.createEl("h2", { text: "\u0420\u0435\u0434\u0430\u043A\u0442\u043E\u0440 \u043F\u0440\u0435\u0441\u0435\u0442\u0430" });
-        new Setting(contentEl).setName("\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435").addText((t) => {
-          t.setValue(this.presetWrapper.name || "");
-          t.onChange((v) => this.presetWrapper.name = v);
+        contentEl.createEl("h2", { text: t("modal.presetEditor.title") });
+        new Setting(contentEl).setName(t("modal.presetEditor.name.title")).addText((t2) => {
+          t2.setValue(this.presetWrapper.name || "");
+          t2.onChange((v) => this.presetWrapper.name = v);
         });
         const tabs = contentEl.createDiv();
         tabs.style.display = "flex";
         tabs.style.gap = "8px";
         tabs.style.margin = "10px 0";
-        const btnVisual = tabs.createEl("button", { text: "\u0412\u0438\u0437\u0443\u0430\u043B\u044C\u043D\u043E" });
-        const btnJson = tabs.createEl("button", { text: "JSON" });
+        const btnVisual = tabs.createEl("button", { text: t("modal.presetEditor.tabs.visual") });
+        const btnJson = tabs.createEl("button", { text: t("modal.presetEditor.tabs.json") });
         const setActive = (tab) => {
           if (tab === this.activeTab) return;
           if (tab === "json") {
@@ -23438,7 +24259,7 @@ var require_preset_editor_modal = __commonJS({
               const parsed = JSON.parse(this.jsonText || "{}");
               this.presetWrapper.preset = parsed;
             } catch (e) {
-              new Notice("\u274C \u041D\u0435\u043A\u043E\u0440\u0440\u0435\u043A\u0442\u043D\u044B\u0439 JSON. \u0412\u0438\u0437\u0443\u0430\u043B\u044C\u043D\u044B\u0439 \u0440\u0435\u0434\u0430\u043A\u0442\u043E\u0440 \u043D\u0435 \u043E\u0431\u043D\u043E\u0432\u043B\u0451\u043D.");
+              new Notice(t("notices.preset.invalidJsonVisualNotUpdated"));
               return;
             }
           }
@@ -23458,9 +24279,9 @@ var require_preset_editor_modal = __commonJS({
         footer.style.justifyContent = "flex-end";
         footer.style.gap = "8px";
         footer.style.marginTop = "12px";
-        const cancel = footer.createEl("button", { text: "\u041E\u0442\u043C\u0435\u043D\u0430" });
+        const cancel = footer.createEl("button", { text: t("buttons.cancel") });
         cancel.onclick = () => this.close();
-        const save = footer.createEl("button", { text: "\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C" });
+        const save = footer.createEl("button", { text: t("buttons.save") });
         save.classList.add("mod-cta");
         save.onclick = () => this.saveAndClose();
       }
@@ -23492,9 +24313,9 @@ var require_preset_editor_modal = __commonJS({
           }
           this.onSave(this.presetWrapper);
           this.close();
-          new Notice("\u2705 \u041F\u0440\u0435\u0441\u0435\u0442 \u0441\u043E\u0445\u0440\u0430\u043D\u0451\u043D");
+          new Notice(t("notices.preset.saved"));
         } catch (e) {
-          new Notice("\u274C \u041D\u0435\u043A\u043E\u0440\u0440\u0435\u043A\u0442\u043D\u044B\u0439 JSON");
+          new Notice(t("notices.preset.invalidJson"));
         }
       }
       onClose() {
@@ -23511,6 +24332,7 @@ var require_settings_tab = __commonJS({
     var { PluginSettingTab, Setting, Notice, Modal } = require("obsidian");
     var { getPresetOptions } = require_gost_loader();
     var { PresetEditorModal } = require_preset_editor_modal();
+    var { t } = require_i18n();
     var GostExportSettingTab2 = class extends PluginSettingTab {
       constructor(app, plugin) {
         super(app, plugin);
@@ -23520,7 +24342,7 @@ var require_settings_tab = __commonJS({
         const { containerEl } = this;
         containerEl.empty();
         containerEl.createEl("h2", { text: "\u0413\u041E\u0421\u0422 Word Export" });
-        new Setting(containerEl).setName("\u041F\u0440\u0435\u0441\u0435\u0442 \u043F\u043E \u0443\u043C\u043E\u043B\u0447\u0430\u043D\u0438\u044E").setDesc("\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0435\u0442\u0441\u044F \u043F\u0440\u0438 Fast Export").addDropdown((dd) => {
+        new Setting(containerEl).setName(t("settings.presetDefault.title")).setDesc(t("settings.presetDefault.desc")).addDropdown((dd) => {
           const presets = getPresetOptions(this.plugin.settings.userPresets);
           for (const p of presets) dd.addOption(p.id, p.name);
           dd.setValue(this.plugin.settings.presetId);
@@ -23529,45 +24351,45 @@ var require_settings_tab = __commonJS({
             await this.plugin.saveSettings();
           });
         });
-        containerEl.createEl("h3", { text: "\u041F\u0430\u0440\u0430\u043C\u0435\u0442\u0440\u044B \u044D\u043A\u0441\u043F\u043E\u0440\u0442\u0430 (\u043F\u043E \u0443\u043C\u043E\u043B\u0447\u0430\u043D\u0438\u044E)" });
-        new Setting(containerEl).setName("\u0418\u0433\u043D\u043E\u0440\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u0440\u0430\u0437\u0440\u044B\u0432\u044B \u0441\u0442\u0440\u0430\u043D\u0438\u0446 ---").addToggle((t) => {
-          t.setValue(this.plugin.settings.exportOptions.ignorePageBreaks);
-          t.onChange(async (v) => {
+        containerEl.createEl("h3", { text: t("settings.exportDefaults.title") });
+        new Setting(containerEl).setName(t("settings.exportDefaults.ignorePageBreaks.title")).addToggle((t2) => {
+          t2.setValue(this.plugin.settings.exportOptions.ignorePageBreaks);
+          t2.onChange(async (v) => {
             this.plugin.settings.exportOptions.ignorePageBreaks = v;
             await this.plugin.saveSettings();
           });
         });
-        new Setting(containerEl).setName("\u041D\u0443\u043C\u0435\u0440\u0430\u0446\u0438\u044F \u0441\u0442\u0440\u0430\u043D\u0438\u0446").addToggle((t) => {
-          t.setValue(this.plugin.settings.exportOptions.enablePagination);
-          t.onChange(async (v) => {
+        new Setting(containerEl).setName(t("settings.exportDefaults.enablePagination.title")).addToggle((t2) => {
+          t2.setValue(this.plugin.settings.exportOptions.enablePagination);
+          t2.onChange(async (v) => {
             this.plugin.settings.exportOptions.enablePagination = v;
             await this.plugin.saveSettings();
           });
         });
-        new Setting(containerEl).setName("\u0410\u0432\u0442\u043E\u043C\u0430\u0442\u0438\u0447\u0435\u0441\u043A\u043E\u0435 \u0441\u043E\u0434\u0435\u0440\u0436\u0430\u043D\u0438\u0435 (Word)").addToggle((t) => {
-          t.setValue(this.plugin.settings.exportOptions.includeToc);
-          t.onChange(async (v) => {
+        new Setting(containerEl).setName(t("settings.exportDefaults.includeToc.title")).addToggle((t2) => {
+          t2.setValue(this.plugin.settings.exportOptions.includeToc);
+          t2.onChange(async (v) => {
             this.plugin.settings.exportOptions.includeToc = v;
             await this.plugin.saveSettings();
           });
         });
-        containerEl.createEl("h3", { text: "\u041A\u0430\u0441\u0442\u043E\u043C\u043D\u044B\u0435 \u0448\u0430\u0431\u043B\u043E\u043D\u044B" });
+        containerEl.createEl("h3", { text: t("settings.userPresets.title") });
         this.plugin.settings.userPresets.forEach((p, index) => {
-          new Setting(containerEl).setName(p.name || "(\u0431\u0435\u0437 \u043D\u0430\u0437\u0432\u0430\u043D\u0438\u044F)").setDesc(p.id).addExtraButton((b) => {
+          new Setting(containerEl).setName(p.name || t("settings.userPresets.unnamed")).setDesc(p.id).addExtraButton((b) => {
             b.setIcon("pencil");
-            b.setTooltip("\u0420\u0435\u0434\u0430\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C");
+            b.setTooltip(t("tooltips.edit"));
             b.onClick(() => this.openPresetEditor(p, index));
           }).addExtraButton((b) => {
             b.setIcon("download");
-            b.setTooltip("\u0418\u043C\u043F\u043E\u0440\u0442");
+            b.setTooltip(t("tooltips.import"));
             b.onClick(() => this.importPreset(index));
           }).addExtraButton((b) => {
             b.setIcon("upload");
-            b.setTooltip("\u042D\u043A\u0441\u043F\u043E\u0440\u0442");
+            b.setTooltip(t("buttons.export"));
             b.onClick(() => this.exportPreset(index));
           }).addExtraButton((b) => {
             b.setIcon("trash");
-            b.setTooltip("\u0423\u0434\u0430\u043B\u0438\u0442\u044C");
+            b.setTooltip(t("buttons.delete"));
             b.onClick(async () => {
               this.plugin.settings.userPresets.splice(index, 1);
               await this.plugin.saveSettings();
@@ -23576,7 +24398,7 @@ var require_settings_tab = __commonJS({
           });
         });
         new Setting(containerEl).addButton(
-          (b) => b.setButtonText("\u2795 \u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u043F\u0440\u0435\u0441\u0435\u0442").setCta().onClick(() => this.createPreset())
+          (b) => b.setButtonText(t("settings.userPresets.addPreset")).setCta().onClick(() => this.createPreset())
         );
       }
       exportPreset(index) {
@@ -23586,7 +24408,7 @@ var require_settings_tab = __commonJS({
         const modal = new Modal(this.app);
         modal.onOpen = () => {
           const { contentEl } = modal;
-          contentEl.createEl("h2", { text: "\u042D\u043A\u0441\u043F\u043E\u0440\u0442 \u043F\u0440\u0435\u0441\u0435\u0442\u0430 (JSON)" });
+          contentEl.createEl("h2", { text: t("modal.presetExport.title") });
           const ta = contentEl.createEl("textarea");
           ta.value = payload;
           ta.style.width = "100%";
@@ -23594,15 +24416,15 @@ var require_settings_tab = __commonJS({
           ta.focus();
           ta.select();
           new Setting(contentEl).addButton(
-            (b) => b.setButtonText("\u0421\u043A\u043E\u043F\u0438\u0440\u043E\u0432\u0430\u0442\u044C").setCta().onClick(async () => {
+            (b) => b.setButtonText(t("buttons.copy")).setCta().onClick(async () => {
               try {
                 await navigator.clipboard.writeText(payload);
-                new Notice("\u2705 \u0421\u043A\u043E\u043F\u0438\u0440\u043E\u0432\u0430\u043D\u043E \u0432 \u0431\u0443\u0444\u0435\u0440 \u043E\u0431\u043C\u0435\u043D\u0430");
+                new Notice(t("notices.preset.copied"));
               } catch (e) {
-                new Notice("\u26A0\uFE0F \u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u0441\u043A\u043E\u043F\u0438\u0440\u043E\u0432\u0430\u0442\u044C. \u0421\u043A\u043E\u043F\u0438\u0440\u0443\u0439 \u0432\u0440\u0443\u0447\u043D\u0443\u044E.");
+                new Notice(t("notices.preset.copyFail"));
               }
             })
-          ).addButton((b) => b.setButtonText("\u0417\u0430\u043A\u0440\u044B\u0442\u044C").onClick(() => modal.close()));
+          ).addButton((b) => b.setButtonText(t("buttons.close")).onClick(() => modal.close()));
         };
         modal.open();
       }
@@ -23610,13 +24432,13 @@ var require_settings_tab = __commonJS({
         const modal = new Modal(this.app);
         modal.onOpen = () => {
           const { contentEl } = modal;
-          contentEl.createEl("h2", { text: "\u0418\u043C\u043F\u043E\u0440\u0442 \u043F\u0440\u0435\u0441\u0435\u0442\u0430 (JSON)" });
+          contentEl.createEl("h2", { text: t("modal.presetImport.title") });
           const ta = contentEl.createEl("textarea");
-          ta.placeholder = "\u0412\u0441\u0442\u0430\u0432\u044C \u0441\u044E\u0434\u0430 JSON \u043F\u0440\u0435\u0441\u0435\u0442\u0430 (\u043E\u0431\u044A\u0435\u043A\u0442 \u0441 id/name/preset)...";
+          ta.placeholder = t("modal.presetImport.placeholder");
           ta.style.width = "100%";
           ta.style.height = "300px";
           new Setting(contentEl).addButton(
-            (b) => b.setButtonText("\u0418\u043C\u043F\u043E\u0440\u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C").setCta().onClick(async () => {
+            (b) => b.setButtonText(t("buttons.import")).setCta().onClick(async () => {
               try {
                 const obj = JSON.parse(ta.value);
                 if (!obj || typeof obj !== "object") throw new Error("bad json");
@@ -23629,12 +24451,12 @@ var require_settings_tab = __commonJS({
                 await this.plugin.saveSettings();
                 this.display();
                 modal.close();
-                new Notice("\u2705 \u041F\u0440\u0435\u0441\u0435\u0442 \u0438\u043C\u043F\u043E\u0440\u0442\u0438\u0440\u043E\u0432\u0430\u043D");
+                new Notice(t("notices.preset.imported"));
               } catch (e) {
-                new Notice("\u274C \u041D\u0435\u043A\u043E\u0440\u0440\u0435\u043A\u0442\u043D\u044B\u0439 JSON \u0438\u043B\u0438 \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u0430 (\u043D\u0443\u0436\u043D\u043E: id, name, preset)");
+                new Notice(t("notices.preset.importBad"));
               }
             })
-          ).addButton((b) => b.setButtonText("\u041E\u0442\u043C\u0435\u043D\u0430").onClick(() => modal.close()));
+          ).addButton((b) => b.setButtonText(t("buttons.cancel")).onClick(() => modal.close()));
         };
         modal.open();
       }
@@ -23673,6 +24495,8 @@ module.exports = class GostExportPlugin extends Plugin {
   async onload() {
     console.log("\u0413\u041E\u0421\u0422 Word Export plugin loaded");
     await this.loadSettings();
+    const { initI18n } = require_i18n();
+    initI18n(this.app);
     this.addSettingTab(new GostExportSettingTab(this.app, this));
     registerCommands(this);
   }

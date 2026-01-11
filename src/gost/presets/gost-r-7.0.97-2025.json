@@ -1,22 +1,176 @@
 {
   "id": "gost-r-7.0.97-2025",
-  "name": "ГОСТ Р 7.0.97-2025 (ОРД)",
+  "name": "GOST R 7.0.97–2025",
   "page": {
     "size": "A4",
-    "marginsMm": { "top": 20, "bottom": 20, "left": 20, "right": 10 },
+    "orientation": "portrait",
+    "marginsMm": { "left": 20, "right": 10, "top": 20, "bottom": 20 },
     "longTermStorageLeftMarginMm": 30
-  },
-  "font": {
-    "family": "Times New Roman",
-    "sizePt": 14
-  },
-  "paragraph": {
-    "alignment": "justify",
-    "firstLineIndentCm": 1.25,
-    "lineSpacing": 1.5
   },
   "pagination": {
     "position": "top-center",
-    "offsetFromTopMm": 10
+    "offsetFromTopMm": 10,
+    "startAt": 1,
+    "skipFirstPages": 0
+  },
+  "strings": {
+    "tocTitle": "СОДЕРЖАНИЕ",
+    "tocFieldTitle": "Содержание",
+    "tableLabel": "Таблица",
+    "figureLabel": "Рисунок",
+    "captionSeparator": " — ",
+    "imageNotFound": "Изображение не найдено: {src}"
+  },
+  "styles": {
+    "normal": {
+      "font": { "family": "Times New Roman", "sizePt": 14, "bold": false, "italic": false, "color": "000000" },
+      "paragraph": {
+        "alignment": "justify",
+        "firstLineIndentCm": 1.25,
+        "spacingBeforePt": 0,
+        "spacingAfterPt": 0,
+        "lineSpacing": 1.5
+      }
+    },
+
+    "heading1": {
+      "font": { "family": "Times New Roman", "sizePt": 14, "bold": true, "italic": false, "color": "000000" },
+      "paragraph": {
+        "alignment": "center",
+        "firstLineIndentCm": 0,
+        "spacingBeforePt": 12,
+        "spacingAfterPt": 6,
+        "lineSpacing": 1.5,
+        "keepWithNext": true,
+        "keepLines": true
+      }
+    },
+    "heading2": {
+      "font": { "family": "Times New Roman", "sizePt": 14, "bold": true, "italic": false, "color": "000000" },
+      "paragraph": {
+        "alignment": "left",
+        "firstLineIndentCm": 1.25,
+        "spacingBeforePt": 12,
+        "spacingAfterPt": 6,
+        "lineSpacing": 1.5,
+        "keepWithNext": true,
+        "keepLines": true
+      }
+    },
+    "heading3": {
+      "font": { "family": "Times New Roman", "sizePt": 14, "bold": true, "italic": false, "color": "000000" },
+      "paragraph": {
+        "alignment": "left",
+        "firstLineIndentCm": 1.25,
+        "spacingBeforePt": 6,
+        "spacingAfterPt": 6,
+        "lineSpacing": 1.5,
+        "keepWithNext": true,
+        "keepLines": true
+      }
+    },
+    "heading4": {
+      "font": { "family": "Times New Roman", "sizePt": 14, "bold": true, "italic": false, "color": "000000" },
+      "paragraph": {
+        "alignment": "left",
+        "firstLineIndentCm": 1.25,
+        "spacingBeforePt": 6,
+        "spacingAfterPt": 6,
+        "lineSpacing": 1.5,
+        "keepWithNext": true,
+        "keepLines": true
+      }
+    },
+    "heading5": {
+      "font": { "family": "Times New Roman", "sizePt": 14, "bold": true, "italic": false, "color": "000000" },
+      "paragraph": {
+        "alignment": "left",
+        "firstLineIndentCm": 1.25,
+        "spacingBeforePt": 6,
+        "spacingAfterPt": 6,
+        "lineSpacing": 1.5,
+        "keepWithNext": true,
+        "keepLines": true
+      }
+    },
+    "heading6": {
+      "font": { "family": "Times New Roman", "sizePt": 14, "bold": true, "italic": false, "color": "000000" },
+      "paragraph": {
+        "alignment": "left",
+        "firstLineIndentCm": 1.25,
+        "spacingBeforePt": 6,
+        "spacingAfterPt": 6,
+        "lineSpacing": 1.5,
+        "keepWithNext": true,
+        "keepLines": true
+      }
+    },
+
+    "tableCaption": {
+      "font": { "family": "Times New Roman", "sizePt": 14, "bold": false, "italic": true, "color": "000000" },
+      "paragraph": {
+        "alignment": "left",
+        "firstLineIndentCm": 0,
+        "spacingBeforePt": 6,
+        "spacingAfterPt": 3,
+        "lineSpacing": 1.0,
+        "keepWithNext": true
+      }
+    },
+    "tableText": {
+      "font": { "family": "Times New Roman", "sizePt": 12, "bold": false, "italic": false, "color": "000000" },
+      "paragraph": {
+        "alignment": "justify",
+        "firstLineIndentCm": 0,
+        "spacingBeforePt": 0,
+        "spacingAfterPt": 0,
+        "lineSpacing": 1.0
+      }
+    },
+    "tableHeaderText": {
+      "font": { "family": "Times New Roman", "sizePt": 12, "bold": true, "italic": false, "color": "000000" },
+      "paragraph": {
+        "alignment": "justify",
+        "firstLineIndentCm": 0,
+        "spacingBeforePt": 0,
+        "spacingAfterPt": 0,
+        "lineSpacing": 1.0
+      }
+    },
+
+    "figureCaption": {
+      "font": { "family": "Times New Roman", "sizePt": 14, "bold": false, "italic": true, "color": "000000" },
+      "paragraph": {
+        "alignment": "center",
+        "firstLineIndentCm": 0,
+        "spacingBeforePt": 3,
+        "spacingAfterPt": 6,
+        "lineSpacing": 1.0
+      }
+    },
+
+    "listingText": {
+      "font": { "family": "Courier New", "sizePt": 10, "bold": false, "italic": false, "color": "000000" },
+      "paragraph": {
+        "alignment": "left",
+        "firstLineIndentCm": 0,
+        "spacingBeforePt": 0,
+        "spacingAfterPt": 0,
+        "lineSpacing": 1.0,
+        "keepLines": true
+      }
+    },
+
+    "tocTitle": {
+      "font": { "family": "Times New Roman", "sizePt": 14, "bold": true, "italic": false, "color": "000000" },
+      "paragraph": {
+        "alignment": "center",
+        "firstLineIndentCm": 0,
+        "spacingBeforePt": 0,
+        "spacingAfterPt": 12,
+        "lineSpacing": 1.5,
+        "pageBreakBefore": false
+      }
+    }
   }
 }

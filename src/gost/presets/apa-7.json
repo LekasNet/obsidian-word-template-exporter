@@ -1,0 +1,163 @@
+{
+  "id": "apa-7",
+  "name": "APA 7 (Academic)",
+  "page": {
+    "size": "A4",
+    "orientation": "portrait",
+    "marginsMm": { "left": 25.4, "right": 25.4, "top": 25.4, "bottom": 25.4 }
+  },
+  "pagination": {
+    "position": "top-right",
+    "startAt": 1,
+    "skipFirstPages": 0
+  },
+  "strings": {
+    "tocTitle": "CONTENTS",
+    "tocFieldTitle": "Contents",
+    "tableLabel": "Table",
+    "figureLabel": "Figure",
+    "captionSeparator": " — ",
+    "imageNotFound": "Image not found: {src}"
+  },
+
+  "styles": {
+    "normal": {
+      "font": { "family": "Times New Roman", "sizePt": 12, "bold": false, "italic": false, "color": "000000" },
+      "paragraph": {
+        "alignment": "left",
+        "firstLineIndentCm": 1.27,
+        "spacingBeforePt": 0,
+        "spacingAfterPt": 0,
+        "lineSpacing": 2.0
+      }
+    },
+
+    "heading1": {
+      "font": { "family": "Times New Roman", "sizePt": 12, "bold": true, "italic": false, "color": "000000" },
+      "paragraph": {
+        "alignment": "center",
+        "firstLineIndentCm": 0,
+        "spacingBeforePt": 24,
+        "spacingAfterPt": 12,
+        "lineSpacing": 2.0,
+        "keepWithNext": true,
+        "keepLines": true
+      }
+    },
+    "heading2": {
+      "font": { "family": "Times New Roman", "sizePt": 12, "bold": true, "italic": false, "color": "000000" },
+      "paragraph": {
+        "alignment": "left",
+        "firstLineIndentCm": 0,
+        "spacingBeforePt": 24,
+        "spacingAfterPt": 12,
+        "lineSpacing": 2.0,
+        "keepWithNext": true,
+        "keepLines": true
+      }
+    },
+    "heading3": {
+      "font": { "family": "Times New Roman", "sizePt": 12, "bold": true, "italic": true, "color": "000000" },
+      "paragraph": {
+        "alignment": "left",
+        "firstLineIndentCm": 0,
+        "spacingBeforePt": 18,
+        "spacingAfterPt": 6,
+        "lineSpacing": 2.0,
+        "keepWithNext": true,
+        "keepLines": true
+      }
+    },
+    "heading4": {
+      "font": { "family": "Times New Roman", "sizePt": 12, "bold": true, "italic": false, "color": "000000" },
+      "paragraph": {
+        "alignment": "left",
+        "firstLineIndentCm": 1.27,
+        "spacingBeforePt": 12,
+        "spacingAfterPt": 6,
+        "lineSpacing": 2.0,
+        "keepWithNext": true,
+        "keepLines": true
+      }
+    },
+    "heading5": {
+      "font": { "family": "Times New Roman", "sizePt": 12, "bold": true, "italic": true, "color": "000000" },
+      "paragraph": {
+        "alignment": "left",
+        "firstLineIndentCm": 1.27,
+        "spacingBeforePt": 12,
+        "spacingAfterPt": 6,
+        "lineSpacing": 2.0,
+        "keepWithNext": true,
+        "keepLines": true
+      }
+    },
+
+    "tableCaption": {
+      "font": { "family": "Times New Roman", "sizePt": 12, "italic": true, "color": "000000" },
+      "paragraph": {
+        "alignment": "left",
+        "firstLineIndentCm": 0,
+        "spacingBeforePt": 12,
+        "spacingAfterPt": 0,
+        "lineSpacing": 2.0,
+        "keepWithNext": true
+      }
+    },
+    "tableText": {
+      "font": { "family": "Times New Roman", "sizePt": 11, "bold": false, "italic": false, "color": "000000" },
+      "paragraph": {
+        "alignment": "left",
+        "firstLineIndentCm": 0,
+        "spacingBeforePt": 0,
+        "spacingAfterPt": 0,
+        "lineSpacing": 2.0
+      }
+    },
+    "tableHeaderText": {
+      "font": { "family": "Times New Roman", "sizePt": 11, "bold": true, "italic": false, "color": "000000" },
+      "paragraph": {
+        "alignment": "left",
+        "firstLineIndentCm": 0,
+        "spacingBeforePt": 0,
+        "spacingAfterPt": 0,
+        "lineSpacing": 2.0
+      }
+    },
+
+    "figureCaption": {
+      "font": { "family": "Times New Roman", "sizePt": 12, "bold": false, "italic": true, "color": "000000" },
+      "paragraph": {
+        "alignment": "center",
+        "firstLineIndentCm": 0,
+        "spacingBeforePt": 6,
+        "spacingAfterPt": 12,
+        "lineSpacing": 2.0
+      }
+    },
+
+    "listingText": {
+      "font": { "family": "Courier New", "sizePt": 10, "bold": false, "italic": false, "color": "000000" },
+      "paragraph": {
+        "alignment": "left",
+        "firstLineIndentCm": 0,
+        "spacingBeforePt": 0,
+        "spacingAfterPt": 0,
+        "lineSpacing": 1.0,
+        "keepLines": true
+      }
+    },
+
+    "tocTitle": {
+      "font": { "family": "Times New Roman", "sizePt": 12, "bold": true, "allCaps": false, "color": "000000" },
+      "paragraph": {
+        "alignment": "center",
+        "firstLineIndentCm": 0,
+        "spacingBeforePt": 0,
+        "spacingAfterPt": 12,
+        "lineSpacing": 2.0,
+        "pageBreakBefore": false
+      }
+    }
+  }
+}

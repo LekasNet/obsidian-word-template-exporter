@@ -2,6 +2,7 @@
 
 const { Modal, Setting, Notice } = require("obsidian");
 const { renderPresetVisualEditor } = require("./preset-visual-editor");
+const { t } = require("../i18n");
 
 class PresetEditorModal extends Modal {
     constructor(app, presetWrapper, onSave) {
@@ -24,10 +25,10 @@ class PresetEditorModal extends Modal {
         const { contentEl } = this;
         contentEl.empty();
 
-        contentEl.createEl("h2", { text: "Редактор пресета" });
+        contentEl.createEl("h2", { text: t("modal.presetEditor.title") });
 
         new Setting(contentEl)
-            .setName("Название")
+            .setName(t("modal.presetEditor.name.title"))
             .addText((t) => {
                 t.setValue(this.presetWrapper.name || "");
                 t.onChange((v) => (this.presetWrapper.name = v));
@@ -39,8 +40,8 @@ class PresetEditorModal extends Modal {
         tabs.style.gap = "8px";
         tabs.style.margin = "10px 0";
 
-        const btnVisual = tabs.createEl("button", { text: "Визуально" });
-        const btnJson = tabs.createEl("button", { text: "JSON" });
+        const btnVisual = tabs.createEl("button", { text: t("modal.presetEditor.tabs.visual") });
+        const btnJson = tabs.createEl("button", { text: t("modal.presetEditor.tabs.json") });
 
         const setActive = (tab) => {
             if (tab === this.activeTab) return;
@@ -55,7 +56,7 @@ class PresetEditorModal extends Modal {
                     const parsed = JSON.parse(this.jsonText || "{}");
                     this.presetWrapper.preset = parsed;
                 } catch {
-                    new Notice("❌ Некорректный JSON. Визуальный редактор не обновлён.");
+                    new Notice(t("notices.preset.invalidJsonVisualNotUpdated"));
                     // остаёмся в json, не переключаем
                     return;
                 }
@@ -85,10 +86,10 @@ class PresetEditorModal extends Modal {
         footer.style.gap = "8px";
         footer.style.marginTop = "12px";
 
-        const cancel = footer.createEl("button", { text: "Отмена" });
+        const cancel = footer.createEl("button", { text: t("buttons.cancel") });
         cancel.onclick = () => this.close();
 
-        const save = footer.createEl("button", { text: "Сохранить" });
+        const save = footer.createEl("button", { text: t("buttons.save") });
         save.classList.add("mod-cta");
         save.onclick = () => this.saveAndClose();
     }
@@ -130,9 +131,9 @@ class PresetEditorModal extends Modal {
             }
             this.onSave(this.presetWrapper);
             this.close();
-            new Notice("✅ Пресет сохранён");
+            new Notice(t("notices.preset.saved"));
         } catch {
-            new Notice("❌ Некорректный JSON");
+            new Notice(t("notices.preset.invalidJson"));
         }
     }
 

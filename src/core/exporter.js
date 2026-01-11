@@ -9,6 +9,7 @@
 
 const path = require("path");
 const { normalizePath } = require("obsidian");
+const { t } = require("../i18n");
 const {
     Document,
     Packer,
@@ -25,6 +26,7 @@ const {
     TableOfContents,
     Header,
     Footer,
+    HeadingLevel,
 } = require("docx");
 
 const { mmToTwips, cmToTwips, ptToHalfPoints } = require("../utils/units");
@@ -60,21 +62,43 @@ function alignmentFrom(alignment) {
     }
 }
 
+// ---------- preset strings (TOC / captions / messages) ----------
+
+function getStrings(preset) {
+    const s = preset?.strings || {};
+    return {
+        tocTitle: s.tocTitle || "СОДЕРЖАНИЕ",
+        tocFieldTitle: s.tocFieldTitle || "Содержание",
+        tableLabel: s.tableLabel || "Таблица",
+        figureLabel: s.figureLabel || "Рисунок",
+        captionSeparator: s.captionSeparator || " — ",
+        imageNotFound: s.imageNotFound || "Изображение не найдено: {src}",
+    };
+}
+
+function escapeRegExp(str) {
+    return String(str || "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+// ---------- filename template ----------
+
 function applyFileNameTemplate(template, title) {
     const safeTitle = (title || "Untitled")
         .replace(/[<>:"/\\|?*\u0000-\u001F]/g, "")
         .trim() || "Untitled";
 
-    const t = template && template.trim() ? template.trim() : "{title}.docx";
-    const name = t.replaceAll("{title}", safeTitle);
+    const templateStr = template && template.trim() ? template.trim() : "{title}.docx";
+    const name = templateStr.replaceAll("{title}", safeTitle);
     return name.toLowerCase().endsWith(".docx") ? name : `${name}.docx`;
 }
+
+// ---------- styles ----------
 
 function synthesizeStylesIfMissing(preset) {
     if (preset && !preset.styles) preset.styles = {};
 
     if (preset && preset.styles && !preset.styles.normal) {
-        const baseFont = preset.font || { family: "Times New Roman", sizePt: 14 };
+        const baseFont = preset.font || { family: t("placeholders.font.family"), sizePt: 14 };
         const basePar = preset.paragraph || {
             alignment: "justify",
             firstLineIndentCm: 1.25,
@@ -106,7 +130,7 @@ function synthesizeStylesIfMissing(preset) {
     if (!s.figureCaption) s.figureCaption = s.normal;
     if (!s.listingText) s.listingText = s.normal;
 
-    // заголовок "СОДЕРЖАНИЕ"
+    // TOC title style (text itself comes from preset.strings.tocTitle)
     if (!s.tocTitle) {
         s.tocTitle = {
             ...(s.heading1 || s.normal),
@@ -151,9 +175,12 @@ function paragraphOptionsFromStyle(style) {
 }
 
 function runsFromInlines(inlines, style, preset) {
-    const baseFont = style.font || preset.font || { family: "Times New Roman", sizePt: 14 };
-    const baseFamily = baseFont.family || "Times New Roman";
+    const baseFont = style.font || preset.font || { family: t("placeholders.font.family"), sizePt: 14 };
+    const baseFamily = baseFont.family || t("placeholders.font.family");
     const baseSize = ptToHalfPoints(baseFont.sizePt || 14);
+    const baseColor = (baseFont.color || "").replace(/^#/, "").toUpperCase();
+    const hasColor = /^[0-9A-F]{6}$/.test(baseColor);
+
 
     const forceBold = !!baseFont.bold;
     const forceItalic = !!baseFont.italic;
@@ -168,6 +195,7 @@ function runsFromInlines(inlines, style, preset) {
             size: isCode ? ptToHalfPoints(Math.max(10, (baseFont.sizePt || 14) - 2)) : baseSize,
             bold: forceBold || !!inl.bold,
             italics: forceItalic || !!inl.italic,
+            ...(hasColor ? { color: baseColor } : {}),
         });
 
         if (allCaps) run.allCaps = true;
@@ -192,25 +220,35 @@ function inlinesToText(inlines) {
     return (inlines || []).map((x) => x.text || "").join("");
 }
 
-function isTableCaptionParagraphBlock(block) {
+function isTableCaptionParagraphBlock(block, preset) {
     if (!block || block.type !== "paragraph") return false;
-    const t = inlinesToText(block.inlines).trim();
-    return /^Таблица\s+\d+([.\d]*)\b/i.test(t);
+
+    const strings = getStrings(preset);
+    const label = escapeRegExp(strings.tableLabel);
+
+    const text = inlinesToText(block.inlines).trim();
+    const rx = new RegExp(`^${label}\\s+\\d+(?:\\.\\d+)*\\b`, "i"); // Table 1 / Таблица 1 / Table 1.1 ...
+    return rx.test(text);
 }
 
-// italics: everything EXCEPT "Таблица N -/—"
+// Italics: everything EXCEPT "Table N —"/"Таблица N —"
 function makeTableCaptionParagraphFromText(text, preset) {
+    const strings = getStrings(preset);
+
     const style = getStyle(preset, "tableCaption", "normal");
     const pOpts = paragraphOptionsFromStyle(style);
-    const font = style.font || { family: "Times New Roman", sizePt: 12 };
+    const font = style.font || { family: t("placeholders.font.family"), sizePt: 12 };
 
-    const family = font.family || "Times New Roman";
+    const family = font.family || t("placeholders.font.family");
     const size = ptToHalfPoints(font.sizePt || 12);
 
-    const t = (text || "").trim();
+    const line = (text || "").trim();
 
-    // with dash
-    let m = /^(Таблица\s+\d+(?:\.\d+)*\s*[—-]\s*)(.*)$/i.exec(t);
+    const label = escapeRegExp(strings.tableLabel);
+    const sep = escapeRegExp(strings.captionSeparator || " — ");
+
+    // with separator (Table 1 — Title)
+    let m = new RegExp(`^(${label}\\s+\\d+(?:\\.\\d+)*\\s*${sep}\\s*)(.*)$`, "i").exec(line);
     if (m) {
         const prefix = m[1];
         const rest = m[2] || "";
@@ -224,8 +262,8 @@ function makeTableCaptionParagraphFromText(text, preset) {
         });
     }
 
-    // without dash
-    m = /^(Таблица\s+\d+(?:\.\d+)*\s+)(.*)$/i.exec(t);
+    // without separator (Table 1 Title)
+    m = new RegExp(`^(${label}\\s+\\d+(?:\\.\\d+)*\\s+)(.*)$`, "i").exec(line);
     if (m) {
         const prefix = m[1];
         const rest = m[2] || "";
@@ -239,10 +277,11 @@ function makeTableCaptionParagraphFromText(text, preset) {
         });
     }
 
+    // fallback: italic whole line
     return new Paragraph({
         ...pOpts,
         indent: undefined,
-        children: [new TextRun({ text: t, font: family, size, italics: true })],
+        children: [new TextRun({ text: line, font: family, size, italics: true })],
     });
 }
 
@@ -351,13 +390,14 @@ async function exportActiveNoteToDocx(plugin, preset, options) {
 
     const app = plugin.app;
     const activeFile = app.workspace.getActiveFile();
-    if (!activeFile) throw ensureError("NO_ACTIVE_FILE", "Нет активной заметки для экспорта.");
+    if (!activeFile) throw ensureError("NO_ACTIVE_FILE", t("errors.noActiveFile"));
 
     synthesizeStylesIfMissing(preset);
+    const strings = getStrings(preset);
 
     const md = await app.vault.read(activeFile);
     const model = parseMarkdownToModel(md);
-    if (!model.blocks.length) throw ensureError("EXPORT_FAILED", "Заметка пустая — нечего экспортировать.");
+    if (!model.blocks.length) throw ensureError("EXPORT_FAILED", t("errors.emptyNote"));
 
     const outputFolder = (plugin.settings?.outputFolder || "Exports").trim() || "Exports";
     const fileNameTemplate = plugin.settings?.fileNameTemplate || "{title}.docx";
@@ -382,12 +422,29 @@ async function exportActiveNoteToDocx(plugin, preset, options) {
 
         if (block.type === "heading") {
             const level = Math.min(6, Math.max(1, block.level || 1));
-            contentChildren.push(paragraphFromInlines(block.inlines, `heading${level}`, preset));
+
+            const headingMap = {
+                1: HeadingLevel.HEADING_1,
+                2: HeadingLevel.HEADING_2,
+                3: HeadingLevel.HEADING_3,
+                4: HeadingLevel.HEADING_4,
+                5: HeadingLevel.HEADING_5,
+                6: HeadingLevel.HEADING_6,
+            };
+
+            contentChildren.push(
+                paragraphFromInlines(block.inlines, `heading${level}`, preset, {
+                    heading: headingMap[level], // ✅ this makes Word treat it as a real heading
+                    // optional: make sure no first-line indent leaks into headings
+                    indent: null,
+                })
+            );
             continue;
         }
 
+
         if (block.type === "paragraph") {
-            if (isTableCaptionParagraphBlock(block)) {
+            if (isTableCaptionParagraphBlock(block, preset)) {
                 pendingTableCaptionText = inlinesToText(block.inlines).trim();
                 continue;
             }
@@ -432,12 +489,14 @@ async function exportActiveNoteToDocx(plugin, preset, options) {
         if (block.type === "table") {
             tableCounter += 1;
 
-            const captionText = pendingTableCaptionText || `Таблица ${tableCounter} — `;
+            const captionText =
+                pendingTableCaptionText ||
+                `${strings.tableLabel} ${tableCounter}${strings.captionSeparator}`;
             contentChildren.push(makeTableCaptionParagraphFromText(captionText, preset));
             pendingTableCaptionText = null;
 
-            const t = makeTable(block, preset);
-            if (t) contentChildren.push(t);
+            const table = makeTable(block, preset);
+            if (table) contentChildren.push(table);
             continue;
         }
 
@@ -445,7 +504,7 @@ async function exportActiveNoteToDocx(plugin, preset, options) {
             figureCounter += 1;
 
             const name = fileBaseName(block.src || "image");
-            const caption = `Рисунок ${figureCounter} — ${name}`;
+            const caption = `${strings.figureLabel} ${figureCounter}${strings.captionSeparator}${name}`;
 
             const resolved = await resolveImageBinary(plugin, activeFile, block.src);
             if (resolved) {
@@ -455,13 +514,12 @@ async function exportActiveNoteToDocx(plugin, preset, options) {
                 });
                 contentChildren.push(makeImageParagraph(imageRun));
             } else {
+                const msg = strings.imageNotFound.replace("{src}", String(block.src || ""));
                 contentChildren.push(
-                    paragraphFromInlines(
-                        [{ type: "text", text: `[Изображение не найдено: ${block.src}]` }],
-                        "normal",
-                        preset,
-                        { indent: null, alignment: AlignmentType.CENTER }
-                    )
+                    paragraphFromInlines([{ type: "text", text: `[${msg}]` }], "normal", preset, {
+                        indent: null,
+                        alignment: AlignmentType.CENTER,
+                    })
                 );
             }
 
@@ -495,21 +553,20 @@ async function exportActiveNoteToDocx(plugin, preset, options) {
     // Build sections
     const sections = [];
 
-    // 1) TOC section (separate page) — by requirement: before first paragraph and on separate page
+    // 1) TOC section (separate page) — before first content and on separate page
     if (opts.includeToc) {
         const tocTitle = paragraphFromInlines(
-            [{ type: "text", text: "СОДЕРЖАНИЕ" }],
+            [{ type: "text", text: strings.tocTitle }],
             "tocTitle",
             preset,
             { indent: null, alignment: AlignmentType.CENTER }
         );
 
-        const toc = new TableOfContents("Содержание", {
+        const toc = new TableOfContents(strings.tocFieldTitle, {
             hyperlink: true,
             headingStyleRange: "1-6",
         });
 
-        // TOC section: typically without page number (matches skip-first-pages behavior)
         sections.push({
             properties: {
                 page: pageProps,
@@ -518,17 +575,16 @@ async function exportActiveNoteToDocx(plugin, preset, options) {
         });
     }
 
-    // If pagination enabled and skipFirstPages > 0, we want the numbering to start in the MAIN section
-    // (TOC/titles etc. are in previous section(s) without numbering).
-    // That is exactly what multiple sections give us.
+    // Note: skipFirstPages is currently not used to auto-insert extra unnumbered sections/pages here.
+    // Your existing behavior relies on whether TOC is enabled as "first unnumbered section".
+    // Keeping this as-is to avoid behavior changes.
+    void skipFirstPages;
 
     const mainSectionProperties = {
         page: pageProps,
         ...(opts.enablePagination
             ? {
-                // attach header/footer with page number
                 ...(pageNumHF || {}),
-                // start page numbers from preset.pagination.startAt (e.g. 3)
                 pageNumberStart: startAt > 0 ? startAt : 1,
             }
             : {}),
@@ -536,8 +592,6 @@ async function exportActiveNoteToDocx(plugin, preset, options) {
 
     sections.push({
         properties: mainSectionProperties,
-        // If TOC exists: main content must start on a new page (new section already starts on new page in Word)
-        // If no TOC: just starts immediately
         children: contentChildren,
     });
 
@@ -547,7 +601,7 @@ async function exportActiveNoteToDocx(plugin, preset, options) {
     try {
         buffer = await Packer.toBuffer(doc);
     } catch (e) {
-        throw ensureError("EXPORT_FAILED", "Не удалось сформировать DOCX.", { cause: e });
+        throw ensureError("EXPORT_FAILED", t("errors.buildDocxFailed"), { cause: e });
     }
 
     const adapter = app.vault.adapter;
@@ -555,7 +609,7 @@ async function exportActiveNoteToDocx(plugin, preset, options) {
         await ensureFolder(adapter, outFolderPath);
         await adapter.writeBinary(outFilePath, buffer);
     } catch (e) {
-        throw ensureError("EXPORT_FAILED", "Не удалось сохранить файл в vault.", { cause: e });
+        throw ensureError("EXPORT_FAILED", t("errors.saveFailed"), { cause: e });
     }
 
     return { outFilePath, outName };

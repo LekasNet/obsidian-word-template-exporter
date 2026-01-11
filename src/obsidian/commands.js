@@ -5,6 +5,7 @@ const { getPresetById } = require("../gost/gost-loader");
 const { normalizePreset } = require("../gost/gost-schema");
 const { exportActiveNoteToDocx } = require("../core/exporter");
 const { ExportOptionsModal } = require("./export-options-modal");
+const { t } = require("../i18n");
 
 function getUserErrorMessage(error) {
     if (!error) return "Неизвестная ошибка";
@@ -12,15 +13,15 @@ function getUserErrorMessage(error) {
     if (typeof error === "object" && error.code) {
         switch (error.code) {
             case "PRESET_NOT_FOUND":
-                return "Выбранный пресет не найден.";
+                return t("errors.presetNotFound");
             case "GOST_PRESET_INVALID":
-                return "Некорректный пресет ГОСТ.";
+                return t("errors.presetInvalid");
             case "NO_ACTIVE_FILE":
-                return "Нет активной заметки для экспорта.";
+                return t("errors.noActiveFile");
             case "EXPORT_FAILED":
-                return "Ошибка при экспорте в Word.";
+                return t("errors.exportFailed");
             default:
-                return "Неизвестная ошибка.";
+                return t("errors.unknown");
         }
     }
 
@@ -28,7 +29,7 @@ function getUserErrorMessage(error) {
         return error.message.trim();
     }
 
-    return "Неизвестная ошибка.";
+    return t("errors.unknown");
 }
 
 async function runExport(plugin, opts) {
@@ -65,10 +66,10 @@ function registerCommands(plugin) {
                     includeToc: false,
                 });
 
-                new Notice(`✅ Экспорт выполнен\n${result.outFilePath}`, 6000);
+                new Notice(t("notices.export.ok", { path: result.outFilePath }), 6000);
             } catch (error) {
                 console.error("[ГОСТ Export] Ошибка экспорта:", error);
-                new Notice(`❌ Экспорт не выполнен\n${getUserErrorMessage(error)}`, 6000);
+                new Notice(t("notices.export.fail", { message: getUserErrorMessage(error) }), 6000);
             }
         },
     });
@@ -83,10 +84,10 @@ function registerCommands(plugin) {
                 onSubmit: async (opts) => {
                     try {
                         const result = await runExport(plugin, opts);
-                        new Notice(`✅ Экспорт выполнен\n${result.outFilePath}`, 6000);
+                        new Notice(t("notices.export.ok", { path: result.outFilePath }), 6000);
                     } catch (error) {
                         console.error("[ГОСТ Export] Ошибка экспорта:", error);
-                        new Notice(`❌ Экспорт не выполнен\n${getUserErrorMessage(error)}`, 6000);
+                        new Notice(t("notices.export.fail", { message: getUserErrorMessage(error) }), 6000);
                     }
                 },
             });

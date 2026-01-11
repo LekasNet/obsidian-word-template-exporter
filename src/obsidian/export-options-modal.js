@@ -2,6 +2,7 @@
 
 const { Modal, Setting, Notice } = require("obsidian");
 const { getPresetOptions } = require("../gost/gost-loader");
+const { t } = require("../i18n");
 
 class ExportOptionsModal extends Modal {
     /**
@@ -32,18 +33,18 @@ class ExportOptionsModal extends Modal {
         const { contentEl } = this;
         contentEl.empty();
 
-        contentEl.createEl("h2", { text: "Экспорт в Word — параметры" });
+        contentEl.createEl("h2", { text: t("modal.exportOptions.title") });
 
         const presets = getPresetOptions();
         if (!presets.length) {
-            new Notice("Нет доступных пресетов.");
+            new Notice(t("notices.preset.noPresets"));
             this.close();
             return;
         }
 
         new Setting(contentEl)
-            .setName("Пресет")
-            .setDesc("Выберите набор правил оформления.")
+            .setName(t("modal.exportOptions.preset.title"))
+            .setDesc(t("modal.exportOptions.preset.desc"))
             .addDropdown((dd) => {
                 for (const p of presets) dd.addOption(p.id, p.name);
                 dd.setValue(this.state.presetId);
@@ -51,24 +52,24 @@ class ExportOptionsModal extends Modal {
             });
 
         new Setting(contentEl)
-            .setName("Игнорировать разрывы страниц по ---")
-            .setDesc("Если включено — строка '---' не будет вставлять разрыв страницы.")
+            .setName(t("modal.exportOptions.ignorePageBreaks.title"))
+            .setDesc(t("modal.exportOptions.ignorePageBreaks.desc"))
             .addToggle((t) => {
                 t.setValue(this.state.ignorePageBreaks);
                 t.onChange((v) => (this.state.ignorePageBreaks = v));
             });
 
         new Setting(contentEl)
-            .setName("Нумерация страниц")
-            .setDesc("Добавить номер страницы в колонтитул (позиция берётся из пресета).")
+            .setName(t("settings.exportDefaults.enablePagination.title"))
+            .setDesc(t("modal.exportOptions.enablePagination.desc"))
             .addToggle((t) => {
                 t.setValue(this.state.enablePagination);
                 t.onChange((v) => (this.state.enablePagination = v));
             });
 
         new Setting(contentEl)
-            .setName("Автоматическое содержание (Word TOC)")
-            .setDesc("Добавит страницу 'СОДЕРЖАНИЕ' и таблицу содержания по заголовкам.")
+            .setName(t("modal.exportOptions.includeToc.title"))
+            .setDesc(t("modal.exportOptions.includeToc.desc"))
             .addToggle((t) => {
                 t.setValue(this.state.includeToc);
                 t.onChange((v) => (this.state.includeToc = v));
@@ -80,10 +81,10 @@ class ExportOptionsModal extends Modal {
         footer.style.marginTop = "16px";
         footer.style.justifyContent = "flex-end";
 
-        const btnCancel = footer.createEl("button", { text: "Отмена" });
+        const btnCancel = footer.createEl("button", { text: t("buttons.cancel") });
         btnCancel.onclick = () => this.close();
 
-        const btnExport = footer.createEl("button", { text: "Экспорт" });
+        const btnExport = footer.createEl("button", { text: t("buttons.export") });
         btnExport.addClass("mod-cta");
         btnExport.onclick = () => {
             this.close();

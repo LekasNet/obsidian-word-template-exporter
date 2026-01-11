@@ -1,6 +1,6 @@
 {
   "id": "mirea-vkr-gost-r-7.0.91-2021",
-  "name": "МИРЭА ВКР — ГОСТ Р 7.0.91-2021",
+  "name": "МИРЭА ВКР/Курсовая — ГОСТ Р 7.0.91-2021",
 
   "page": {
     "size": "A4",
@@ -16,7 +16,7 @@
 
   "styles": {
     "normal": {
-      "font": { "family": "Times New Roman", "sizePt": 14, "bold": false, "italic": false },
+      "font": { "family": "Times New Roman", "sizePt": 14, "bold": false, "italic": false, "color": "000000" },
       "paragraph": {
         "alignment": "justify",
         "firstLineIndentCm": 1.25,
@@ -27,7 +27,7 @@
     },
 
     "heading1": {
-      "font": { "family": "Times New Roman", "sizePt": 18, "bold": true, "allCaps": true },
+      "font": { "family": "Times New Roman", "sizePt": 18, "bold": true, "allCaps": true, "color": "000000" },
       "paragraph": {
         "alignment": "justify",
         "firstLineIndentCm": 1.25,
@@ -41,7 +41,7 @@
     },
 
     "heading2": {
-      "font": { "family": "Times New Roman", "sizePt": 16, "bold": true },
+      "font": { "family": "Times New Roman", "sizePt": 16, "bold": true, "color": "000000" },
       "paragraph": {
         "alignment": "justify",
         "firstLineIndentCm": 1.25,
@@ -54,7 +54,7 @@
     },
 
     "heading3": {
-      "font": { "family": "Times New Roman", "sizePt": 14, "bold": true },
+      "font": { "family": "Times New Roman", "sizePt": 14, "bold": true, "color": "000000" },
       "paragraph": {
         "alignment": "justify",
         "firstLineIndentCm": 1.25,
@@ -67,7 +67,7 @@
     },
 
     "heading4": {
-      "font": { "family": "Times New Roman", "sizePt": 14, "bold": true },
+      "font": { "family": "Times New Roman", "sizePt": 14, "bold": true, "color": "000000" },
       "paragraph": {
         "alignment": "justify",
         "firstLineIndentCm": 1.25,
@@ -80,7 +80,7 @@
     },
 
     "heading5": {
-      "font": { "family": "Times New Roman", "sizePt": 14, "bold": true },
+      "font": { "family": "Times New Roman", "sizePt": 14, "bold": true, "color": "000000" },
       "paragraph": {
         "alignment": "justify",
         "firstLineIndentCm": 1.25,
@@ -93,7 +93,7 @@
     },
 
     "heading6": {
-      "font": { "family": "Times New Roman", "sizePt": 14, "bold": true },
+      "font": { "family": "Times New Roman", "sizePt": 14, "bold": true, "color": "000000" },
       "paragraph": {
         "alignment": "justify",
         "firstLineIndentCm": 1.25,
@@ -106,7 +106,7 @@
     },
 
     "tableCaption": {
-      "font": { "family": "Times New Roman", "sizePt": 12, "italic": true },
+      "font": { "family": "Times New Roman", "sizePt": 12, "italic": true, "color": "000000" },
       "paragraph": {
         "alignment": "justify",
         "firstLineIndentCm": 0,
@@ -117,8 +117,19 @@
       }
     },
 
+    "tableHeaderText": {
+      "font": { "family": "Times New Roman", "sizePt": 12, "bold": true, "italic": false, "color": "000000" },
+      "paragraph": {
+        "alignment": "justify",
+        "firstLineIndentCm": 0,
+        "spacingBeforePt": 0,
+        "spacingAfterPt": 0,
+        "lineSpacing": 1.0
+      }
+    },
+
     "tableText": {
-      "font": { "family": "Times New Roman", "sizePt": 12, "bold": false, "italic": false },
+      "font": { "family": "Times New Roman", "sizePt": 12, "bold": false, "italic": false, "color": "000000" },
       "paragraph": {
         "alignment": "justify",
         "firstLineIndentCm": 0,
@@ -129,7 +140,7 @@
     },
 
     "figureCaption": {
-      "font": { "family": "Times New Roman", "sizePt": 12, "bold": true, "italic": false },
+      "font": { "family": "Times New Roman", "sizePt": 12, "bold": true, "italic": false, "color": "000000" },
       "paragraph": {
         "alignment": "center",
         "firstLineIndentCm": 0,
@@ -140,7 +151,7 @@
     },
 
     "listingCaption": {
-      "font": { "family": "Times New Roman", "sizePt": 12, "italic": true },
+      "font": { "family": "Times New Roman", "sizePt": 12, "italic": true, "color": "000000" },
       "paragraph": {
         "alignment": "left",
         "firstLineIndentCm": 0,
@@ -152,7 +163,7 @@
     },
 
     "listingText": {
-      "font": { "family": "Courier New", "sizePt": 10, "bold": false, "italic": false },
+      "font": { "family": "Courier New", "sizePt": 10, "bold": false, "italic": false, "color": "000000" },
       "paragraph": {
         "alignment": "left",
         "firstLineIndentCm": 0,

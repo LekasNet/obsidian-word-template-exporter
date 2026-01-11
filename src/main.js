@@ -9,6 +9,11 @@ module.exports = class GostExportPlugin extends Plugin {
 
         await this.loadSettings();
 
+        // Локализация
+        const { initI18n } = require("./i18n");
+        initI18n(this.app);
+
+
         // Вкладка настроек
         this.addSettingTab(new GostExportSettingTab(this.app, this));
 
