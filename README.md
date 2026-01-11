@@ -84,12 +84,12 @@ This approach avoids:
 2. Rename the plugin folder to:
 
    ```
-   obsidian-word-export
+   word-template-exporter
    ```
 3. Copy the folder into your Obsidian vault:
 
    ```
-   <vault>/.obsidian/plugins/obsidian-word-export
+   <vault>/.obsidian/plugins/word-template-exporter
    ```
 4. Restart Obsidian
 5. Enable **Word Template Exporter** in
