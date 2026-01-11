@@ -13,7 +13,7 @@ class GostExportSettingTab extends PluginSettingTab {
         const { containerEl } = this;
         containerEl.empty();
 
-        containerEl.createEl("h2", { text: "ГОСТ Word Export" });
+        containerEl.createEl("h2", { text: t("app.title")});
 
         /* =======================
            ПРЕСЕТ ПО УМОЛЧАНИЮ
