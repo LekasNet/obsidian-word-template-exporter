@@ -1,7 +1,7 @@
 {
   "id": "word-template-exporter",
   "name": "Word Template Exporter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "minAppVersion": "1.5.0",
   "description": "Export markdown notes to Microsoft Word (.docx) using customizable templates, including academic standards like APA, IEEE, and GOST (ГОСТ).",
   "author": "lek4s",
