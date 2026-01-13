@@ -9,6 +9,7 @@ class ExportOptionsModal extends Modal {
      * @param {import("obsidian").App} app
      * @param {{
      *  currentPresetId?: string,
+     *  userPresets?: Array<{ id: string, name: string, preset: any }>,
      *  onSubmit: (opts: {
      *    presetId: string,
      *    ignorePageBreaks: boolean,
@@ -35,7 +36,7 @@ class ExportOptionsModal extends Modal {
 
         contentEl.createEl("h2", { text: t("modal.exportOptions.title") });
 
-        const presets = getPresetOptions();
+        const presets = getPresetOptions(this.props.userPresets);
         if (!presets.length) {
             new Notice(t("notices.preset.noPresets"));
             this.close();

@@ -81,6 +81,7 @@ function registerCommands(plugin) {
         callback: () => {
             const modal = new ExportOptionsModal(plugin.app, {
                 currentPresetId: plugin.settings?.presetId,
+                userPresets: plugin.settings?.userPresets,
                 onSubmit: async (opts) => {
                     try {
                         const result = await runExport(plugin, opts);

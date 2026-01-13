@@ -23729,6 +23729,7 @@ var require_export_options_modal = __commonJS({
        * @param {import("obsidian").App} app
        * @param {{
        *  currentPresetId?: string,
+       *  userPresets?: Array<{ id: string, name: string, preset: any }>,
        *  onSubmit: (opts: {
        *    presetId: string,
        *    ignorePageBreaks: boolean,
@@ -23752,7 +23753,7 @@ var require_export_options_modal = __commonJS({
         const { contentEl } = this;
         contentEl.empty();
         contentEl.createEl("h2", { text: t("modal.exportOptions.title") });
-        const presets = getPresetOptions();
+        const presets = getPresetOptions(this.props.userPresets);
         if (!presets.length) {
           new Notice(t("notices.preset.noPresets"));
           this.close();
@@ -23867,9 +23868,10 @@ var require_commands = __commonJS({
         id: "export-to-word-gost-advanced",
         name: "Export note to Word (\u0413\u041E\u0421\u0422) \u2014 Advanced\u2026",
         callback: () => {
-          var _a;
+          var _a, _b;
           const modal = new ExportOptionsModal(plugin.app, {
             currentPresetId: (_a = plugin.settings) == null ? void 0 : _a.presetId,
+            userPresets: (_b = plugin.settings) == null ? void 0 : _b.userPresets,
             onSubmit: async (opts) => {
               try {
                 const result = await runExport(plugin, opts);
@@ -24341,7 +24343,7 @@ var require_settings_tab = __commonJS({
       display() {
         const { containerEl } = this;
         containerEl.empty();
-        containerEl.createEl("h2", { text: "\u0413\u041E\u0421\u0422 Word Export" });
+        containerEl.createEl("h2", { text: t("app.title") });
         new Setting(containerEl).setName(t("settings.presetDefault.title")).setDesc(t("settings.presetDefault.desc")).addDropdown((dd) => {
           const presets = getPresetOptions(this.plugin.settings.userPresets);
           for (const p of presets) dd.addOption(p.id, p.name);
