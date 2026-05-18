@@ -3,9 +3,15 @@
   "exportOptions": {
     "ignorePageBreaks": true,
     "enablePagination": true,
-    "includeToc": false
+    "includeToc": true
   },
-  "userPresets": [],
+  "userPresets": [
+    {
+      "id": "custom-1768096515890",
+      "name": "Новый пресет",
+      "preset": {}
+    }
+  ],
   "outputFolder": "Exports",
   "fileNameTemplate": "{title}.docx"
 }

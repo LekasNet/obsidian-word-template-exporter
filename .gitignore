@@ -4,5 +4,11 @@
 .idea/
 /.idea
 .idea
+*.idea
 
 *.bak
+
+data.json
+
+*.log
+releases

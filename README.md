@@ -1,307 +1,303 @@
 # Word Template Exporter for Obsidian
 
-> Export Obsidian notes to **Microsoft Word (.docx)** using **powerful, customizable templates** — from academic standards to fully custom document styles.
+Export Obsidian notes to Microsoft Word (`.docx`) using customizable formatting templates.
 
-**Word Template Exporter** is an Obsidian plugin that converts Markdown notes into professionally formatted Word documents using **template-based formatting rules**, not hardcoded styles.
+Word Template Exporter converts Markdown notes into professionally formatted Word documents using template-based rules for headings, body text, lists, tables, figures, code listings, page layout, pagination, and table of contents generation.
 
-The plugin is designed for:
+The plugin is designed for academic writing, reports, theses, coursework, technical documentation, and other documents with strict formatting requirements.
 
-* academic writing
-* technical documentation
-* reports, theses, and articles
-* structured documents with strict formatting requirements
+## Features
 
----
+- Export the active Obsidian note to `.docx`.
+- Use built-in templates for APA 7, IEEE, GOST, and MIREA VКR/coursework formatting.
+- Create and edit custom templates in a visual editor or raw JSON.
+- Configure fonts, sizes, colors, alignment, indents, spacing, headings, captions, lists, page margins, and pagination.
+- Generate a Word table of contents from Markdown headings.
+- Save the last Advanced Export settings and reuse them in Fast Export.
+- Export tables, figures, captions, and code listings.
+- Use true Word bulleted and numbered lists, not plain text markers.
+- Configure list marker, list indents, first-line indent, tab stop, and list text style.
+- Optionally extract a code listing title from the first code comment.
+- Work fully locally, with no external services.
 
-## ✨ Key Features
+## Installation
 
-* 📄 **Export to DOCX** (Microsoft Word compatible)
-* 🧩 **Template-based formatting** (presets, not hardcoded rules)
-* 🎨 **Visual template editor** + raw JSON editor
-* 🔁 **Instant sync** between visual editor and JSON
-* 🌍 **Multilingual UI** (auto-detected from Obsidian)
-* 📚 **Built-in academic standards**
+### Manual installation
 
-    * APA 7
-    * IEEE
-    * GOST (Russian standards)
-* 📐 Fine-grained control over:
+1. Download or clone this repository.
+2. Put the plugin folder into:
 
-    * fonts and font sizes
-    * paragraph spacing
-    * alignment and indents
-    * headings hierarchy
-    * tables, captions, figures
-    * page margins and pagination
-* 📑 Optional **automatic Table of Contents** (Word TOC)
-* ⚡ Fast export with a single command
-
-> **Note**
-> Built-in templates are provided as ready-to-use presets and can be freely customized.
-
----
-
-## 🧠 How It Works
-
-1. You write notes in **plain Markdown** inside Obsidian
-2. The plugin parses the document into a structured internal model
-3. A **template (preset)** defines how each block type should look in Word
-4. The document is exported to `.docx` using these rules
-
-This approach avoids:
-
-* fragile Markdown → Word conversions
-* manual post-editing in Word
-* duplicated styles across documents
-
----
-
-## 🖼 Screenshots
-
-> *(Screenshots will be added here)*
-
-### Export options modal
-
-![modal](./presentation/modal.png)
-
-### Visual template editor
-
-![Settings](./presentation/settings.gif)
-
-> Visual ↔ JSON synchronization
-
----
-
-## 📦 Installation
-
-### Manual installation (from GitHub)
-
-1. Download the repository:
-
-   ```
-   https://github.com/LekasNet/obsidian-word-template-exporter
-   ```
-2. Rename the plugin folder to:
-
-   ```
-   word-template-exporter
-   ```
-3. Copy the folder into your Obsidian vault:
-
-   ```
+   ```text
    <vault>/.obsidian/plugins/word-template-exporter
    ```
-4. Restart Obsidian
-5. Enable **Word Template Exporter** in
-   **Settings → Community Plugins**
 
----
+3. Restart Obsidian.
+4. Enable `Word Template Exporter` in `Settings -> Community plugins`.
 
-## 🚀 Usage
+## Commands
 
 ### Fast Export
 
-* Command:
+Command:
 
-  ```
-  Export note to Word — Fast
-  ```
-* Uses the default template and export settings
+```text
+Export note to Word - Fast
+```
+
+Fast Export uses:
+
+- the default/last selected preset;
+- the saved export options from Settings or the latest Advanced Export run.
 
 ### Advanced Export
 
-* Command:
+Command:
 
-  ```
-  Export note to Word — Advanced…
-  ```
-* Allows configuration of:
+```text
+Export note to Word - Advanced...
+```
 
-    * template (preset)
-    * page numbering
-    * table of contents
-    * page break handling
+Advanced Export lets you choose:
 
----
+- template preset;
+- page numbering;
+- automatic table of contents;
+- page break handling;
+- whether listing titles should be extracted from the first code comment.
 
-## 🧩 Templates (Presets)
+When you run Advanced Export, the selected options are saved and reused by Fast Export.
 
-A **template** defines how each document block is formatted:
+## Markdown Support
 
-* Headings (H1–H6)
-* Body text
-* Tables (text, headers, captions)
-* Figures and captions
-* Code listings
+### Headings
 
-Templates can be:
+Markdown headings are exported as real Word headings:
 
-* edited visually
-* edited as JSON
-* imported/exported
-* reused across projects
+```md
+# Heading 1
+## Heading 2
+### Heading 3
+```
 
----
+Templates can define formatting for `heading1` through `heading6`.
 
-## 📚 Built-in Standards & Templates
+The MIREA preset additionally handles major section headings such as:
 
-Word Template Exporter includes several **built-in formatting standards**, covering both **international** and **region-specific** academic requirements.
+- `АННОТАЦИЯ`
+- `СОДЕРЖАНИЕ`
+- `ВВЕДЕНИЕ`
+- `ЗАКЛЮЧЕНИЕ`
+- `ВЫВОД`
+- `СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ`
+- `ПРИЛОЖЕНИЯ`
 
-These templates are provided as **ready-to-use presets** and can also serve as a base for custom templates.
+These are uppercased and centered according to the MIREA methodological requirements.
 
----
+### Lists
 
-### 🌍 International Standards
+Markdown unordered lists:
 
-#### APA 7
+```md
+- first item
+- second item
+```
 
-A template based on the **APA 7th edition** guidelines, commonly used for:
+Markdown ordered lists:
 
-* academic papers
-* research articles
-* theses and dissertations
+```md
+1. first item
+1. second item
+```
 
-The preset follows standard APA formatting rules for:
+Lists are exported as real Word lists. Separate Markdown list blocks receive separate Word numbering instances, so unrelated numbered lists restart from `1`.
 
-* headings hierarchy
-* paragraph spacing
-* fonts and alignment
-* page layout
+Templates can configure:
 
-#### IEEE
+- list marker symbol, for example `-` or `—`;
+- left indent;
+- first-line indent;
+- tab stop;
+- list text font, size, spacing, and alignment.
 
-A template inspired by **IEEE** document formatting, suitable for:
+The MIREA preset uses:
 
-* technical papers
-* engineering reports
-* conference submissions
+```json
+"lists": {
+  "bulletSymbol": "—",
+  "leftIndentCm": 0,
+  "firstLineIndentCm": 1.25,
+  "tabStopCm": 2.25
+}
+```
 
-The IEEE preset focuses on:
+List text formatting is controlled by the `listText` style block.
 
-* compact layout
-* strict hierarchy
-* technical readability
+### Tables
 
----
+Markdown tables are exported as Word tables:
 
-### 🇷🇺 Russian Standards (GOST)
+```md
+Таблица 1.1 - Example table
 
-In addition to international formats, the plugin includes **built-in GOST-based templates**, widely used in Russian academic and official documentation.
+| Column | Value |
+| --- | --- |
+| A | B |
+```
 
-#### GOST R 7.0.97–2025
+If a paragraph before a table starts with `Таблица N`, it is used as the table caption. Otherwise, the plugin generates a caption automatically.
 
-A template based on **GOST R 7.0.97–2025**, commonly used for:
+Table captions are formatted with the `tableCaption` style. The whole caption, including `Таблица N`, uses the same caption style.
 
-* official documents
-* reports
-* formal academic texts
+### Figures
 
-This preset reflects:
+Markdown and Obsidian image embeds are exported as centered figures with captions:
 
-* page margins
-* paragraph indents
-* heading formatting
-* spacing rules
+```md
+![Diagram](diagram.png)
+![[diagram.png]]
+```
 
----
+Figure captions are controlled by the `figureCaption` style.
 
-### 🎓 MIREA GOST (Why “MIREA”?)
+### Code Listings
 
-One of the built-in presets is named **MIREA**, and this is intentional.
+Fenced code blocks are exported as framed code listings:
 
-This template is based on **GOST R 7.0.91–2021**, which is **commonly required for theses and graduation papers at MIREA** (and many other Russian universities with similar internal guidelines).
+````md
+```js
+console.log("Hello");
+```
+````
 
-Why this preset exists:
+Listing text formatting is controlled by `listingText`; listing captions are controlled by `listingCaption`.
 
-* the author of the plugin is a **MIREA student**
-* this standard is actively used in real academic work
-* university requirements often **extend or slightly modify GOST**, and this preset reflects those practical constraints
+If enabled, the plugin can use the first code comment as the listing title:
 
-What this means for users:
+````md
+```js
+// Program startup procedure
+console.log("start");
+```
+````
 
-* you get a **battle-tested academic template**
-* even if you are not a MIREA student, the preset can be:
+This exports the caption as:
 
-    * used as-is
-    * adapted for another university
-    * copied as a base for your own standard
+```text
+Листинг N.N - Program startup procedure
+```
 
-> The name **“MIREA”** does not lock the template to a single university —
-> it simply reflects its origin and real-world usage.
+The first comment line is removed from the code body. Supported comment markers are:
 
----
+- `//`
+- `#`
 
-## 🎨 Visual Template Editor
+If an explicit `Листинг N - ...` caption is written before the code block, it takes priority.
 
-The visual editor allows you to:
+### Page Breaks
 
-* add blocks in **any order**
-* choose a block type from a dropdown
-* automatically reorder blocks logically
-* edit formatting without touching JSON
+A line containing only `---` is treated as a page break unless page breaks are ignored in export options.
 
-Every visual change:
+## Automatic Table of Contents
 
-* instantly updates the JSON
-* stays in sync when switching tabs
+The plugin can insert a Word TOC field generated from headings.
 
-This makes template creation:
+When TOC export is enabled:
 
-* intuitive for non-programmers
-* powerful for advanced users
+- a `СОДЕРЖАНИЕ`/contents page is inserted before the main content;
+- the TOC field is configured for heading levels `1-6`;
+- Word field updating is enabled;
+- TOC paragraph styles `TOC1` through `TOC6` are added.
 
----
+In Word, you may still need to update fields manually if your editor does not update them automatically on open.
 
-## 🌍 Localization
+## Templates
 
-* UI language is **automatically detected** from Obsidian
-* Supported:
+A template preset defines document formatting rules. Presets can be edited visually or as JSON.
 
-    * English (`en`)
-    * Russian (`ru`)
-* Fallback order:
+Supported style blocks include:
 
-    * Obsidian language
-    * system language
-    * English
+- `normal`
+- `listText`
+- `heading1` through `heading6`
+- `tableText`
+- `tableHeaderText`
+- `tableCaption`
+- `figureCaption`
+- `listingCaption`
+- `listingText`
+- `tocTitle`
 
-Document language is controlled by the **template**, not the UI.
+Templates can also define document-level rules such as:
 
----
+- page size and margins;
+- page number position and start value;
+- caption numbering behavior;
+- special heading behavior;
+- list marker and indentation rules.
 
-## 🛠 Technical Notes
+## Built-In Presets
 
-* Written in JavaScript (no TypeScript)
-* Uses `docx` for Word generation
-* Internal structured document model
-* No external services — fully local
+### APA 7
 
----
+Academic-paper oriented preset based on APA 7 style conventions.
 
-## 🗺 Roadmap
+### IEEE
 
-* More built-in academic templates
-* Template sharing
-* Improved image handling
-* Section-based templates
-* Metadata-driven exports
+Technical-paper oriented preset inspired by IEEE formatting.
 
----
+### GOST R 7.0.97-2025
 
-## 🤝 Contributing
+Preset for Russian formal documents and reports.
 
-Issues, feature requests, and pull requests are welcome.
+### MIREA VКR/Coursework
 
-If you:
+Preset based on MIREA VКR/coursework methodological requirements, including:
 
-* write academic papers
-* work with strict formatting standards
-* export documents to Word regularly
+- A4 portrait layout;
+- margins `left 30 mm`, `right 15 mm`, `top 20 mm`, `bottom 20 mm`;
+- Times New Roman body text, 14 pt, 1.5 line spacing;
+- first-line indent for body text and regular first-level headings;
+- centered uppercase major sections;
+- table, figure, and listing captions;
+- section-scoped caption numbering;
+- true Word lists with configurable marker and MIREA list indents;
+- TOC title and TOC styles.
 
-— your feedback is especially valuable.
+## Visual Template Editor
 
----
+The visual editor supports:
 
-## 📄 License
+- adding/removing style blocks;
+- editing fonts, sizes, colors, bold, italic;
+- editing paragraph alignment, first-line indent, spacing before/after, and line spacing;
+- editing list rules such as marker symbol and indentation;
+- switching between visual and JSON editing.
+
+## Release Notes
+
+See [CHANGELOG.md](CHANGELOG.md).
+
+## Development
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Build:
+
+```bash
+npm run build
+```
+
+Main files:
+
+- `src/core/exporter.js` - DOCX export logic.
+- `src/core/markdown-parser.js` - Markdown parsing.
+- `src/gost/presets/` - built-in presets.
+- `src/obsidian/` - Obsidian UI, settings, commands, and modals.
+
+## License
 
 MIT
