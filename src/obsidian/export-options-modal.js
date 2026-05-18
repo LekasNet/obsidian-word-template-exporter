@@ -10,11 +10,18 @@ class ExportOptionsModal extends Modal {
      * @param {{
      *  currentPresetId?: string,
      *  userPresets?: Array<{ id: string, name: string, preset: any }>,
+     *  exportOptions?: {
+     *    ignorePageBreaks?: boolean,
+     *    enablePagination?: boolean,
+     *    includeToc?: boolean,
+     *    extractListingTitleFromFirstComment?: boolean
+     *  },
      *  onSubmit: (opts: {
      *    presetId: string,
      *    ignorePageBreaks: boolean,
      *    enablePagination: boolean,
-     *    includeToc: boolean
+     *    includeToc: boolean,
+     *    extractListingTitleFromFirstComment: boolean
      *  }) => void
      * }} props
      */
@@ -22,11 +29,13 @@ class ExportOptionsModal extends Modal {
         super(app);
         this.props = props;
 
+        const exportOptions = props.exportOptions || {};
         this.state = {
             presetId: props.currentPresetId || (getPresetOptions()[0]?.id ?? ""),
-            ignorePageBreaks: false,
-            enablePagination: true,
-            includeToc: false,
+            ignorePageBreaks: !!exportOptions.ignorePageBreaks,
+            enablePagination: exportOptions.enablePagination !== false,
+            includeToc: !!exportOptions.includeToc,
+            extractListingTitleFromFirstComment: exportOptions.extractListingTitleFromFirstComment !== false,
         };
     }
 
@@ -74,6 +83,14 @@ class ExportOptionsModal extends Modal {
             .addToggle((t) => {
                 t.setValue(this.state.includeToc);
                 t.onChange((v) => (this.state.includeToc = v));
+            });
+
+        new Setting(contentEl)
+            .setName(t("modal.exportOptions.extractListingTitleFromFirstComment.title"))
+            .setDesc(t("modal.exportOptions.extractListingTitleFromFirstComment.desc"))
+            .addToggle((t) => {
+                t.setValue(this.state.extractListingTitleFromFirstComment);
+                t.onChange((v) => (this.state.extractListingTitleFromFirstComment = v));
             });
 
         const footer = contentEl.createDiv({ cls: "gost-export-modal-footer" });

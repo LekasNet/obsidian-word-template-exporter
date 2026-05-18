@@ -67,6 +67,16 @@ class GostExportSettingTab extends PluginSettingTab {
                 });
             });
 
+        new Setting(containerEl)
+            .setName(t("settings.exportDefaults.extractListingTitleFromFirstComment.title"))
+            .addToggle((t) => {
+                t.setValue(this.plugin.settings.exportOptions.extractListingTitleFromFirstComment !== false);
+                t.onChange(async (v) => {
+                    this.plugin.settings.exportOptions.extractListingTitleFromFirstComment = v;
+                    await this.plugin.saveSettings();
+                });
+            });
+
         /* =======================
            КАСТОМНЫЕ ПРЕСЕТЫ
            ======================= */

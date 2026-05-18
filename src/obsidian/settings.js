@@ -5,6 +5,7 @@ const DEFAULT_SETTINGS = {
         ignorePageBreaks: false,
         enablePagination: true,
         includeToc: false,
+        extractListingTitleFromFirstComment: true,
     },
 
     userPresets: [

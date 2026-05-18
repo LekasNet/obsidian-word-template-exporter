@@ -5,13 +5,57 @@
   "page": {
     "size": "A4",
     "orientation": "portrait",
-    "marginsMm": { "left": 25, "right": 10, "top": 20, "bottom": 20 }
+    "marginsMm": { "left": 30, "right": 15, "top": 20, "bottom": 20 }
   },
 
   "pagination": {
-    "position": "bottom-right",
-    "skipFirstPages": 2,
-    "startAt": 3
+    "position": "bottom-center",
+    "skipFirstPages": 3,
+    "startAt": 4
+  },
+
+  "strings": {
+    "tocTitle": "СОДЕРЖАНИЕ",
+    "tocFieldTitle": "Содержание",
+    "tableLabel": "Таблица",
+    "figureLabel": "Рисунок",
+    "listingLabel": "Листинг",
+    "captionSeparator": " – ",
+    "imageNotFound": "Изображение не найдено: {src}"
+  },
+
+  "rules": {
+    "headings": {
+      "stripTerminalPunctuation": true,
+      "centeredUppercase": [
+        "АННОТАЦИЯ",
+        "ОГЛАВЛЕНИЕ",
+        "СОДЕРЖАНИЕ",
+        "ВВЕДЕНИЕ",
+        "ЗАКЛЮЧЕНИЕ",
+        "ВЫВОД",
+        "ВЫВОДЫ",
+        "СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ",
+        "СПИСОК ИСПОЛЬЗУЕМЫХ ИСТОЧНИКОВ",
+        "ПРИЛОЖЕНИЯ",
+        "ТЕОРЕТИЧЕСКИЙ РАЗДЕЛ",
+        "ПРАКТИЧЕСКИЙ РАЗДЕЛ",
+        "ТЕХНОЛОГИЧЕСКИЙ РАЗДЕЛ"
+      ]
+    },
+    "captions": {
+      "numberWithinHeading1": true,
+      "stripFinalPeriod": true
+    },
+    "objects": {
+      "followingParagraphSpacingBeforePt": 6
+    },
+    "lists": {
+      "bulletSymbol": "—",
+      "leftIndentCm": 0,
+      "firstLineIndentCm": 1.25,
+      "tabStopCm": 2.25
+    }
   },
 
   "styles": {
@@ -20,6 +64,17 @@
       "paragraph": {
         "alignment": "justify",
         "firstLineIndentCm": 1.25,
+        "spacingBeforePt": 0,
+        "spacingAfterPt": 0,
+        "lineSpacing": 1.5
+      }
+    },
+
+    "listText": {
+      "font": { "family": "Times New Roman", "sizePt": 14, "bold": false, "italic": false, "color": "000000" },
+      "paragraph": {
+        "alignment": "left",
+        "firstLineIndentCm": 0,
         "spacingBeforePt": 0,
         "spacingAfterPt": 0,
         "lineSpacing": 1.5
@@ -120,7 +175,7 @@
     "tableHeaderText": {
       "font": { "family": "Times New Roman", "sizePt": 12, "bold": true, "italic": false, "color": "000000" },
       "paragraph": {
-        "alignment": "justify",
+        "alignment": "center",
         "firstLineIndentCm": 0,
         "spacingBeforePt": 0,
         "spacingAfterPt": 0,
@@ -146,7 +201,8 @@
         "firstLineIndentCm": 0,
         "spacingBeforePt": 0,
         "spacingAfterPt": 6,
-        "lineSpacing": 1.0
+        "lineSpacing": 1.0,
+        "keepLines": true
       }
     },
 
@@ -170,6 +226,20 @@
         "spacingBeforePt": 0,
         "spacingAfterPt": 0,
         "lineSpacing": 1.0,
+        "keepLines": true
+      }
+    },
+
+    "tocTitle": {
+      "font": { "family": "Times New Roman", "sizePt": 18, "bold": true, "allCaps": true, "color": "000000" },
+      "paragraph": {
+        "alignment": "center",
+        "firstLineIndentCm": 0,
+        "spacingBeforePt": 0,
+        "spacingAfterPt": 12,
+        "lineSpacing": 1.5,
+        "pageBreakBefore": false,
+        "keepWithNext": true,
         "keepLines": true
       }
     }

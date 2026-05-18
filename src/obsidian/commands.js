@@ -46,6 +46,7 @@ async function runExport(plugin, opts) {
         ignorePageBreaks: !!opts.ignorePageBreaks,
         enablePagination: !!opts.enablePagination,
         includeToc: !!opts.includeToc,
+        extractListingTitleFromFirstComment: !!opts.extractListingTitleFromFirstComment,
     });
 
     return result;
@@ -59,11 +60,13 @@ function registerCommands(plugin) {
         callback: async () => {
             try {
                 const presetId = plugin.settings?.presetId;
+                const exportOptions = plugin.settings?.exportOptions || {};
                 const result = await runExport(plugin, {
                     presetId,
-                    ignorePageBreaks: false,
-                    enablePagination: true,
-                    includeToc: false,
+                    ignorePageBreaks: !!exportOptions.ignorePageBreaks,
+                    enablePagination: exportOptions.enablePagination !== false,
+                    includeToc: !!exportOptions.includeToc,
+                    extractListingTitleFromFirstComment: exportOptions.extractListingTitleFromFirstComment !== false,
                 });
 
                 new Notice(t("notices.export.ok", { path: result.outFilePath }), 6000);
@@ -82,8 +85,19 @@ function registerCommands(plugin) {
             const modal = new ExportOptionsModal(plugin.app, {
                 currentPresetId: plugin.settings?.presetId,
                 userPresets: plugin.settings?.userPresets,
+                exportOptions: plugin.settings?.exportOptions,
                 onSubmit: async (opts) => {
                     try {
+                        plugin.settings.presetId = opts.presetId;
+                        plugin.settings.exportOptions = {
+                            ...(plugin.settings.exportOptions || {}),
+                            ignorePageBreaks: !!opts.ignorePageBreaks,
+                            enablePagination: !!opts.enablePagination,
+                            includeToc: !!opts.includeToc,
+                            extractListingTitleFromFirstComment: !!opts.extractListingTitleFromFirstComment,
+                        };
+                        await plugin.saveSettings();
+
                         const result = await runExport(plugin, opts);
                         new Notice(t("notices.export.ok", { path: result.outFilePath }), 6000);
                     } catch (error) {

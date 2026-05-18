@@ -189,12 +189,54 @@ var require_mirea_vkr_gost_r_7_0_91_2021 = __commonJS({
       page: {
         size: "A4",
         orientation: "portrait",
-        marginsMm: { left: 25, right: 10, top: 20, bottom: 20 }
+        marginsMm: { left: 30, right: 15, top: 20, bottom: 20 }
       },
       pagination: {
-        position: "bottom-right",
-        skipFirstPages: 2,
-        startAt: 3
+        position: "bottom-center",
+        skipFirstPages: 3,
+        startAt: 4
+      },
+      strings: {
+        tocTitle: "\u0421\u041E\u0414\u0415\u0420\u0416\u0410\u041D\u0418\u0415",
+        tocFieldTitle: "\u0421\u043E\u0434\u0435\u0440\u0436\u0430\u043D\u0438\u0435",
+        tableLabel: "\u0422\u0430\u0431\u043B\u0438\u0446\u0430",
+        figureLabel: "\u0420\u0438\u0441\u0443\u043D\u043E\u043A",
+        listingLabel: "\u041B\u0438\u0441\u0442\u0438\u043D\u0433",
+        captionSeparator: " \u2013 ",
+        imageNotFound: "\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435 \u043D\u0435 \u043D\u0430\u0439\u0434\u0435\u043D\u043E: {src}"
+      },
+      rules: {
+        headings: {
+          stripTerminalPunctuation: true,
+          centeredUppercase: [
+            "\u0410\u041D\u041D\u041E\u0422\u0410\u0426\u0418\u042F",
+            "\u041E\u0413\u041B\u0410\u0412\u041B\u0415\u041D\u0418\u0415",
+            "\u0421\u041E\u0414\u0415\u0420\u0416\u0410\u041D\u0418\u0415",
+            "\u0412\u0412\u0415\u0414\u0415\u041D\u0418\u0415",
+            "\u0417\u0410\u041A\u041B\u042E\u0427\u0415\u041D\u0418\u0415",
+            "\u0412\u042B\u0412\u041E\u0414",
+            "\u0412\u042B\u0412\u041E\u0414\u042B",
+            "\u0421\u041F\u0418\u0421\u041E\u041A \u0418\u0421\u041F\u041E\u041B\u042C\u0417\u041E\u0412\u0410\u041D\u041D\u042B\u0425 \u0418\u0421\u0422\u041E\u0427\u041D\u0418\u041A\u041E\u0412",
+            "\u0421\u041F\u0418\u0421\u041E\u041A \u0418\u0421\u041F\u041E\u041B\u042C\u0417\u0423\u0415\u041C\u042B\u0425 \u0418\u0421\u0422\u041E\u0427\u041D\u0418\u041A\u041E\u0412",
+            "\u041F\u0420\u0418\u041B\u041E\u0416\u0415\u041D\u0418\u042F",
+            "\u0422\u0415\u041E\u0420\u0415\u0422\u0418\u0427\u0415\u0421\u041A\u0418\u0419 \u0420\u0410\u0417\u0414\u0415\u041B",
+            "\u041F\u0420\u0410\u041A\u0422\u0418\u0427\u0415\u0421\u041A\u0418\u0419 \u0420\u0410\u0417\u0414\u0415\u041B",
+            "\u0422\u0415\u0425\u041D\u041E\u041B\u041E\u0413\u0418\u0427\u0415\u0421\u041A\u0418\u0419 \u0420\u0410\u0417\u0414\u0415\u041B"
+          ]
+        },
+        captions: {
+          numberWithinHeading1: true,
+          stripFinalPeriod: true
+        },
+        objects: {
+          followingParagraphSpacingBeforePt: 6
+        },
+        lists: {
+          bulletSymbol: "\u2014",
+          leftIndentCm: 0,
+          firstLineIndentCm: 1.25,
+          tabStopCm: 2.25
+        }
       },
       styles: {
         normal: {
@@ -202,6 +244,16 @@ var require_mirea_vkr_gost_r_7_0_91_2021 = __commonJS({
           paragraph: {
             alignment: "justify",
             firstLineIndentCm: 1.25,
+            spacingBeforePt: 0,
+            spacingAfterPt: 0,
+            lineSpacing: 1.5
+          }
+        },
+        listText: {
+          font: { family: "Times New Roman", sizePt: 14, bold: false, italic: false, color: "000000" },
+          paragraph: {
+            alignment: "left",
+            firstLineIndentCm: 0,
             spacingBeforePt: 0,
             spacingAfterPt: 0,
             lineSpacing: 1.5
@@ -294,7 +346,7 @@ var require_mirea_vkr_gost_r_7_0_91_2021 = __commonJS({
         tableHeaderText: {
           font: { family: "Times New Roman", sizePt: 12, bold: true, italic: false, color: "000000" },
           paragraph: {
-            alignment: "justify",
+            alignment: "center",
             firstLineIndentCm: 0,
             spacingBeforePt: 0,
             spacingAfterPt: 0,
@@ -318,7 +370,8 @@ var require_mirea_vkr_gost_r_7_0_91_2021 = __commonJS({
             firstLineIndentCm: 0,
             spacingBeforePt: 0,
             spacingAfterPt: 6,
-            lineSpacing: 1
+            lineSpacing: 1,
+            keepLines: true
           }
         },
         listingCaption: {
@@ -340,6 +393,19 @@ var require_mirea_vkr_gost_r_7_0_91_2021 = __commonJS({
             spacingBeforePt: 0,
             spacingAfterPt: 0,
             lineSpacing: 1,
+            keepLines: true
+          }
+        },
+        tocTitle: {
+          font: { family: "Times New Roman", sizePt: 18, bold: true, allCaps: true, color: "000000" },
+          paragraph: {
+            alignment: "center",
+            firstLineIndentCm: 0,
+            spacingBeforePt: 0,
+            spacingAfterPt: 12,
+            lineSpacing: 1.5,
+            pageBreakBefore: false,
+            keepWithNext: true,
             keepLines: true
           }
         }
@@ -726,6 +792,7 @@ var require_ru = __commonJS({
       "settings.exportDefaults.ignorePageBreaks.title": "\u0418\u0433\u043D\u043E\u0440\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u0440\u0430\u0437\u0440\u044B\u0432\u044B \u0441\u0442\u0440\u0430\u043D\u0438\u0446 ---",
       "settings.exportDefaults.enablePagination.title": "\u041D\u0443\u043C\u0435\u0440\u0430\u0446\u0438\u044F \u0441\u0442\u0440\u0430\u043D\u0438\u0446",
       "settings.exportDefaults.includeToc.title": "\u0410\u0432\u0442\u043E\u043C\u0430\u0442\u0438\u0447\u0435\u0441\u043A\u043E\u0435 \u0441\u043E\u0434\u0435\u0440\u0436\u0430\u043D\u0438\u0435 (Word)",
+      "settings.exportDefaults.extractListingTitleFromFirstComment.title": "\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435 \u043B\u0438\u0441\u0442\u0438\u043D\u0433\u0430 \u0438\u0437 \u043F\u0435\u0440\u0432\u043E\u0433\u043E \u043A\u043E\u043C\u043C\u0435\u043D\u0442\u0430\u0440\u0438\u044F",
       "settings.userPresets.title": "\u041A\u0430\u0441\u0442\u043E\u043C\u043D\u044B\u0435 \u0448\u0430\u0431\u043B\u043E\u043D\u044B",
       "settings.userPresets.addPreset": "\u2795 \u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u043F\u0440\u0435\u0441\u0435\u0442",
       "settings.userPresets.unnamed": "(\u0431\u0435\u0437 \u043D\u0430\u0437\u0432\u0430\u043D\u0438\u044F)",
@@ -771,6 +838,8 @@ var require_ru = __commonJS({
       "modal.exportOptions.enablePagination.desc": "\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u043D\u043E\u043C\u0435\u0440 \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u044B \u0432 \u043A\u043E\u043B\u043E\u043D\u0442\u0438\u0442\u0443\u043B (\u043F\u043E\u0437\u0438\u0446\u0438\u044F \u0431\u0435\u0440\u0451\u0442\u0441\u044F \u0438\u0437 \u043F\u0440\u0435\u0441\u0435\u0442\u0430).",
       "modal.exportOptions.includeToc.title": "\u0410\u0432\u0442\u043E\u043C\u0430\u0442\u0438\u0447\u0435\u0441\u043A\u043E\u0435 \u0441\u043E\u0434\u0435\u0440\u0436\u0430\u043D\u0438\u0435 (Word TOC)",
       "modal.exportOptions.includeToc.desc": "\u0414\u043E\u0431\u0430\u0432\u0438\u0442 \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u0443 '\u0421\u041E\u0414\u0415\u0420\u0416\u0410\u041D\u0418\u0415' \u0438 \u0442\u0430\u0431\u043B\u0438\u0446\u0443 \u0441\u043E\u0434\u0435\u0440\u0436\u0430\u043D\u0438\u044F \u043F\u043E \u0437\u0430\u0433\u043E\u043B\u043E\u0432\u043A\u0430\u043C.",
+      "modal.exportOptions.extractListingTitleFromFirstComment.title": "\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435 \u043B\u0438\u0441\u0442\u0438\u043D\u0433\u0430 \u0438\u0437 \u043F\u0435\u0440\u0432\u043E\u0433\u043E \u043A\u043E\u043C\u043C\u0435\u043D\u0442\u0430\u0440\u0438\u044F",
+      "modal.exportOptions.extractListingTitleFromFirstComment.desc": "\u0415\u0441\u043B\u0438 \u043F\u0435\u0440\u0432\u0430\u044F \u0441\u0442\u0440\u043E\u043A\u0430 \u0431\u043B\u043E\u043A\u0430 \u043A\u043E\u0434\u0430 \u043D\u0430\u0447\u0438\u043D\u0430\u0435\u0442\u0441\u044F \u0441 // \u0438\u043B\u0438 #, \u043F\u0435\u0440\u0435\u043D\u0435\u0441\u0442\u0438 \u0442\u0435\u043A\u0441\u0442 \u043A\u043E\u043C\u043C\u0435\u043D\u0442\u0430\u0440\u0438\u044F \u0432 \u043F\u043E\u0434\u043F\u0438\u0441\u044C \u043B\u0438\u0441\u0442\u0438\u043D\u0433\u0430 \u0438 \u0443\u0431\u0440\u0430\u0442\u044C \u044D\u0442\u0443 \u0441\u0442\u0440\u043E\u043A\u0443 \u0438\u0437 \u043A\u043E\u0434\u0430.",
       "modal.presetEditor.title": "\u0420\u0435\u0434\u0430\u043A\u0442\u043E\u0440 \u043F\u0440\u0435\u0441\u0435\u0442\u0430",
       "modal.presetEditor.name.title": "\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435",
       "modal.presetEditor.tabs.visual": "\u0412\u0438\u0437\u0443\u0430\u043B\u044C\u043D\u043E",
@@ -789,6 +858,7 @@ var require_ru = __commonJS({
       "block.heading5": "\u0417\u0430\u0433\u043E\u043B\u043E\u0432\u043E\u043A 5",
       "block.heading6": "\u0417\u0430\u0433\u043E\u043B\u043E\u0432\u043E\u043A 6",
       "block.normal": "\u0422\u0435\u043A\u0441\u0442",
+      "block.listText": "\u041C\u0430\u0440\u043A\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u044B\u0439/\u043D\u0443\u043C\u0435\u0440\u043E\u0432\u0430\u043D\u043D\u044B\u0439 \u0441\u043F\u0438\u0441\u043E\u043A",
       "block.tableText": "\u0422\u0430\u0431\u043B\u0438\u0446\u0430 \u2014 \u0442\u0435\u043A\u0441\u0442",
       "block.tableHeaderText": "\u0422\u0430\u0431\u043B\u0438\u0446\u0430 \u2014 \u0448\u0430\u043F\u043A\u0430",
       "block.tableCaption": "\u041F\u043E\u0434\u043F\u0438\u0441\u044C \u0442\u0430\u0431\u043B\u0438\u0446\u044B",
@@ -808,6 +878,11 @@ var require_ru = __commonJS({
       "fields.paragraph.spacingAfterPt": "\u0418\u043D\u0442\u0435\u0440\u0432\u0430\u043B \u043F\u043E\u0441\u043B\u0435 (pt)",
       "fields.paragraph.lineSpacing": "\u041C\u0435\u0436\u0441\u0442\u0440\u043E\u0447\u043D\u044B\u0439 \u0438\u043D\u0442\u0435\u0440\u0432\u0430\u043B",
       "fields.font.color": "\u0426\u0432\u0435\u0442 (HEX)",
+      "rules.lists.title": "\u041F\u0440\u0430\u0432\u0438\u043B\u0430 \u0441\u043F\u0438\u0441\u043A\u043E\u0432",
+      "rules.lists.bulletSymbol": "\u041C\u0430\u0440\u043A\u0435\u0440 \u043C\u0430\u0440\u043A\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u043E\u0433\u043E \u0441\u043F\u0438\u0441\u043A\u0430",
+      "rules.lists.leftIndentCm": "\u041E\u0442\u0441\u0442\u0443\u043F \u0441\u043F\u0438\u0441\u043A\u0430 \u0441\u043B\u0435\u0432\u0430 (\u0441\u043C)",
+      "rules.lists.firstLineIndentCm": "\u041E\u0442\u0441\u0442\u0443\u043F \u043F\u0435\u0440\u0432\u043E\u0439 \u0441\u0442\u0440\u043E\u043A\u0438 \u0441\u043F\u0438\u0441\u043A\u0430 (\u0441\u043C)",
+      "rules.lists.tabStopCm": "\u0422\u0430\u0431\u0443\u043B\u044F\u0446\u0438\u044F \u0442\u0435\u043A\u0441\u0442\u0430 \u0441\u043F\u0438\u0441\u043A\u0430 (\u0441\u043C)",
       "placeholders.font.family": "Times New Roman",
       "placeholders.font.sizePt": "14",
       "placeholders.paragraph.firstLineIndentCm": "1.25",
@@ -834,6 +909,7 @@ var require_en = __commonJS({
       "settings.exportDefaults.ignorePageBreaks.title": "Ignore page breaks (---)",
       "settings.exportDefaults.enablePagination.title": "Page numbering",
       "settings.exportDefaults.includeToc.title": "Automatic table of contents (Word)",
+      "settings.exportDefaults.extractListingTitleFromFirstComment.title": "Listing title from first comment",
       "settings.userPresets.title": "Custom presets",
       "settings.userPresets.addPreset": "\u2795 Add preset",
       "settings.userPresets.unnamed": "(unnamed)",
@@ -879,6 +955,8 @@ var require_en = __commonJS({
       "modal.exportOptions.enablePagination.desc": "Add page numbers to header/footer (position comes from the preset).",
       "modal.exportOptions.includeToc.title": "Automatic table of contents (Word TOC)",
       "modal.exportOptions.includeToc.desc": "Adds a TOC page and generates a table of contents from headings.",
+      "modal.exportOptions.extractListingTitleFromFirstComment.title": "Listing title from first comment",
+      "modal.exportOptions.extractListingTitleFromFirstComment.desc": "If the first code line starts with // or #, move that comment text into the listing caption and remove the line from the code block.",
       "modal.presetEditor.title": "Preset Editor",
       "modal.presetEditor.name.title": "Name",
       "modal.presetEditor.tabs.visual": "Visual",
@@ -897,6 +975,7 @@ var require_en = __commonJS({
       "block.heading5": "Heading 5",
       "block.heading6": "Heading 6",
       "block.normal": "Body text",
+      "block.listText": "Bulleted/numbered list",
       "block.tableText": "Table \u2014 text",
       "block.tableHeaderText": "Table \u2014 header",
       "block.tableCaption": "Table caption",
@@ -916,6 +995,11 @@ var require_en = __commonJS({
       "fields.paragraph.spacingAfterPt": "Spacing after (pt)",
       "fields.paragraph.lineSpacing": "Line spacing",
       "fields.font.color": "Color (HEX)",
+      "rules.lists.title": "List rules",
+      "rules.lists.bulletSymbol": "Bullet marker",
+      "rules.lists.leftIndentCm": "List left indent (cm)",
+      "rules.lists.firstLineIndentCm": "List first line indent (cm)",
+      "rules.lists.tabStopCm": "List tab stop (cm)",
       "placeholders.font.family": "Times New Roman",
       "placeholders.font.sizePt": "14",
       "placeholders.paragraph.firstLineIndentCm": "1.25",
@@ -23258,10 +23342,14 @@ var require_exporter = __commonJS({
       TableOfContents,
       Header,
       Footer,
-      HeadingLevel
+      HeadingLevel,
+      LevelFormat,
+      LevelSuffix
     } = require_dist();
     var { mmToTwips, cmToTwips, ptToHalfPoints } = require_units();
     var { parseMarkdownToModel } = require_markdown_parser();
+    var BULLET_NUMBERING_REFERENCE = "word-export-bullet-list";
+    var ORDERED_NUMBERING_REFERENCE = "word-export-ordered-list";
     function ensureError(code, message, extra) {
       const err = new Error(message || code);
       err.code = code;
@@ -23295,6 +23383,7 @@ var require_exporter = __commonJS({
         tocFieldTitle: s.tocFieldTitle || "\u0421\u043E\u0434\u0435\u0440\u0436\u0430\u043D\u0438\u0435",
         tableLabel: s.tableLabel || "\u0422\u0430\u0431\u043B\u0438\u0446\u0430",
         figureLabel: s.figureLabel || "\u0420\u0438\u0441\u0443\u043D\u043E\u043A",
+        listingLabel: s.listingLabel || "\u041B\u0438\u0441\u0442\u0438\u043D\u0433",
         captionSeparator: s.captionSeparator || " \u2014 ",
         imageNotFound: s.imageNotFound || "\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435 \u043D\u0435 \u043D\u0430\u0439\u0434\u0435\u043D\u043E: {src}"
       };
@@ -23339,7 +23428,9 @@ var require_exporter = __commonJS({
       if (!s.tableText) s.tableText = s.normal;
       if (!s.tableHeaderText) s.tableHeaderText = s.tableText || s.normal;
       if (!s.figureCaption) s.figureCaption = s.normal;
+      if (!s.listingCaption) s.listingCaption = s.tableCaption || s.normal;
       if (!s.listingText) s.listingText = s.normal;
+      if (!s.listText) s.listText = s.normal;
       if (!s.tocTitle) {
         s.tocTitle = {
           ...s.heading1 || s.normal,
@@ -23373,7 +23464,46 @@ var require_exporter = __commonJS({
       if (p.keepLines) opts.keepLines = true;
       return opts;
     }
-    function runsFromInlines(inlines, style, preset) {
+    function styleRunOptionsFromStyle(style, preset) {
+      const font = style.font || preset.font || { family: t("placeholders.font.family"), sizePt: 14 };
+      const color = (font.color || "").replace(/^#/, "").toUpperCase();
+      const hasColor = /^[0-9A-F]{6}$/.test(color);
+      return {
+        font: font.family || t("placeholders.font.family"),
+        size: ptToHalfPoints(font.sizePt || 14),
+        bold: !!font.bold,
+        italics: !!font.italic,
+        allCaps: !!font.allCaps,
+        ...hasColor ? { color } : {}
+      };
+    }
+    function buildDocumentStyles(preset) {
+      const normal = getStyle(preset, "normal");
+      const normalParagraph = paragraphOptionsFromStyle(normal);
+      const tocParagraph = {
+        ...normalParagraph,
+        alignment: AlignmentType.LEFT,
+        indent: {}
+      };
+      const tocRun = styleRunOptionsFromStyle(normal, preset);
+      return {
+        paragraphStyles: Array.from({ length: 6 }, (_, index) => ({
+          id: `TOC${index + 1}`,
+          name: `TOC ${index + 1}`,
+          basedOn: "Normal",
+          next: "Normal",
+          paragraph: tocParagraph,
+          run: tocRun
+        }))
+      };
+    }
+    function transformInlineText(text, transform) {
+      let out = text || "";
+      if (transform == null ? void 0 : transform.stripTerminalPunctuation) out = out.replace(/[.!?;:]+$/u, "");
+      if (transform == null ? void 0 : transform.uppercase) out = out.toLocaleUpperCase("ru-RU");
+      return out;
+    }
+    function runsFromInlines(inlines, style, preset, transform) {
       const baseFont = style.font || preset.font || { family: t("placeholders.font.family"), sizePt: 14 };
       const baseFamily = baseFont.family || t("placeholders.font.family");
       const baseSize = ptToHalfPoints(baseFont.sizePt || 14);
@@ -23385,7 +23515,7 @@ var require_exporter = __commonJS({
       return (inlines || []).map((inl) => {
         const isCode = !!inl.code;
         const run = new TextRun({
-          text: inl.text || "",
+          text: transformInlineText(inl.text, transform),
           font: isCode ? "Courier New" : baseFamily,
           size: isCode ? ptToHalfPoints(Math.max(10, (baseFont.sizePt || 14) - 2)) : baseSize,
           bold: forceBold || !!inl.bold,
@@ -23401,13 +23531,99 @@ var require_exporter = __commonJS({
       const pOpts = paragraphOptionsFromStyle(style);
       const merged = { ...pOpts, ...overrides || {} };
       if (overrides && overrides.indent === null) delete merged.indent;
+      delete merged.textTransform;
       return new Paragraph({
         ...merged,
-        children: runsFromInlines(inlines, style, preset)
+        children: runsFromInlines(inlines, style, preset, overrides == null ? void 0 : overrides.textTransform)
       });
     }
     function inlinesToText(inlines) {
       return (inlines || []).map((x) => x.text || "").join("");
+    }
+    function normalizedHeadingText(inlines) {
+      return inlinesToText(inlines).trim().replace(/[.!?;:]+$/u, "").replace(/\s+/g, " ").toLocaleUpperCase("ru-RU");
+    }
+    function getPresetRules(preset) {
+      return (preset == null ? void 0 : preset.rules) || {};
+    }
+    function headingRulesFor(block, preset) {
+      const rules = getPresetRules(preset).headings || {};
+      const special = new Set((rules.centeredUppercase || []).map((x) => String(x).toLocaleUpperCase("ru-RU")));
+      const text = normalizedHeadingText(block.inlines);
+      const isCenteredUppercase = special.has(text);
+      return {
+        center: isCenteredUppercase,
+        uppercase: block.level === 1 || isCenteredUppercase,
+        stripTerminalPunctuation: rules.stripTerminalPunctuation !== false
+      };
+    }
+    function getNumberedHeadingPrefix(block) {
+      const text = inlinesToText(block.inlines).trim();
+      const match = /^(\d+)(?:[.)]|\s)/u.exec(text);
+      return match ? match[1] : null;
+    }
+    function formatScopedNumber(label, sectionNumber, counter) {
+      return sectionNumber ? `${label} ${sectionNumber}.${counter}` : `${label} ${counter}`;
+    }
+    function formatCaptionNumber(label, sectionNumber, counter, preset) {
+      var _a;
+      const scoped = ((_a = getPresetRules(preset).captions) == null ? void 0 : _a.numberWithinHeading1) !== false;
+      return formatScopedNumber(label, scoped ? sectionNumber : null, counter);
+    }
+    function listIndentOptionsFromRules(listRules) {
+      var _a, _b, _c, _d, _e;
+      const markerIndentCm = (_a = listRules.markerIndentCm) != null ? _a : 1.25;
+      const textIndentCm = (_b = listRules.textIndentCm) != null ? _b : 2.25;
+      if (typeof listRules.leftIndentCm === "number" || typeof listRules.firstLineIndentCm === "number") {
+        return {
+          left: cmToTwips((_c = listRules.leftIndentCm) != null ? _c : 0),
+          firstLine: cmToTwips((_d = listRules.firstLineIndentCm) != null ? _d : markerIndentCm)
+        };
+      }
+      return {
+        left: cmToTwips(textIndentCm),
+        hanging: cmToTwips((_e = listRules.hangingIndentCm) != null ? _e : Math.max(0, textIndentCm - markerIndentCm))
+      };
+    }
+    function listTabStopCmFromRules(listRules) {
+      var _a, _b;
+      return (_b = (_a = listRules.tabStopCm) != null ? _a : listRules.textIndentCm) != null ? _b : 2.25;
+    }
+    function buildNumberingConfig(preset) {
+      const listRules = getPresetRules(preset).lists || {};
+      const bulletSymbol = String(listRules.bulletSymbol || "-");
+      const paragraph = {
+        indent: listIndentOptionsFromRules(listRules),
+        leftTabStop: cmToTwips(listTabStopCmFromRules(listRules))
+      };
+      return {
+        config: [
+          {
+            reference: BULLET_NUMBERING_REFERENCE,
+            levels: [
+              {
+                level: 0,
+                format: LevelFormat.BULLET,
+                text: bulletSymbol,
+                suffix: LevelSuffix.TAB,
+                style: { paragraph }
+              }
+            ]
+          },
+          {
+            reference: ORDERED_NUMBERING_REFERENCE,
+            levels: [
+              {
+                level: 0,
+                format: LevelFormat.DECIMAL,
+                text: "%1.",
+                suffix: LevelSuffix.TAB,
+                style: { paragraph }
+              }
+            ]
+          }
+        ]
+      };
     }
     function isTableCaptionParagraphBlock(block, preset) {
       if (!block || block.type !== "paragraph") return false;
@@ -23417,6 +23633,19 @@ var require_exporter = __commonJS({
       const rx = new RegExp(`^${label}\\s+\\d+(?:\\.\\d+)*\\b`, "i");
       return rx.test(text);
     }
+    function isListingCaptionParagraphBlock(block, preset) {
+      if (!block || block.type !== "paragraph") return false;
+      const strings = getStrings(preset);
+      const label = escapeRegExp(strings.listingLabel);
+      const text = inlinesToText(block.inlines).trim();
+      const rx = new RegExp(`^${label}\\s+\\d+(?:\\.\\d+)*\\b`, "i");
+      return rx.test(text);
+    }
+    function stripCaptionFinalPeriod(text, preset) {
+      var _a;
+      if (((_a = getPresetRules(preset).captions) == null ? void 0 : _a.stripFinalPeriod) === false) return text || "";
+      return String(text || "").trim().replace(/\.$/u, "");
+    }
     function makeTableCaptionParagraphFromText(text, preset) {
       const strings = getStrings(preset);
       const style = getStyle(preset, "tableCaption", "normal");
@@ -23424,7 +23653,9 @@ var require_exporter = __commonJS({
       const font = style.font || { family: t("placeholders.font.family"), sizePt: 12 };
       const family = font.family || t("placeholders.font.family");
       const size = ptToHalfPoints(font.sizePt || 12);
-      const line = (text || "").trim();
+      const bold = !!font.bold;
+      const italics = !!font.italic;
+      const line = stripCaptionFinalPeriod(text, preset);
       const label = escapeRegExp(strings.tableLabel);
       const sep = escapeRegExp(strings.captionSeparator || " \u2014 ");
       let m = new RegExp(`^(${label}\\s+\\d+(?:\\.\\d+)*\\s*${sep}\\s*)(.*)$`, "i").exec(line);
@@ -23435,8 +23666,8 @@ var require_exporter = __commonJS({
           ...pOpts,
           indent: void 0,
           children: [
-            new TextRun({ text: prefix, font: family, size, italics: false }),
-            new TextRun({ text: rest, font: family, size, italics: true })
+            new TextRun({ text: prefix, font: family, size, bold, italics }),
+            new TextRun({ text: rest, font: family, size, bold, italics })
           ]
         });
       }
@@ -23448,16 +23679,36 @@ var require_exporter = __commonJS({
           ...pOpts,
           indent: void 0,
           children: [
-            new TextRun({ text: prefix, font: family, size, italics: false }),
-            new TextRun({ text: rest, font: family, size, italics: true })
+            new TextRun({ text: prefix, font: family, size, bold, italics }),
+            new TextRun({ text: rest, font: family, size, bold, italics })
           ]
         });
       }
       return new Paragraph({
         ...pOpts,
         indent: void 0,
-        children: [new TextRun({ text: line, font: family, size, italics: true })]
+        children: [new TextRun({ text: line, font: family, size, bold, italics })]
       });
+    }
+    function makeListingCaptionParagraphFromText(text, preset) {
+      return paragraphFromInlines(
+        [{ type: "text", text: stripCaptionFinalPeriod(text, preset) }],
+        "listingCaption",
+        preset,
+        { indent: null }
+      );
+    }
+    function extractListingTitleFromFirstComment(lines) {
+      const first = Array.isArray(lines) ? lines[0] : null;
+      if (typeof first !== "string") return null;
+      const match = /^\s*(?:\/\/|#)\s*(.+?)\s*$/.exec(first);
+      if (!match) return null;
+      const title = (match[1] || "").trim();
+      if (!title) return null;
+      return {
+        title,
+        lines: lines.slice(1)
+      };
     }
     function makeTable(block, preset) {
       const rows = block.rows || [];
@@ -23489,6 +23740,42 @@ var require_exporter = __commonJS({
         width: { size: 100, type: WidthType.PERCENTAGE },
         borders,
         rows: docxRows
+      });
+    }
+    function makeListingTable(block, preset) {
+      const style = getStyle(preset, "listingText", "normal");
+      const pOpts = paragraphOptionsFromStyle(style);
+      const font = style.font || { family: "Courier New", sizePt: 10 };
+      const paragraphs = (block.lines || [""]).map((line) => new Paragraph({
+        ...pOpts,
+        indent: void 0,
+        children: [
+          new TextRun({
+            text: line,
+            font: font.family || "Courier New",
+            size: ptToHalfPoints(font.sizePt || 10)
+          })
+        ]
+      }));
+      return new Table({
+        width: { size: 100, type: WidthType.PERCENTAGE },
+        borders: {
+          top: { style: BorderStyle.SINGLE, size: 1, color: "000000" },
+          bottom: { style: BorderStyle.SINGLE, size: 1, color: "000000" },
+          left: { style: BorderStyle.SINGLE, size: 1, color: "000000" },
+          right: { style: BorderStyle.SINGLE, size: 1, color: "000000" },
+          insideHorizontal: { style: BorderStyle.NIL, size: 0, color: "FFFFFF" },
+          insideVertical: { style: BorderStyle.NIL, size: 0, color: "FFFFFF" }
+        },
+        rows: [
+          new TableRow({
+            children: [
+              new TableCell({
+                children: paragraphs
+              })
+            ]
+          })
+        ]
       });
     }
     function fileBaseName(p) {
@@ -23529,11 +23816,12 @@ var require_exporter = __commonJS({
       return { footers: { default: new Footer({ children: [p] }) } };
     }
     async function exportActiveNoteToDocx(plugin, preset, options) {
-      var _a, _b, _c, _d, _e, _f;
+      var _a, _b, _c, _d, _e, _f, _g;
       const opts = {
         ignorePageBreaks: !!(options == null ? void 0 : options.ignorePageBreaks),
         enablePagination: !!(options == null ? void 0 : options.enablePagination),
-        includeToc: !!(options == null ? void 0 : options.includeToc)
+        includeToc: !!(options == null ? void 0 : options.includeToc),
+        extractListingTitleFromFirstComment: !!(options == null ? void 0 : options.extractListingTitleFromFirstComment)
       };
       const app = plugin.app;
       const activeFile = app.workspace.getActiveFile();
@@ -23552,7 +23840,13 @@ var require_exporter = __commonJS({
       const contentChildren = [];
       let tableCounter = 0;
       let figureCounter = 0;
+      let listingCounter = 0;
+      let currentSectionNumber = null;
       let pendingTableCaptionText = null;
+      let pendingListingCaptionText = null;
+      let nextNormalSpacingBeforePt = null;
+      let listInstanceCounter = 0;
+      const afterObjectSpacingBeforePt = (_d = getPresetRules(preset).objects) == null ? void 0 : _d.followingParagraphSpacingBeforePt;
       for (const block of model.blocks) {
         if (block.type === "pageBreak") {
           if (!opts.ignorePageBreaks) contentChildren.push(new Paragraph({ pageBreakBefore: true }));
@@ -23560,6 +23854,12 @@ var require_exporter = __commonJS({
         }
         if (block.type === "heading") {
           const level = Math.min(6, Math.max(1, block.level || 1));
+          if (level === 1) {
+            currentSectionNumber = getNumberedHeadingPrefix(block);
+            tableCounter = 0;
+            figureCounter = 0;
+            listingCounter = 0;
+          }
           const headingMap = {
             1: HeadingLevel.HEADING_1,
             2: HeadingLevel.HEADING_2,
@@ -23568,12 +23868,15 @@ var require_exporter = __commonJS({
             5: HeadingLevel.HEADING_5,
             6: HeadingLevel.HEADING_6
           };
+          const rules = headingRulesFor(block, preset);
           contentChildren.push(
             paragraphFromInlines(block.inlines, `heading${level}`, preset, {
               heading: headingMap[level],
-              // ✅ this makes Word treat it as a real heading
-              // optional: make sure no first-line indent leaks into headings
-              indent: null
+              ...rules.center ? { alignment: AlignmentType.CENTER, indent: null } : {},
+              textTransform: {
+                uppercase: rules.uppercase,
+                stripTerminalPunctuation: rules.stripTerminalPunctuation
+              }
             })
           );
           continue;
@@ -23583,52 +23886,72 @@ var require_exporter = __commonJS({
             pendingTableCaptionText = inlinesToText(block.inlines).trim();
             continue;
           }
-          contentChildren.push(paragraphFromInlines(block.inlines, "normal", preset));
+          if (isListingCaptionParagraphBlock(block, preset)) {
+            pendingListingCaptionText = inlinesToText(block.inlines).trim();
+            continue;
+          }
+          const overrides = {};
+          if (typeof nextNormalSpacingBeforePt === "number") {
+            overrides.spacing = {
+              ...paragraphOptionsFromStyle(getStyle(preset, "normal")).spacing,
+              before: Math.round(nextNormalSpacingBeforePt * 20)
+            };
+            nextNormalSpacingBeforePt = null;
+          }
+          contentChildren.push(paragraphFromInlines(block.inlines, "normal", preset, overrides));
           continue;
         }
         if (block.type === "list") {
-          for (const item of block.items || []) {
-            const inlines = [{ type: "text", text: "- " }, ...item.inlines || []];
-            contentChildren.push(
-              paragraphFromInlines(inlines, "normal", preset, { alignment: AlignmentType.LEFT })
-            );
-          }
-          continue;
-        }
-        if (block.type === "codeBlock") {
-          const style = getStyle(preset, "listingText", "normal");
+          const style = getStyle(preset, "listText", "normal");
           const pOpts = paragraphOptionsFromStyle(style);
-          const font = style.font || { family: "Courier New", sizePt: 10 };
-          for (const line of block.lines || []) {
+          const listInstance = listInstanceCounter;
+          listInstanceCounter += 1;
+          for (const item of block.items || []) {
+            const listRules = getPresetRules(preset).lists || {};
             contentChildren.push(
               new Paragraph({
+                ...pOpts,
                 alignment: AlignmentType.LEFT,
-                spacing: pOpts.spacing,
-                children: [
-                  new TextRun({
-                    text: line,
-                    font: font.family || "Courier New",
-                    size: ptToHalfPoints(font.sizePt || 10)
-                  })
-                ]
+                numbering: {
+                  reference: block.ordered ? ORDERED_NUMBERING_REFERENCE : BULLET_NUMBERING_REFERENCE,
+                  level: 0,
+                  instance: listInstance,
+                  custom: true
+                },
+                indent: listIndentOptionsFromRules(listRules),
+                children: runsFromInlines(item.inlines || [], style, preset)
               })
             );
           }
           continue;
         }
+        if (block.type === "codeBlock") {
+          listingCounter += 1;
+          const extractedListingTitle = opts.extractListingTitleFromFirstComment && !pendingListingCaptionText ? extractListingTitleFromFirstComment(block.lines) : null;
+          const captionText = pendingListingCaptionText || `${formatCaptionNumber(strings.listingLabel, currentSectionNumber, listingCounter, preset)}${strings.captionSeparator}${(extractedListingTitle == null ? void 0 : extractedListingTitle.title) || ""}`;
+          contentChildren.push(makeListingCaptionParagraphFromText(captionText, preset));
+          pendingListingCaptionText = null;
+          contentChildren.push(makeListingTable(
+            extractedListingTitle ? { ...block, lines: extractedListingTitle.lines } : block,
+            preset
+          ));
+          if (typeof afterObjectSpacingBeforePt === "number") nextNormalSpacingBeforePt = afterObjectSpacingBeforePt;
+          continue;
+        }
         if (block.type === "table") {
           tableCounter += 1;
-          const captionText = pendingTableCaptionText || `${strings.tableLabel} ${tableCounter}${strings.captionSeparator}`;
+          const captionText = pendingTableCaptionText || `${formatCaptionNumber(strings.tableLabel, currentSectionNumber, tableCounter, preset)}${strings.captionSeparator}`;
           contentChildren.push(makeTableCaptionParagraphFromText(captionText, preset));
           pendingTableCaptionText = null;
           const table = makeTable(block, preset);
           if (table) contentChildren.push(table);
+          if (typeof afterObjectSpacingBeforePt === "number") nextNormalSpacingBeforePt = afterObjectSpacingBeforePt;
           continue;
         }
         if (block.type === "image") {
           figureCounter += 1;
           const name = fileBaseName(block.src || "image");
-          const caption = `${strings.figureLabel} ${figureCounter}${strings.captionSeparator}${name}`;
+          const caption = `${formatCaptionNumber(strings.figureLabel, currentSectionNumber, figureCounter, preset)}${strings.captionSeparator}${name}`;
           const resolved = await resolveImageBinary(plugin, activeFile, block.src);
           if (resolved) {
             const imageRun = new ImageRun({
@@ -23646,10 +23969,11 @@ var require_exporter = __commonJS({
             );
           }
           contentChildren.push(
-            paragraphFromInlines([{ type: "text", text: caption }], "figureCaption", preset, {
+            paragraphFromInlines([{ type: "text", text: stripCaptionFinalPeriod(caption, preset) }], "figureCaption", preset, {
               indent: null
             })
           );
+          if (typeof afterObjectSpacingBeforePt === "number") nextNormalSpacingBeforePt = afterObjectSpacingBeforePt;
           continue;
         }
       }
@@ -23661,10 +23985,10 @@ var require_exporter = __commonJS({
           right: mmToTwips(margins.right)
         }
       };
-      const pagPos = ((_d = preset.pagination) == null ? void 0 : _d.position) || "none";
+      const pagPos = ((_e = preset.pagination) == null ? void 0 : _e.position) || "none";
       const pageNumHF = opts.enablePagination ? buildPageNumberHF(pagPos) : null;
-      const startAt = Number.isFinite((_e = preset.pagination) == null ? void 0 : _e.startAt) ? preset.pagination.startAt : 1;
-      const skipFirstPages = Number.isFinite((_f = preset.pagination) == null ? void 0 : _f.skipFirstPages) ? preset.pagination.skipFirstPages : 0;
+      const startAt = Number.isFinite((_f = preset.pagination) == null ? void 0 : _f.startAt) ? preset.pagination.startAt : 1;
+      const skipFirstPages = Number.isFinite((_g = preset.pagination) == null ? void 0 : _g.skipFirstPages) ? preset.pagination.skipFirstPages : 0;
       const sections = [];
       if (opts.includeToc) {
         const tocTitle = paragraphFromInlines(
@@ -23675,7 +23999,9 @@ var require_exporter = __commonJS({
         );
         const toc = new TableOfContents(strings.tocFieldTitle, {
           hyperlink: true,
-          headingStyleRange: "1-6"
+          headingStyleRange: "1-6",
+          hideTabAndPageNumbersInWebView: true,
+          useAppliedParagraphOutlineLevel: true
         });
         sections.push({
           properties: {
@@ -23686,17 +24012,26 @@ var require_exporter = __commonJS({
       }
       void skipFirstPages;
       const mainSectionProperties = {
-        page: pageProps,
+        page: {
+          ...pageProps,
+          ...opts.enablePagination ? { pageNumbers: { start: startAt > 0 ? startAt : 1 } } : {}
+        },
         ...opts.enablePagination ? {
-          ...pageNumHF || {},
-          pageNumberStart: startAt > 0 ? startAt : 1
+          ...pageNumHF || {}
         } : {}
       };
       sections.push({
         properties: mainSectionProperties,
         children: contentChildren
       });
-      const doc = new Document({ sections });
+      const doc = new Document({
+        sections,
+        styles: buildDocumentStyles(preset),
+        numbering: buildNumberingConfig(preset),
+        features: {
+          updateFields: opts.includeToc
+        }
+      });
       let buffer;
       try {
         buffer = await Packer.toBuffer(doc);
@@ -23730,11 +24065,18 @@ var require_export_options_modal = __commonJS({
        * @param {{
        *  currentPresetId?: string,
        *  userPresets?: Array<{ id: string, name: string, preset: any }>,
+       *  exportOptions?: {
+       *    ignorePageBreaks?: boolean,
+       *    enablePagination?: boolean,
+       *    includeToc?: boolean,
+       *    extractListingTitleFromFirstComment?: boolean
+       *  },
        *  onSubmit: (opts: {
        *    presetId: string,
        *    ignorePageBreaks: boolean,
        *    enablePagination: boolean,
-       *    includeToc: boolean
+       *    includeToc: boolean,
+       *    extractListingTitleFromFirstComment: boolean
        *  }) => void
        * }} props
        */
@@ -23742,11 +24084,13 @@ var require_export_options_modal = __commonJS({
         var _a, _b;
         super(app);
         this.props = props;
+        const exportOptions = props.exportOptions || {};
         this.state = {
           presetId: props.currentPresetId || ((_b = (_a = getPresetOptions()[0]) == null ? void 0 : _a.id) != null ? _b : ""),
-          ignorePageBreaks: false,
-          enablePagination: true,
-          includeToc: false
+          ignorePageBreaks: !!exportOptions.ignorePageBreaks,
+          enablePagination: exportOptions.enablePagination !== false,
+          includeToc: !!exportOptions.includeToc,
+          extractListingTitleFromFirstComment: exportOptions.extractListingTitleFromFirstComment !== false
         };
       }
       onOpen() {
@@ -23775,6 +24119,10 @@ var require_export_options_modal = __commonJS({
         new Setting(contentEl).setName(t("modal.exportOptions.includeToc.title")).setDesc(t("modal.exportOptions.includeToc.desc")).addToggle((t2) => {
           t2.setValue(this.state.includeToc);
           t2.onChange((v) => this.state.includeToc = v);
+        });
+        new Setting(contentEl).setName(t("modal.exportOptions.extractListingTitleFromFirstComment.title")).setDesc(t("modal.exportOptions.extractListingTitleFromFirstComment.desc")).addToggle((t2) => {
+          t2.setValue(this.state.extractListingTitleFromFirstComment);
+          t2.onChange((v) => this.state.extractListingTitleFromFirstComment = v);
         });
         const footer = contentEl.createDiv({ cls: "gost-export-modal-footer" });
         footer.style.display = "flex";
@@ -23839,7 +24187,8 @@ var require_commands = __commonJS({
       const result = await exportActiveNoteToDocx(plugin, preset, {
         ignorePageBreaks: !!opts.ignorePageBreaks,
         enablePagination: !!opts.enablePagination,
-        includeToc: !!opts.includeToc
+        includeToc: !!opts.includeToc,
+        extractListingTitleFromFirstComment: !!opts.extractListingTitleFromFirstComment
       });
       return result;
     }
@@ -23848,14 +24197,16 @@ var require_commands = __commonJS({
         id: "export-to-word-gost",
         name: "Export note to Word (\u0413\u041E\u0421\u0422) \u2014 Fast",
         callback: async () => {
-          var _a;
+          var _a, _b;
           try {
             const presetId = (_a = plugin.settings) == null ? void 0 : _a.presetId;
+            const exportOptions = ((_b = plugin.settings) == null ? void 0 : _b.exportOptions) || {};
             const result = await runExport(plugin, {
               presetId,
-              ignorePageBreaks: false,
-              enablePagination: true,
-              includeToc: false
+              ignorePageBreaks: !!exportOptions.ignorePageBreaks,
+              enablePagination: exportOptions.enablePagination !== false,
+              includeToc: !!exportOptions.includeToc,
+              extractListingTitleFromFirstComment: exportOptions.extractListingTitleFromFirstComment !== false
             });
             new Notice(t("notices.export.ok", { path: result.outFilePath }), 6e3);
           } catch (error) {
@@ -23868,12 +24219,22 @@ var require_commands = __commonJS({
         id: "export-to-word-gost-advanced",
         name: "Export note to Word (\u0413\u041E\u0421\u0422) \u2014 Advanced\u2026",
         callback: () => {
-          var _a, _b;
+          var _a, _b, _c;
           const modal = new ExportOptionsModal(plugin.app, {
             currentPresetId: (_a = plugin.settings) == null ? void 0 : _a.presetId,
             userPresets: (_b = plugin.settings) == null ? void 0 : _b.userPresets,
+            exportOptions: (_c = plugin.settings) == null ? void 0 : _c.exportOptions,
             onSubmit: async (opts) => {
               try {
+                plugin.settings.presetId = opts.presetId;
+                plugin.settings.exportOptions = {
+                  ...plugin.settings.exportOptions || {},
+                  ignorePageBreaks: !!opts.ignorePageBreaks,
+                  enablePagination: !!opts.enablePagination,
+                  includeToc: !!opts.includeToc,
+                  extractListingTitleFromFirstComment: !!opts.extractListingTitleFromFirstComment
+                };
+                await plugin.saveSettings();
                 const result = await runExport(plugin, opts);
                 new Notice(t("notices.export.ok", { path: result.outFilePath }), 6e3);
               } catch (error) {
@@ -23898,7 +24259,8 @@ var require_settings = __commonJS({
       exportOptions: {
         ignorePageBreaks: false,
         enablePagination: true,
-        includeToc: false
+        includeToc: false,
+        extractListingTitleFromFirstComment: true
       },
       userPresets: [
         // {
@@ -23927,6 +24289,7 @@ var require_preset_visual_editor = __commonJS({
       "heading5",
       "heading6",
       "normal",
+      "listText",
       "tableText",
       "tableHeaderText",
       "tableCaption",
@@ -23941,6 +24304,7 @@ var require_preset_visual_editor = __commonJS({
       heading5: tr("block.heading5"),
       heading6: tr("block.heading6"),
       normal: tr("block.normal"),
+      listText: tr("block.listText"),
       tableText: tr("block.tableText"),
       tableHeaderText: tr("block.tableHeaderText"),
       tableCaption: tr("block.tableCaption"),
@@ -23987,6 +24351,10 @@ var require_preset_visual_editor = __commonJS({
         base.paragraph.spacingBeforePt = 6;
         base.paragraph.lineSpacing = 1;
       }
+      if (type === "listText") {
+        base.paragraph.alignment = "left";
+        base.paragraph.firstLineIndentCm = 0;
+      }
       if (type === "figureCaption") {
         base.font.sizePt = 12;
         base.paragraph.firstLineIndentCm = 0;
@@ -24006,6 +24374,31 @@ var require_preset_visual_editor = __commonJS({
         base.paragraph.lineSpacing = 1;
       }
       return base;
+    }
+    function ensureListRules(preset) {
+      if (!preset.rules) preset.rules = {};
+      if (!preset.rules.lists) {
+        preset.rules.lists = {
+          bulletSymbol: "\u2014",
+          leftIndentCm: 0,
+          firstLineIndentCm: 1.25,
+          tabStopCm: 2.25
+        };
+      }
+      return preset.rules.lists;
+    }
+    function addNumberField(containerEl, name, placeholder, getValue, setValue, notifyChange) {
+      new Setting(containerEl).setName(name).addText((input) => {
+        const value = getValue();
+        input.setPlaceholder(placeholder);
+        input.setValue(value != null ? String(value) : "");
+        input.onChange((v) => {
+          const n = Number(v);
+          if (!Number.isFinite(n)) return;
+          setValue(n);
+          notifyChange();
+        });
+      });
     }
     function renderPresetVisualEditor(containerEl, presetWrapper, hooks) {
       const preset = presetWrapper.preset || {};
@@ -24028,6 +24421,33 @@ var require_preset_visual_editor = __commonJS({
       const addBtn = header.createEl("button", { text: tr("buttons.addBlock") });
       addBtn.classList.add("mod-cta");
       const blocksEl = containerEl.createDiv();
+      function renderListRuleFields(container) {
+        const sectionEl = container.createDiv();
+        sectionEl.style.border = "1px solid var(--background-modifier-border)";
+        sectionEl.style.borderRadius = "8px";
+        sectionEl.style.padding = "10px";
+        sectionEl.style.marginBottom = "10px";
+        sectionEl.createEl("strong", { text: tr("rules.lists.title") });
+        const listRules = ensureListRules(preset);
+        if (listRules.bulletSymbol == null) listRules.bulletSymbol = "\u2014";
+        new Setting(sectionEl).setName(tr("rules.lists.bulletSymbol")).addText((input) => {
+          input.setPlaceholder("\u2014");
+          input.setValue(String(listRules.bulletSymbol || ""));
+          input.onChange((v) => {
+            listRules.bulletSymbol = String(v || "\u2014");
+            notifyChange();
+          });
+        });
+        addNumberField(sectionEl, tr("rules.lists.leftIndentCm"), "0", () => listRules.leftIndentCm, (n) => {
+          listRules.leftIndentCm = n;
+        }, notifyChange);
+        addNumberField(sectionEl, tr("rules.lists.firstLineIndentCm"), "1.25", () => listRules.firstLineIndentCm, (n) => {
+          listRules.firstLineIndentCm = n;
+        }, notifyChange);
+        addNumberField(sectionEl, tr("rules.lists.tabStopCm"), "2.25", () => listRules.tabStopCm, (n) => {
+          listRules.tabStopCm = n;
+        }, notifyChange);
+      }
       function renderBlockTypeChooser(blockEl, block) {
         const selectedTypes = getSelectedTypes(blocks);
         const available = getAvailableTypes(selectedTypes);
@@ -24163,6 +24583,7 @@ var require_preset_visual_editor = __commonJS({
       }
       function renderAll() {
         blocksEl.empty();
+        renderListRuleFields(blocksEl);
         const chosen = blocks.filter((b) => !!b.type);
         const unchosen = blocks.filter((b) => !b.type);
         sortBlocks(chosen);
@@ -24372,6 +24793,13 @@ var require_settings_tab = __commonJS({
           t2.setValue(this.plugin.settings.exportOptions.includeToc);
           t2.onChange(async (v) => {
             this.plugin.settings.exportOptions.includeToc = v;
+            await this.plugin.saveSettings();
+          });
+        });
+        new Setting(containerEl).setName(t("settings.exportDefaults.extractListingTitleFromFirstComment.title")).addToggle((t2) => {
+          t2.setValue(this.plugin.settings.exportOptions.extractListingTitleFromFirstComment !== false);
+          t2.onChange(async (v) => {
+            this.plugin.settings.exportOptions.extractListingTitleFromFirstComment = v;
             await this.plugin.saveSettings();
           });
         });

@@ -12,6 +12,7 @@ const STYLE_ORDER = [
     "heading5",
     "heading6",
     "normal",
+    "listText",
     "tableText",
     "tableHeaderText",
     "tableCaption",
@@ -27,6 +28,7 @@ const LABELS = {
     heading5: tr("block.heading5"),
     heading6: tr("block.heading6"),
     normal: tr("block.normal"),
+    listText: tr("block.listText"),
     tableText: tr("block.tableText"),
     tableHeaderText: tr("block.tableHeaderText"),
     tableCaption: tr("block.tableCaption"),
@@ -78,6 +80,11 @@ function defaultStyleFor(type, preset) {
         base.paragraph.lineSpacing = 1.0;
     }
 
+    if (type === "listText") {
+        base.paragraph.alignment = "left";
+        base.paragraph.firstLineIndentCm = 0;
+    }
+
     if (type === "figureCaption") {
         base.font.sizePt = 12;
         base.paragraph.firstLineIndentCm = 0;
@@ -100,6 +107,35 @@ function defaultStyleFor(type, preset) {
     }
 
     return base;
+}
+
+function ensureListRules(preset) {
+    if (!preset.rules) preset.rules = {};
+    if (!preset.rules.lists) {
+        preset.rules.lists = {
+            bulletSymbol: "—",
+            leftIndentCm: 0,
+            firstLineIndentCm: 1.25,
+            tabStopCm: 2.25,
+        };
+    }
+    return preset.rules.lists;
+}
+
+function addNumberField(containerEl, name, placeholder, getValue, setValue, notifyChange) {
+    new Setting(containerEl)
+        .setName(name)
+        .addText((input) => {
+            const value = getValue();
+            input.setPlaceholder(placeholder);
+            input.setValue(value != null ? String(value) : "");
+            input.onChange((v) => {
+                const n = Number(v);
+                if (!Number.isFinite(n)) return;
+                setValue(n);
+                notifyChange();
+            });
+        });
 }
 
 /**
@@ -139,6 +175,41 @@ function renderPresetVisualEditor(containerEl, presetWrapper, hooks) {
     addBtn.classList.add("mod-cta");
 
     const blocksEl = containerEl.createDiv();
+
+    function renderListRuleFields(container) {
+        const sectionEl = container.createDiv();
+        sectionEl.style.border = "1px solid var(--background-modifier-border)";
+        sectionEl.style.borderRadius = "8px";
+        sectionEl.style.padding = "10px";
+        sectionEl.style.marginBottom = "10px";
+
+        sectionEl.createEl("strong", { text: tr("rules.lists.title") });
+        const listRules = ensureListRules(preset);
+        if (listRules.bulletSymbol == null) listRules.bulletSymbol = "—";
+
+        new Setting(sectionEl)
+            .setName(tr("rules.lists.bulletSymbol"))
+            .addText((input) => {
+                input.setPlaceholder("—");
+                input.setValue(String(listRules.bulletSymbol || ""));
+                input.onChange((v) => {
+                    listRules.bulletSymbol = String(v || "—");
+                    notifyChange();
+                });
+            });
+
+        addNumberField(sectionEl, tr("rules.lists.leftIndentCm"), "0", () => listRules.leftIndentCm, (n) => {
+            listRules.leftIndentCm = n;
+        }, notifyChange);
+
+        addNumberField(sectionEl, tr("rules.lists.firstLineIndentCm"), "1.25", () => listRules.firstLineIndentCm, (n) => {
+            listRules.firstLineIndentCm = n;
+        }, notifyChange);
+
+        addNumberField(sectionEl, tr("rules.lists.tabStopCm"), "2.25", () => listRules.tabStopCm, (n) => {
+            listRules.tabStopCm = n;
+        }, notifyChange);
+    }
 
     function renderBlockTypeChooser(blockEl, block) {
         const selectedTypes = getSelectedTypes(blocks);
@@ -330,6 +401,7 @@ function renderPresetVisualEditor(containerEl, presetWrapper, hooks) {
 
     function renderAll() {
         blocksEl.empty();
+        renderListRuleFields(blocksEl);
 
         // сортируем только “выбранные”; но пустые (без type) пусть остаются внизу
         const chosen = blocks.filter((b) => !!b.type);
